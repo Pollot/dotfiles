@@ -1,0 +1,46 @@
+window:
+  opacity: 0.8
+  padding:
+    x: 6
+    y: 6
+  
+font:
+  normal:
+    family: FiraCode Nerd Font Mono
+  size: 12
+  
+shell:
+  program: /bin/zsh
+  args:
+    - --login
+    
+schemes:
+  Qtile: &Qtile
+    # Default colors
+    primary:
+      background: '#222831' #'#2E3440'
+      foreground: '#ffffff' #'#D8DEE9'
+
+    # Normal colors
+    normal:
+      black:   '#000000' #'#3B4252'
+      red:     '#BF616A'
+      green:   '#A3BE8C'
+      yellow:  '#EBCB8B'
+      blue:    '#00adb5' #'#81A1C1'
+      magenta: '#B48EAD'
+      cyan:    '#00adb5' #'#88C0D0'
+      white:   '#E5E9F0'
+
+    # Bright colors
+    bright:
+      black:   '#4C566A'
+      red:     '#BF616A'
+      green:   '#A3BE8C'
+      yellow:  '#EBCB8B'
+      blue:    '#81A1C1'
+      magenta: '#B48EAD'
+      cyan:    '#8FBCBB'
+      white:   '#ECEFF4'
+
+colors: *Qtile
