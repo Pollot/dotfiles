@@ -63,7 +63,7 @@ location = "Warsaw"
 weather = "firefox https://www.yr.no/en/forecast/daily-table/2-756135/Poland/Mazovia/Warszawa/Warsaw"
 clock = "firefox https://www.timeanddate.com/worldclock/"
 
-font_nerd = "MesloLGS NF"
+font_nerd = "FiraCode Nerd Font Mono"
 font_default = "sans"
 wlpr_dir = "~/Wallpapers/gray-cyan.png"
 
@@ -124,11 +124,11 @@ keys = [
         ),
     Key([mod], "period",
         lazy.next_screen(),
-        desc='Move focus to the next monitor'
+        desc="Move focus to the next monitor"
         ),
     Key([mod], "comma",
         lazy.prev_screen(),
-        desc='Move focus to the prev monitor'
+        desc="Move focus to the prev monitor"
         ),
     # Switch between windows
     Key([mod], "j",
@@ -291,7 +291,7 @@ def init_widgets_list():
             use_mask=True,
         ),
         widget.GroupBox(
-            fontsize=18,
+            fontsize=24,
             font=font_nerd,
             highlight_method="block",
             active=white,
