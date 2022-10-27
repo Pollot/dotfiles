@@ -1,0 +1,131 @@
+format = """
+[](#f38ba8)\
+$username\
+$sudo\
+[](bg:#fab387 fg:#f38ba8)\
+$directory\
+[](fg:#fab387 bg:#f9e2af)\
+$git_branch\
+$git_status\
+[](fg:#f9e2af bg:#a6e3a1)\
+$c\
+$python\
+$java\
+$lua\
+$rust\
+$nodejs\
+$dart\
+$golang\
+$kotlin\
+$haskell\
+[](fg:#a6e3a1 bg:#89b4fa)\
+$time\
+$cmd_duration\
+[ ](fg:#89b4fa)\
+"""
+
+# Uncomment to disable the blank line at the start of the prompt
+# add_newline = false
+
+# Replaced with cat icon
+[username]
+show_always = true
+#style_user = "bg:#f38ba8 fg:#11111b"
+#style_root = "bg:#f38ba8 fg:#11111b"
+#format = "[$user ]($style)"
+format = "[ ](bg:#f38ba8 fg:#11111b)"
+
+[sudo]
+disabled = false
+style = "bg:#f38ba8 fg:#11111b"
+symbol = ""
+format = "[$symbol ]($style)"
+
+[directory]
+style = "bg:#fab387 fg:#11111b"
+format = "[ $path ]($style)"
+truncation_symbol = "…/"
+
+# Here is how you can shorten some long paths by text replacement
+# similar to mapped_locations in Oh My Posh:
+[directory.substitutions]
+"Documents" = ""
+"Downloads" = ""
+"Music" = ""
+"Pictures" = ""
+".config" = ""
+"fonts" = ""
+# Keep in mind that the order matters. For example:
+# "Important Documents" = "  "
+# will not be replaced, because "Documents" was already substituted before.
+# So either put "Important Documents" before "Documents" or use the substituted version:
+# "Important  " = "  "
+
+[git_branch]
+symbol = ""
+style = "bg:#f9e2af fg:#11111b"
+format = "[ $symbol $branch]($style)"
+
+[git_status]
+style = "bg:#f9e2af fg:#11111b"
+format = "[ $all_status$ahead_behind ]($style)"
+
+[c]
+symbol = ""
+style = "bg:#a6e3a1 fg:#11111b"
+format = "[ $symbol ($version) ]($style)"
+
+[python]
+symbol = ""
+style = "bg:#a6e3a1 fg:#11111b"
+format = "[ $symbol ($version) ]($style)"
+
+[java]
+symbol = ""
+style = "bg:#a6e3a1 fg:#11111b"
+format = "[ $symbol ($version) ]($style)"
+
+[lua]
+symbol = ""
+style = "bg:#a6e3a1 fg:#11111b"
+format = "[ $symbol ($version) ]($style)"
+
+[rust]
+symbol = ""
+style = "bg:#a6e3a1 fg:#11111b"
+format = "[ $symbol ($version) ]($style)"
+
+[nodejs]
+symbol = ""
+style = "bg:#a6e3a1 fg:#11111b"
+format = "[ $symbol ($version) ]($style)"
+
+[dart]
+symbol = ""
+style = "bg:#a6e3a1 fg:#11111b"
+format = "[ $symbol ($version) ]($style)"
+
+[golang]
+symbol = ""
+style = "bg:#a6e3a1 fg:#11111b"
+format = "[ $symbol ($version) ]($style)"
+
+[kotlin]
+symbol = ""
+style = "bg:#a6e3a1 fg:#11111b"
+format = "[ $symbol ($version) ]($style)"
+
+[haskell]
+symbol = ""
+style = "bg:#a6e3a1 fg:#11111b"
+format = "[ $symbol ($version) ]($style)"
+
+[time]
+disabled = false
+time_format = "%R" # Hour:Minute Format
+style = "bg:#89b4fa fg:#11111b"
+format = "[  $time ]($style)"
+
+[cmd_duration]
+style = "bg:#89b4fa fg:#11111b"
+format = "[ took $duration ]($style)"
