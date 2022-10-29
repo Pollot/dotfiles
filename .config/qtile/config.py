@@ -499,9 +499,10 @@ def init_widgets_list():
             foreground=crust,
             app_key=owm_api,
             location=location,
-            format="{icon} ",
+            format="{icon}",
             weather_symbols=owm_symbols,
             font=font_nerd,
+            fontsize=18,
             padding=0,
             mouse_callbacks={"Button1": lazy.spawn(weather)},
         ),
@@ -511,19 +512,36 @@ def init_widgets_list():
             location=location,
             app_key=owm_api,
             format="{main_temp: .0f}°{units_temperature}",
-            padding=0,
+            padding=5,
             mouse_callbacks={"Button1": lazy.spawn(weather)},
         ),
         widget.Spacer(
             background=peach,
-            length=8,
+            length=3,
             **slash_forward,
         ),
-        widget.Clock(
-            format="%A, %d %B - %H:%M:%S",
+        widget.Spacer(
+            background=red,
+            length=8,
+        ),
+        widget.TextBox(
             background=red,
             foreground=crust,
+            text="",
+            font=font_nerd,
+            fontsize=18,
+            padding=0,
+        ),
+        widget.Clock(
+            background=red,
+            foreground=crust,
+            format="%H:%M:%S",
+            padding=8,
             mouse_callbacks={"Button1": lazy.spawn(clock)},
+        ),
+        widget.Spacer(
+            background=red,
+            length=5,
         ),
     ]
     return widgets_list
