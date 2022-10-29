@@ -73,7 +73,7 @@ format = "[ $symbol $branch]($style)"
 
 [git_status]
 style = "bg:#f9e2af fg:#11111b"
-format = "[ $all_status$ahead_behind ]($style)"
+format = "[$all_status$ahead_behind ]($style)"
 
 [c]
 symbol = ""
