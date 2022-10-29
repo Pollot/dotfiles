@@ -1,8 +1,63 @@
 # Table of Contents
+- Colour scheme: [Catppuccin](#catppuccin)
 - Window manager: [Qtile](#qtile)
-- Launcher: [Rofi](#rofi)
+- Wallpapers: [Catppuccin](#wallpapers)
 - Compositor: [Picom](#picom)
 - Shell: [Zsh](#zsh)
-- Terminal: [Alacritty](#alacritty)
+- Terminal: [Kitty](#kitty)
+- Prompt: [Starship](#starship)
+- Launcher: [Rofi](#rofi)
 - Fetch: [Neofetch](#neofetch)
-- Wallpaper: [Dark Cyan Material](https://www.pling.com/s/Wallpapers/p/1200561/)
+- Nerd Font: [Fira Code](#nerd-font)
+- Display manager: [SDDM](#sddm)
+- Bootloader: [Grub](#grub)
+
+# Catppuccin
+Catppuccin is a community-driven pastel theme that aims to be the middle ground between low and high contrast themes. It consists of 4 soothing warm palettes with 26 eye-candy colors each, perfect for coding, designing, and much more!
+- [Official repository](https://github.com/catppuccin/catppuccin)
+- [Project's documentation](https://github.com/catppuccin/catppuccin/tree/dev/docs)
+
+I use **Catppuccin Mocha** palette in my configs.
+# Qtile
+#### Information:
+- [Official website](http://www.qtile.org/)
+- [Qtile Documentation](http://docs.qtile.org/en/stable/)
+- [Qtile extras documentation](https://qtile-extras.readthedocs.io/en/stable/index.html)
+#### Dependencies:
+- [Qtile extras](https://qtile-extras.readthedocs.io/en/stable/manual/install.html)
+- [Psutil](https://pypi.org/project/psutil/)
+- [Nerd font](#nerd-font)
+
+# Wallpapers
+- [Arch](https://github.com/catppuccin/wallpapers/blob/main/os/arch-black-4k.png) by [elkrien](https://github.com/elkrien)
+- [Flatppuccin](https://github.com/catppuccin/wallpapers/blob/main/flatppuccin/flatppuccin_4k_macchiato.png) by [Adal Zanabria](https://github.com/AdalZanabria)
+- [Hashtags](https://github.com/catppuccin/wallpapers/blob/main/minimalistic/hashtags-black.png) by [elkrien](https://github.com/elkrien)
+
+# Picom
+[Official repository](https://github.com/yshui/picom).
+
+# Zsh
+[Official website](https://www.zsh.org/).
+
+# Kitty
+[Official website](https://sw.kovidgoyal.net/kitty/).
+
+# Starship
+[Official website](https://starship.rs/).
+
+# Rofi
+[Catppuccin for Rofi - Siduck's Theme](https://github.com/catppuccin/rofi/tree/main/basic).
+
+# Neofetch
+[Official repository](https://github.com/dylanaraps/neofetch).
+
+# Nerd Font
+I use **Fira Code Nerd Font Mono**. You can download its latest release from: [Nerd Fonts website](https://www.nerdfonts.com/font-downloads).
+
+**<center>Remember to install the mono variant of chosen Nerd Font. Icons are not centered in the regular version.</center>**
+
+# SDDM
+**Not included in my repository**: [Catppuccin for SDDM](https://github.com/catppuccin/sddm).
+
+# Grub
+**Not included in my repository**: [Catppuccin for Grub](https://github.com/catppuccin/grub).
