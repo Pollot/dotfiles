@@ -24,14 +24,7 @@
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 # SOFTWARE.
 #
-# Edited by:
-#
-# #####  ######  #       #       ######  #######
-# #   #  #    #  #       #       #    #     #
-# #####  #    #  #       #       #    #     #
-# #      #    #  #       #       #    #     #
-# #      ######  ######  ######  ######     #
-#
+# Edited by: https://github.com/Pollot
 # More information: https://github.com/Pollot/dot-files
 
 ##########################
@@ -55,9 +48,9 @@ from qtile_extras.widget.decorations import RectDecoration
 ##########################
 
 mod = "mod4"
-terminal = "alacritty"
+terminal = "kitty"
 browser = "firefox"
-menu = "rofi -show run"
+menu = "rofi -show drun"
 audio = "alsamixer"
 
 location = "Warsaw"
@@ -66,11 +59,15 @@ clock = "firefox https://www.timeanddate.com/worldclock/"
 
 gap_size = 6
 
-font_nerd = "FiraCode Nerd Font Mono"
 font_default = "sans"
+font_nerd = "FiraCode Nerd Font Mono"
+font_weather = "Weather Icons"
+
 wlp1 = "~/Wallpapers/hashtags-black.png"
 wlp2 = "~/Wallpapers/arch-black.png"
 
+# OpenWeatherMap API key
+owm_api = "9f48fca94a15edcd4705c0ae0a92895a"
 
 ##########################
 ######## Colours #########
@@ -436,8 +433,6 @@ def init_widgets_list():
             foreground=crust,
             padding=0,
             format="GPU: {temp}°C",
-            threshold=60,
-            foreground_alert=red,
         ),
         widget.Spacer(
             background=blue,
@@ -493,15 +488,17 @@ def init_widgets_list():
             foreground=crust,
         ),
         widget.Spacer(
-            length=10,
             background=yellow,
+            length=8,
             **slash_forward,
         ),
         widget.OpenWeather(
-            location=location,
-            format="{icon} {main_temp: .0f}°{units_temperature}",
             background=peach,
             foreground=crust,
+            location=location,
+            format="{icon} {main_temp: .0f}°{units_temperature}",
+            font=font_weather,
+            app_key=owm_api,
             mouse_callbacks={"Button1": lazy.spawn(weather)},
             **slash_forward,
         ),
