@@ -42,8 +42,8 @@ from qtile_extras import widget
 from qtile_extras.widget.decorations import PowerLineDecoration
 from qtile_extras.widget.decorations import RectDecoration
 
-# OpenWeatherMap API key
-from owm_api import owm_api
+# OpenWeatherMap API key and symbols
+from owm import owm_api, owm_symbols
 
 ##########################
 ####### Variables ########
@@ -63,7 +63,6 @@ gap_size = 6
 
 font_default = "sans"
 font_nerd = "FiraCode Nerd Font Mono"
-font_weather = "Weather Icons"
 
 wlp1 = "~/Wallpapers/hashtags-black.png"
 wlp2 = "~/Wallpapers/arch-black.png"
@@ -332,7 +331,6 @@ border = {
     )]
 }
 
-
 widget_defaults = dict(
     font=font_default,
     fontsize=12,
@@ -492,14 +490,33 @@ def init_widgets_list():
             length=8,
             **slash_forward,
         ),
+        widget.Spacer(
+            background=peach,
+            length=8,
+        ),
+        widget.OpenWeather(
+            background=peach,
+            foreground=crust,
+            app_key=owm_api,
+            location=location,
+            format="{icon} ",
+            weather_symbols=owm_symbols,
+            font=font_nerd,
+            padding=0,
+            mouse_callbacks={"Button1": lazy.spawn(weather)},
+        ),
         widget.OpenWeather(
             background=peach,
             foreground=crust,
             location=location,
-            format="{icon} {main_temp: .0f}°{units_temperature}",
-            font=font_weather,
             app_key=owm_api,
+            format="{main_temp: .0f}°{units_temperature}",
+            padding=0,
             mouse_callbacks={"Button1": lazy.spawn(weather)},
+        ),
+        widget.Spacer(
+            background=peach,
+            length=8,
             **slash_forward,
         ),
         widget.Clock(
