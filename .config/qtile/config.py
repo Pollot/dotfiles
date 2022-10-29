@@ -42,6 +42,8 @@ from qtile_extras import widget
 from qtile_extras.widget.decorations import PowerLineDecoration
 from qtile_extras.widget.decorations import RectDecoration
 
+# OpenWeatherMap API key
+from owm_api import owm_api
 
 ##########################
 ####### Variables ########
@@ -66,8 +68,6 @@ font_weather = "Weather Icons"
 wlp1 = "~/Wallpapers/hashtags-black.png"
 wlp2 = "~/Wallpapers/arch-black.png"
 
-# OpenWeatherMap API key
-owm_api = "9f48fca94a15edcd4705c0ae0a92895a"
 
 ##########################
 ######## Colours #########
