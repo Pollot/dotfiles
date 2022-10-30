@@ -1,13 +1,25 @@
 # Table of Contents
+- [List of software](#list-of-software)
+    - [Catppuccin](#catppuccin)
+    - [Qtile](#qtile)
+    - [Wallpapers](#wallpapers)
+    - [Picom](#picom)
+    - [Rofi](#rofi)
+    - [Nerd Font](#nerd-font)
+    - [SDDM](#sddm)
+    - [Grub](#grub)
+- [Installation](#installation)
+
+# List of software
 - Colour scheme: [Catppuccin](#catppuccin)
 - Window manager: [Qtile](#qtile)
-- Wallpapers: [Catppuccin](#wallpapers)
+- Wallpapers: [Catppuccin Wallpapers](#wallpapers)
 - Compositor: [Picom](#picom)
-- Shell: [Zsh](#zsh)
-- Terminal: [Kitty](#kitty)
-- Prompt: [Starship](#starship)
+- Shell: [Zsh](https://www.zsh.org/)
+- Terminal: [Kitty](https://sw.kovidgoyal.net/kitty/)
+- Prompt: [Starship](https://starship.rs/)
 - Launcher: [Rofi](#rofi)
-- Fetch: [Neofetch](#neofetch)
+- Fetch: [Neofetch](https://github.com/dylanaraps/neofetch)
 - Nerd Font: [Fira Code](#nerd-font)
 - Display manager: [SDDM](#sddm)
 - Bootloader: [Grub](#grub)
@@ -29,27 +41,18 @@ I use **Catppuccin Mocha** palette in my configs.
 - [Nerd font](#nerd-font)
 
 # Wallpapers
+- [Repository](https://github.com/catppuccin/wallpapers)
 - [Arch](https://github.com/catppuccin/wallpapers/blob/main/os/arch-black-4k.png) by [elkrien](https://github.com/elkrien)
 - [Flatppuccin](https://github.com/catppuccin/wallpapers/blob/main/flatppuccin/flatppuccin_4k_macchiato.png) by [Adal Zanabria](https://github.com/AdalZanabria)
 - [Hashtags](https://github.com/catppuccin/wallpapers/blob/main/minimalistic/hashtags-black.png) by [elkrien](https://github.com/elkrien)
 
 # Picom
-[Official repository](https://github.com/yshui/picom).
-
-# Zsh
-[Official website](https://www.zsh.org/).
-
-# Kitty
-[Official website](https://sw.kovidgoyal.net/kitty/).
-
-# Starship
-[Official website](https://starship.rs/).
+There are a lot of Picom forks, but I decided to stick to the main one (made by [yshui](https://github.com/yshui)). However, the latest version is required. The easiest way to install it is by using the [AUR](https://aur.archlinux.org/).
+- [Official repository](https://github.com/yshui/picom)
+- [AUR](https://aur.archlinux.org/packages/picom-git)
 
 # Rofi
-[Catppuccin for Rofi - Siduck's Theme](https://github.com/catppuccin/rofi/tree/main/basic).
-
-# Neofetch
-[Official repository](https://github.com/dylanaraps/neofetch).
+I'm **not** an author of the Rofi config included in this repository. It's: [Catppuccin for Rofi - Siduck's Theme](https://github.com/catppuccin/rofi/tree/main/basic).
 
 # Nerd Font
 I use **Fira Code Nerd Font Mono**. You can download its latest release from: [Nerd Fonts website](https://www.nerdfonts.com/font-downloads).
@@ -57,7 +60,10 @@ I use **Fira Code Nerd Font Mono**. You can download its latest release from: [N
 **<center>Remember to install the mono variant of chosen Nerd Font. Icons are not centered in the regular version.</center>**
 
 # SDDM
-**Not included in my repository**: [Catppuccin for SDDM](https://github.com/catppuccin/sddm).
+**Not included in my repository**. I use: [Catppuccin for SDDM](https://github.com/catppuccin/sddm).
 
 # Grub
-**Not included in my repository**: [Catppuccin for Grub](https://github.com/catppuccin/grub).
+**Not included in my repository**. I use: [Catppuccin for Grub](https://github.com/catppuccin/grub).
+
+# Installation
+To do.
