@@ -475,7 +475,7 @@ def init_widgets_list():
             background=green,
             foreground=crust,
             format="{down}",
-            width=74,
+            width=76,
         ),
         widget.TextBox(
             background=green,
@@ -488,7 +488,7 @@ def init_widgets_list():
             background=green,
             foreground=crust,
             format="{up}",
-            width=74,
+            width=76,
             **slash_forward,
         ),
         widget.Spacer(
