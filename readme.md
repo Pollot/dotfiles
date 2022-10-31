@@ -39,6 +39,7 @@ I use **Catppuccin Mocha** palette in my configs.
 - [Qtile extras](https://qtile-extras.readthedocs.io/en/stable/manual/install.html)
 - [Psutil](https://pypi.org/project/psutil/)
 - [Nerd font](#nerd-font)
+- [Open Sans font](https://fonts.google.com/specimen/Open+Sans)
 
 ## Wallpapers
 - [Repository](https://github.com/catppuccin/wallpapers)
