@@ -4,6 +4,7 @@
     - [Qtile](#qtile)
     - [Wallpapers](#wallpapers)
     - [Picom](#picom)
+    - [Zsh](#zsh)
     - [Rofi](#rofi)
     - [Nerd Font](#nerd-font)
     - [SDDM](#sddm)
@@ -15,7 +16,7 @@
 - Window manager: [Qtile](#qtile)
 - Wallpapers: [Catppuccin Wallpapers](#wallpapers)
 - Compositor: [Picom](#picom)
-- Shell: [Zsh](https://www.zsh.org/)
+- Shell: [Zsh](#zsh)
 - Terminal: [Kitty](https://sw.kovidgoyal.net/kitty/)
 - Prompt: [Starship](https://starship.rs/)
 - Launcher: [Rofi](#rofi)
@@ -29,7 +30,7 @@ Catppuccin is a community-driven pastel theme that aims to be the middle ground 
 - [Official repository](https://github.com/catppuccin/catppuccin)
 - [Project's documentation](https://github.com/catppuccin/catppuccin/tree/dev/docs)
 
-I use **Catppuccin Mocha** palette in my configs.
+I use **Catppuccin Mocha** palette in my configurations.
 ## Qtile
 #### Information:
 - [Official website](http://www.qtile.org/)
@@ -53,13 +54,22 @@ There are a lot of Picom forks, but I decided to stick to the main one (made by 
 - [Official repository](https://github.com/yshui/picom)
 - [AUR](https://aur.archlinux.org/packages/picom-git)
 
+## Zsh
+[Official website](https://www.zsh.org/). Plugins I use:
+- [Autosuggestions](https://github.com/zsh-users/zsh-autosuggestions)
+- [Syntax highlighting](https://github.com/zsh-users/zsh-syntax-highlighting)
+- [Directory history](https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/dirhistory)
+- [Sudo](https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/sudo)
+
+**<p align="center">Autosuggestions and syntax highlighting are not included. You have to clone their repository into .config/zsh directory yourself.</p>**
+
 ## Rofi
 I'm **not** an author of the Rofi config included in this repository. It's: [Catppuccin for Rofi - Siduck's Theme](https://github.com/catppuccin/rofi/tree/main/basic).
 
 ## Nerd Font
 I use **Fira Code Nerd Font Mono**. You can download its latest release from: [Nerd Fonts website](https://www.nerdfonts.com/font-downloads).
 
-**<center>Remember to install the mono variant of chosen Nerd Font. Icons are not centered in the regular version.</center>**
+**<p align="center">Remember to install the mono variant of chosen Nerd Font. Icons are not centered in the regular version.</p>**
 
 ## SDDM
 **Not included in my repository**. I use: [Catppuccin for SDDM](https://github.com/catppuccin/sddm).
