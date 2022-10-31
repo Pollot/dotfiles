@@ -61,17 +61,16 @@ weather = "firefox https://openweathermap.org/city/756135"
 clock = "firefox https://www.timeanddate.com/worldclock/"
 calendar = "firefox https://calendar.google.com/calendar/"
 
-gap_size = 6
-font_size = 14
-icon_size = 20
+gap_size = 8
+font_size = 16
+icon_size = 22
+icon_size2 = 26  # group and weather icons
 
-network_interface = "eno1"
-
-font_default = "sans"
+font_default = "Open Sans"
 font_nerd = "FiraCode Nerd Font Mono"
 
-wlp1 = "~/Wallpapers/hashtags-black.png"
-wlp2 = "~/Wallpapers/arch-black.png"
+wlp1 = "~/Wallpapers/pokemons.png"
+wlp2 = "~/Wallpapers/sound.png"
 
 
 ##########################
@@ -245,27 +244,24 @@ for i in groups:
     keys.extend(
         [
             # mod1 + letter of group = switch to group
-            Key(
-                [mod],
+            Key([mod],
                 i.name,
                 lazy.group[i.name].toscreen(),
                 desc="Switch to group {}".format(i.name),
-            ),
+                ),
             # mod1 + control + letter of group = switch to & move focused window to group
-            Key(
-                [mod, "control"],
+            Key([mod, "control"],
                 i.name,
                 lazy.window.togroup(i.name, switch_group=True),
                 desc="Switch to & move focused window to group {}".format(
                     i.name),
-            ),
+                ),
             # mod1 + shift + letter of group = move focused window to group
-            Key(
-                [mod, "shift"],
+            Key([mod, "shift"],
                 i.name,
                 lazy.window.togroup(i.name),
                 desc="move focused window to group {}".format(i.name),
-            ),
+                ),
         ]
     )
 
@@ -338,11 +334,11 @@ border = {
 }
 
 widget_defaults = dict(
+    background=base,
+    foreground=text,
     font=font_default,
     fontsize=font_size,
     padding=8,
-    background=base,
-    foreground=text,
 )
 
 extension_defaults = widget_defaults.copy()
@@ -379,7 +375,7 @@ def init_widgets_list():
             background=mantle,
             disable_drag=True,
             font=font_nerd,
-            fontsize=24,
+            fontsize=icon_size2,
             highlight_method="line",
             margin_y=5,
             active=text,
@@ -398,9 +394,10 @@ def init_widgets_list():
         widget.TaskList(
             border=mauve,
             unfocused_border=overlay0,
-            padding=6,
+            padding=3,
+            margin_y=1,
             spacing=6,
-            icon_size=20,
+            icon_size=icon_size,
             txt_floating="[Floating] ",
             txt_maximized="[Maximized] ",
             txt_minimized="[Minimized] ",
@@ -416,11 +413,15 @@ def init_widgets_list():
         ),
         widget.TextBox(
             foreground=crust,
-            text="墳 ",
+            text="墳",
             font=font_nerd,
             fontsize=icon_size,
             padding=0,
             mouse_callbacks={"Button3": lazy.spawn(terminal + " -e " + audio)},
+            **border,
+        ),
+        widget.Spacer(
+            length=6,
             **border,
         ),
         widget.Volume(
@@ -448,12 +449,12 @@ def init_widgets_list():
         widget.CPU(
             background=blue,
             foreground=crust,
-            width=42,
+            width=48,
             format="{load_percent:.0f}%",
         ),
         widget.Spacer(
             background=blue,
-            length=10,
+            length=8,
         ),
         widget.TextBox(
             background=blue,
@@ -466,7 +467,7 @@ def init_widgets_list():
         widget.Memory(
             background=blue,
             foreground=crust,
-            width=42,
+            width=48,
             format="{MemPercent:.0f}%",
             **slash_forward,
         ),
@@ -474,7 +475,7 @@ def init_widgets_list():
             background=green,
             foreground=crust,
             format="{down}",
-            width=68,
+            width=74,
         ),
         widget.TextBox(
             background=green,
@@ -487,7 +488,7 @@ def init_widgets_list():
             background=green,
             foreground=crust,
             format="{up}",
-            width=68,
+            width=74,
             **slash_forward,
         ),
         widget.Spacer(
@@ -502,7 +503,7 @@ def init_widgets_list():
             format="{icon}",
             weather_symbols=owm_symbols,
             font=font_nerd,
-            fontsize=icon_size,
+            fontsize=icon_size2,
             padding=0,
             mouse_callbacks={"Button1": lazy.spawn(weather)},
         ),
@@ -512,12 +513,12 @@ def init_widgets_list():
             location=location,
             app_key=owm_api,
             format="{main_temp: .0f}°{units_temperature}",
-            padding=5,
+            padding=3,
             mouse_callbacks={"Button1": lazy.spawn(weather)},
         ),
         widget.Spacer(
             background=yellow,
-            length=3,
+            length=5,
             **slash_forward,
         ),
         widget.Spacer(
@@ -537,7 +538,12 @@ def init_widgets_list():
             background=peach,
             foreground=crust,
             format="%a, %b %-m",
+            padding=6,
             mouse_callbacks={"Button1": lazy.spawn(calendar)},
+        ),
+        widget.Spacer(
+            background=peach,
+            length=2,
             **slash_forward,
         ),
         widget.Spacer(
@@ -557,11 +563,12 @@ def init_widgets_list():
             background=red,
             foreground=crust,
             format="%-H:%M:%S",
+            padding=5,
             mouse_callbacks={"Button1": lazy.spawn(clock)},
         ),
         widget.Spacer(
             background=red,
-            length=5,
+            length=8,
         ),
     ]
     return widgets_list
@@ -605,20 +612,22 @@ screens = [
 ##########################
 
 mouse = [
-    Drag([mod], "Button1", lazy.window.set_position_floating(),
+    Drag([mod], "Button1",
+         lazy.window.set_position_floating(),
          start=lazy.window.get_position()),
-    Drag([mod], "Button3", lazy.window.set_size_floating(),
+    Drag([mod], "Button3",
+         lazy.window.set_size_floating(),
          start=lazy.window.get_size()),
-    Click([mod], "Button2", lazy.window.bring_to_front()),
+    Click([mod], "Button2",
+          lazy.window.bring_to_front()),
 ]
 
 dgroups_key_binder = None
 dgroups_app_rules = []  # type: list
-follow_mouse_focus = True
 bring_front_click = False
 cursor_warp = False
 floating_layout = layout.Floating(
-    border_focus=mauve,
+    border_focus=red,
     border_normal=base,
     border_width=2,
     float_rules=[
@@ -632,7 +641,9 @@ floating_layout = layout.Floating(
 ######### Rules ##########
 ##########################
 
-auto_fullscreen = False
+follow_mouse_focus = True
+
+auto_fullscreen = True
 auto_minimize = False
 
 focus_on_window_activation = "smart"
