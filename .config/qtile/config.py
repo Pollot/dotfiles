@@ -61,6 +61,9 @@ weather = "firefox https://openweathermap.org/city/756135"
 clock = "firefox https://www.timeanddate.com/worldclock/"
 calendar = "firefox https://calendar.google.com/calendar/"
 
+screenshot_full = "flameshot full"
+screenshot_gui = "flameshot gui"
+
 gap_size = 8
 font_size = 16
 icon_size = 22
@@ -223,6 +226,14 @@ keys = [
         lazy.group.next_window(),
         lazy.window.bring_to_front(),
         desc="Cycle next floating windows",
+        ),
+    Key([], "Print",
+        lazy.spawn(screenshot_full),
+        desc="Makes screenshot",
+        ),
+    Key([mod], "Print",
+        lazy.spawn(screenshot_gui),
+        desc="Makes screenshot with gui",
         ),
 ]
 
