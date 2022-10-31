@@ -16,14 +16,14 @@ ZSH_HIGHLIGHT_STYLES[path]='fg=blue'
 # Precommand modifiers
 ZSH_HIGHLIGHT_STYLES[precommand]='fg=yellow'
 
-# Sudo: https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/sudo
-# Press ESC x 2 to add sudo at the beggining
-source ~/.config/zsh/sudo.zsh
-
 # Directory history: https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/dirhistory
 # Alt + left -> past directory ; Alt + right -> recent directory
 # Alt + down -> child directory ; Alt + up -> parent directory
 source ~/.config/zsh/dirhistory.zsh
+
+# Sudo: https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/sudo
+# Press ESC x 2 to add sudo at the beggining
+source ~/.config/zsh/sudo.zsh
 
 # Neofetch
 neofetch
