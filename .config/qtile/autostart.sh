@@ -1,0 +1,5 @@
+#!/bin/sh
+
+picom &
+
+lxsession
