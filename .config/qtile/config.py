@@ -56,10 +56,16 @@ menu = "rofi -show drun"
 audio = "alsamixer"
 
 location = "Warsaw"
-weather = "firefox https://www.yr.no/en/forecast/daily-table/2-756135/Poland/Mazovia/Warszawa/Warsaw"
+
+weather = "firefox https://openweathermap.org/city/756135"
 clock = "firefox https://www.timeanddate.com/worldclock/"
+calendar = "firefox https://calendar.google.com/calendar/"
 
 gap_size = 6
+font_size = 14
+icon_size = 20
+
+network_interface = "eno1"
 
 font_default = "sans"
 font_nerd = "FiraCode Nerd Font Mono"
@@ -232,7 +238,7 @@ groups = [
     Group("3", label="", layout="monadtall"),
     Group("4", label="", layout="monadtall"),
     Group("5", label="調", layout="max"),
-    Group("6", label="ﭮ", layout="monadtall"),
+    Group("6", label="ﭮ", layout="max"),
 ]
 
 for i in groups:
@@ -271,7 +277,7 @@ for i in groups:
 layout_theme = {
     "border_width": 2,
     "margin": gap_size,
-    "border_focus": blue,
+    "border_focus": mauve,
     "border_normal": base,
 }
 
@@ -333,7 +339,7 @@ border = {
 
 widget_defaults = dict(
     font=font_default,
-    fontsize=12,
+    fontsize=font_size,
     padding=8,
     background=base,
     foreground=text,
@@ -346,7 +352,7 @@ def init_widgets_list():
     widgets_list = [
         widget.Spacer(
             background=crust,
-            length=3,
+            length=8,
         ),
         widget.CurrentScreen(
             background=crust,
@@ -372,24 +378,29 @@ def init_widgets_list():
         widget.GroupBox(
             background=mantle,
             disable_drag=True,
-            fontsize=24,
             font=font_nerd,
+            fontsize=24,
             highlight_method="line",
+            margin_y=5,
             active=text,
             inactive=overlay0,
-            block_highlight_text_color=blue,
             highlight_color=[mantle, mantle],
-            other_current_screen_border=overlay0,
+            block_highlight_text_color=blue,
+            other_current_screen_border=mauve,
             other_screen_border=overlay0,
-            this_current_screen_border=blue,
+            this_current_screen_border=mauve,
             this_screen_border=blue,
             **rounded_left,
         ),
+        widget.Spacer(
+            length=8,
+        ),
         widget.TaskList(
-            border=blue,
+            border=mauve,
             unfocused_border=overlay0,
             padding=6,
-            icon_size=16,
+            spacing=6,
+            icon_size=20,
             txt_floating="[Floating] ",
             txt_maximized="[Maximized] ",
             txt_minimized="[Minimized] ",
@@ -407,15 +418,15 @@ def init_widgets_list():
             foreground=crust,
             text="墳 ",
             font=font_nerd,
-            fontsize=14,
+            fontsize=icon_size,
             padding=0,
             mouse_callbacks={"Button3": lazy.spawn(terminal + " -e " + audio)},
             **border,
         ),
         widget.Volume(
+            foreground=crust,
             padding=0,
             volume_app=terminal + " -e " + audio,
-            foreground=crust,
             **border,
         ),
         widget.Spacer(
@@ -426,88 +437,77 @@ def init_widgets_list():
             length=10,
             **rounded_right,
         ),
-        widget.NvidiaSensors(
+        widget.TextBox(
             background=blue,
             foreground=crust,
+            text="",
+            font=font_nerd,
+            fontsize=icon_size,
             padding=0,
-            format="GPU: {temp}°C",
-        ),
-        widget.Spacer(
-            background=blue,
-            length=8,
-            **slash_forward,
         ),
         widget.CPU(
-            background=green,
+            background=blue,
             foreground=crust,
-            width=80,
-            format="CPU: {load_percent}%",
-        ),
-        widget.Memory(
-            background=green,
-            foreground=crust,
-            padding=0,
-            width=78,
-            format="MEM: {MemPercent}%",
-            **slash_forward,
-        ),
-        widget.Net(
-            background=yellow,
-            foreground=crust,
-            padding=4,
-            width=55,
-            interface="eno1",
-            format="{down}",
-        ),
-        widget.TextBox(
-            background=yellow,
-            foreground=crust,
-            padding=0,
-            text="",
-            font=font_nerd,
+            width=42,
+            format="{load_percent:.0f}%",
         ),
         widget.Spacer(
-            background=yellow,
+            background=blue,
             length=10,
         ),
-        widget.Net(
-            background=yellow,
+        widget.TextBox(
+            background=blue,
             foreground=crust,
-            interface="eno1",
-            format="{up}",
-            padding=4,
-            width=55,
+            text="",
+            font=font_nerd,
+            fontsize=icon_size,
+            padding=0,
+        ),
+        widget.Memory(
+            background=blue,
+            foreground=crust,
+            width=42,
+            format="{MemPercent:.0f}%",
+            **slash_forward,
+        ),
+        widget.Net(
+            background=green,
+            foreground=crust,
+            format="{down}",
+            width=68,
         ),
         widget.TextBox(
-            text="祝",
+            background=green,
+            foreground=crust,
+            text="",
             font=font_nerd,
             padding=0,
-            background=yellow,
-            foreground=crust,
         ),
-        widget.Spacer(
-            background=yellow,
-            length=8,
+        widget.Net(
+            background=green,
+            foreground=crust,
+            format="{up}",
+            width=68,
             **slash_forward,
         ),
         widget.Spacer(
-            background=peach,
+            background=yellow,
             length=8,
         ),
         widget.OpenWeather(
-            background=peach,
+            background=yellow,
             foreground=crust,
             app_key=owm_api,
             location=location,
             format="{icon}",
             weather_symbols=owm_symbols,
             font=font_nerd,
-            fontsize=18,
+            fontsize=icon_size,
             padding=0,
             mouse_callbacks={"Button1": lazy.spawn(weather)},
         ),
         widget.OpenWeather(
-            background=peach,
+            background=yellow,
             foreground=crust,
             location=location,
             app_key=owm_api,
@@ -516,8 +516,28 @@ def init_widgets_list():
             mouse_callbacks={"Button1": lazy.spawn(weather)},
         ),
         widget.Spacer(
-            background=peach,
+            background=yellow,
             length=3,
+            **slash_forward,
+        ),
+        widget.Spacer(
+            background=peach,
+            length=8,
+        ),
+        widget.TextBox(
+            background=peach,
+            foreground=crust,
+            text="",
+            font=font_nerd,
+            fontsize=icon_size,
+            padding=0,
+            mouse_callbacks={"Button1": lazy.spawn(calendar)},
+        ),
+        widget.Clock(
+            background=peach,
+            foreground=crust,
+            format="%a, %b %-m",
+            mouse_callbacks={"Button1": lazy.spawn(calendar)},
             **slash_forward,
         ),
         widget.Spacer(
@@ -529,14 +549,14 @@ def init_widgets_list():
             foreground=crust,
             text="",
             font=font_nerd,
-            fontsize=18,
+            fontsize=icon_size,
             padding=0,
+            mouse_callbacks={"Button1": lazy.spawn(clock)},
         ),
         widget.Clock(
             background=red,
             foreground=crust,
-            format="%H:%M:%S",
-            padding=8,
+            format="%-H:%M:%S",
             mouse_callbacks={"Button1": lazy.spawn(clock)},
         ),
         widget.Spacer(
@@ -554,7 +574,7 @@ def init_widgets_screen1():
 
 def init_widgets_screen2():
     widgets_screen2 = init_widgets_list()
-    del widgets_screen2[6]  # removing systray
+    del widgets_screen2[7]  # removing systray
     return widgets_screen2
 
 
@@ -598,7 +618,7 @@ follow_mouse_focus = True
 bring_front_click = False
 cursor_warp = False
 floating_layout = layout.Floating(
-    border_focus=blue,
+    border_focus=mauve,
     border_normal=base,
     border_width=2,
     float_rules=[
@@ -612,13 +632,12 @@ floating_layout = layout.Floating(
 ######### Rules ##########
 ##########################
 
-auto_fullscreen = True
-focus_on_window_activation = "smart"
-reconfigure_screens = True
+auto_fullscreen = False
+auto_minimize = False
 
-# If things like steam games want to auto-minimize themselves when losing
-# focus, should we respect this or not?
-auto_minimize = True
+focus_on_window_activation = "smart"
+
+reconfigure_screens = True
 
 # When using the Wayland backend, this can be used to configure input devices.
 wl_input_rules = None
