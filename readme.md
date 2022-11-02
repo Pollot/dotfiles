@@ -1,23 +1,23 @@
-# Screenshot
+# Screenshots
 <img src="screenshots/unixporn.jpg">
 
 # Table of Contents
 - [List of software](#list-of-software)
-    - [Catppuccin](#catppuccin)
     - [Qtile](#qtile)
+    - [Catppuccin](#catppuccin)
     - [Wallpapers](#wallpapers)
     - [Picom](#picom)
     - [Zsh](#zsh)
     - [Rofi](#rofi)
     - [Nerd Font](#nerd-font)
-    - [SDDM](#sddm)
     - [Grub](#grub)
 - [Installation](#installation)
 
 # List of software
-- Colour scheme: [Catppuccin](#catppuccin)
 - Window manager: [Qtile](#qtile)
-- Wallpapers: [Catppuccin Wallpapers](#wallpapers)
+- Colour scheme: [Catppuccin](#catppuccin)
+- Wallpapers: [Catppuccin](#wallpapers)
+- GTK theme: [Catppuccin](https://github.com/catppuccin/gtk)
 - Compositor: [Picom](#picom)
 - Shell: [Zsh](#zsh)
 - Terminal: [Kitty](https://sw.kovidgoyal.net/kitty/)
@@ -25,7 +25,6 @@
 - Launcher: [Rofi](#rofi)
 - Fetch: [Neofetch](https://github.com/dylanaraps/neofetch)
 - Nerd Font: [Fira Code](#nerd-font)
-- Display manager: [SDDM](#sddm)
 - Bootloader: [Grub](#grub)
 
 ## Catppuccin
@@ -46,16 +45,16 @@ I use **Catppuccin Mocha** palette in my configurations.
 - [Open Sans font](https://fonts.google.com/specimen/Open+Sans)
 
 ## Wallpapers
-- [Repository](https://github.com/catppuccin/wallpapers)
-- [Arch](https://github.com/catppuccin/wallpapers/blob/main/os/arch-black-4k.png) by [elkrien](https://github.com/elkrien)
-- [Hashtags](https://github.com/catppuccin/wallpapers/blob/main/minimalistic/hashtags-black.png) by [elkrien](https://github.com/elkrien)
+[Official repository](https://github.com/catppuccin/wallpapers). Wallpapers I use:
 - [Pokemons](https://github.com/catppuccin/wallpapers/blob/main/misc/cat_bunnies.png) by [elkrien](https://github.com/elkrien)
 - [Sound](https://github.com/catppuccin/wallpapers/blob/main/misc/cat-sound.png) by [elkrien](https://github.com/elkrien)
+- [Arch](https://github.com/catppuccin/wallpapers/blob/main/os/arch-black-4k.png) by [elkrien](https://github.com/elkrien)
+- [Hashtags](https://github.com/catppuccin/wallpapers/blob/main/minimalistic/hashtags-black.png) by [elkrien](https://github.com/elkrien)
 
 ## Picom
 There are a lot of Picom forks, but I decided to stick to the main one (made by [yshui](https://github.com/yshui)). However, the latest version is required. The easiest way to install it is by using the [AUR](https://aur.archlinux.org/).
 - [Official repository](https://github.com/yshui/picom)
-- [AUR](https://aur.archlinux.org/packages/picom-git)
+- [AUR package](https://aur.archlinux.org/packages/picom-git)
 
 ## Zsh
 [Official website](https://www.zsh.org/). Plugins I use:
@@ -64,7 +63,7 @@ There are a lot of Picom forks, but I decided to stick to the main one (made by 
 - [Directory history](https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/dirhistory)
 - [Sudo](https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/sudo)
 
-**<p align="center">Autosuggestions and syntax highlighting are not included. You have to clone their repository into .config/zsh directory yourself.</p>**
+**<p align="center">Autosuggestions and syntax highlighting are not included in my repository.</p>**
 
 ## Rofi
 I'm **not** an author of the Rofi config included in this repository. It's: [Catppuccin for Rofi - Siduck's Theme](https://github.com/catppuccin/rofi/tree/main/basic).
@@ -74,11 +73,96 @@ I use **Fira Code Nerd Font Mono**. You can download its latest release from: [N
 
 **<p align="center">Remember to install the mono variant of chosen Nerd Font. Icons are not centered in the regular version.</p>**
 
-## SDDM
-**Not included in my repository**. I use: [Catppuccin for SDDM](https://github.com/catppuccin/sddm).
-
 ## Grub
 **Not included in my repository**. I use: [Catppuccin for Grub](https://github.com/catppuccin/grub).
 
-# Installation
-To do.
+# Installation (Arch)
+
+### Basic configuration
+1. Install Arch using the [official installation guide](https://wiki.archlinux.org/title/installation_guide).
+
+2. Create a user and add it to the wheel group:
+```
+useradd -mG wheel [user name]
+```
+
+3. Uncomment the following line in ```/etc/sudoers``` to allow members of the wheel group to use sudo:
+```
+%wheel ALL=(ALL:ALL) ALL
+```
+
+4. Set user's password:
+```
+passwd [user name]
+```
+
+5. Log out from the root account and log into the newly created one.
+
+6. Enable multilib repository (required for 32-bit software and libraries on 64-bit installs). Uncomment the [multilib] section in ```/etc/pacman.conf```:
+```
+[multilib]
+Include = /etc/pacman.d/mirrorlist
+```
+
+### Packages
+1. Update system:
+```
+sudo pacman -Syu
+```
+
+2. Install base-devel package if you haven't already:
+```
+sudo pacman -S --needed base-devel
+```
+
+3. Install basic packages:
+```
+sudo pacman -S xorg-server xorg-xinit qtile git zsh kitty starship firefox \
+rofi neofetch flameshot alsa-utils polkit lxsession lxappearance
+```
+
+4. Install AUR helper *yay* :
+```
+git clone https://aur.archlinux.org/yay
+cd yay
+makepkg -si
+cd
+```
+
+5. Install AUR packages (don't remove qtile-extras build dependencies):
+```
+yay -S qtile-extras-git picom-git catppuccin-gtk-theme-mocha
+```
+
+6. Install psutil:
+```
+pip install psutil
+```
+
+7. Install drivers. On Nvidia graphic's card follow [this guide](https://wiki.archlinux.org/title/NVIDIA). **For the Maxwell (NV110/GMXXX) series and newer:**
+```
+sudo pacman -S nvidia nvidia-settings lib32-nvidia-utils
+```
+
+### Dotfiles
+
+1. Clone this repository:
+```
+git clone https://github.com/Pollot/dotfiles
+```
+
+2. Install fonts:
+```
+cd dotfiles/installation
+sudo ./install-fonts.sh
+```
+
+3. Install configuration files:
+```
+./install-configs.sh
+```
+
+4. Install Zsh plugins:
+```
+./install-zsh.sh
+```
