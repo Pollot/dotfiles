@@ -76,7 +76,7 @@ I use **Fira Code Nerd Font Mono**. You can download its latest release from: [N
 ## Grub
 **Not included in my repository**. I use: [Catppuccin for Grub](https://github.com/catppuccin/grub).
 
-# Installation (Arch)
+# Installation
 
 ### Basic configuration
 1. Install Arch using the [official installation guide](https://wiki.archlinux.org/title/installation_guide).
