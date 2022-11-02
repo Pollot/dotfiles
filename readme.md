@@ -36,7 +36,7 @@ I use **Catppuccin Mocha** palette in my configurations.
 ## Qtile
 #### Information:
 - [Official website](http://www.qtile.org/)
-- [Qtile Documentation](http://docs.qtile.org/en/stable/)
+- [Qtile documentation](http://docs.qtile.org/en/stable/)
 - [Qtile extras documentation](https://qtile-extras.readthedocs.io/en/stable/index.html)
 #### Dependencies:
 - [Qtile extras](https://qtile-extras.readthedocs.io/en/stable/manual/install.html)
@@ -83,7 +83,7 @@ I use **Fira Code Nerd Font Mono**. You can download its latest release from: [N
 
 2. Create a user and add it to the wheel group:
 ```
-useradd -mG wheel [user name]
+useradd -mG wheel [username]
 ```
 
 3. Uncomment the following line in ```/etc/sudoers``` to allow members of the wheel group to use sudo:
@@ -93,7 +93,7 @@ useradd -mG wheel [user name]
 
 4. Set user's password:
 ```
-passwd [user name]
+passwd [username]
 ```
 
 5. Log out from the root account and log into the newly created one.

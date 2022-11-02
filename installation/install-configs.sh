@@ -11,6 +11,8 @@ cp -r .config/* $HOME/.config/
 
 cp -r scripts $HOME
 
+cp -r Wallpapers $HOME
+
 rm $HOME/.bash_profile
 
 cp bash/.bash_profile $HOME
