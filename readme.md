@@ -118,7 +118,7 @@ sudo pacman -S --needed base-devel
 3. Install basic packages:
 ```
 sudo pacman -S xorg-server xorg-xinit qtile git zsh kitty starship firefox \
-rofi neofetch flameshot alsa-utils polkit lxsession lxappearance
+rofi neofetch flameshot alsa-utils lxsession-gtk3 lxappearance
 ```
 
 4. Install AUR helper *yay* :
@@ -166,3 +166,24 @@ sudo ./install-fonts.sh
 ```
 ./install-zsh.sh
 ```
+
+### Finishing
+
+1. Reboot:
+```
+sudo reboot
+```
+
+2. X server session should automatically start up after logging in
+
+3. Use lxappearance to change your GTK theme
+
+4. Use nvidia-settings to change your displays configuration
+
+5. Configure audio - for example install PipeWire:
+```
+sudo pacman -S pipewire lib32-pipewire pipewire-alsa \
+pipewire-pulse pipewire-jack lib32-pipewire-jack
+```
+
+<h3 align="center">Enjoy</h3>
