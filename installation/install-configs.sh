@@ -11,4 +11,4 @@ cp -r .config/* $HOME/.config/
 
 cp -r scripts $HOME
 
-echo "\nDotfiles installed"
+echo "Dotfiles installed"
