@@ -9,4 +9,6 @@ cd ..
 
 cp -r .config/* $HOME/.config/
 
+cp -r scripts $HOME
+
 echo "\nDotfiles installed"
