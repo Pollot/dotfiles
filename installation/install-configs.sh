@@ -11,4 +11,8 @@ cp -r .config/* $HOME/.config/
 
 cp -r scripts $HOME
 
+rm $HOME/.bash_profile
+
+cp bash/.bash_profile $HOME
+
 echo "Dotfiles installed"
