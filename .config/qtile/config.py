@@ -54,6 +54,7 @@ terminal = "kitty"
 browser = "firefox"
 menu = "rofi -show drun"
 audio = "alsamixer"
+process_monitor = "htop"
 
 location = "Warsaw"
 
@@ -334,9 +335,19 @@ slash_forward = {
     "decorations": [PowerLineDecoration(path="forward_slash")]
 }
 
-border = {
+border_mauve = {
     "decorations": [RectDecoration(
         colour=mauve,
+        radius=10,
+        filled=True,
+        padding_y=4,
+        group=True
+    )]
+}
+
+border_blue = {
+    "decorations": [RectDecoration(
+        colour=blue,
         radius=10,
         filled=True,
         padding_y=4,
@@ -420,7 +431,7 @@ def init_widgets_list():
         ),
         widget.Spacer(
             length=10,
-            **border,
+            **border_mauve,
         ),
         widget.TextBox(
             foreground=crust,
@@ -428,44 +439,58 @@ def init_widgets_list():
             font=font_nerd,
             fontsize=icon_size,
             padding=0,
-            mouse_callbacks={"Button3": lazy.spawn(terminal + " -e " + audio)},
-            **border,
+            **border_mauve,
         ),
         widget.Spacer(
             length=6,
-            **border,
+            **border_mauve,
         ),
         widget.Volume(
             foreground=crust,
             padding=0,
             volume_app=terminal + " -e " + audio,
-            **border,
+            **border_mauve,
         ),
         widget.Spacer(
             length=10,
-            **border,
+            **border_mauve,
+        ),
+        widget.Spacer(
+            length=10,
+        ),
+        widget.Spacer(
+            length=10,
+            **border_blue,
+        ),
+        widget.TextBox(
+            foreground=crust,
+            text="ﮮ",
+            font=font_nerd,
+            fontsize=icon_size,
+            padding=0,
+            **border_blue,
+        ),
+        widget.Spacer(
+            length=6,
+            **border_blue,
+        ),
+        widget.CheckUpdates(
+            colour_no_updates=crust,
+            colour_have_updates=crust,
+            update_interval=1800,
+            no_update_string="Up to date",
+            display_format="{updates}",
+            execute=terminal + " -e sudo pacman -Syu",
+            padding=0,
+            **border_blue,
+        ),
+        widget.Spacer(
+            length=10,
+            **border_blue,
         ),
         widget.Spacer(
             length=10,
             **rounded_right,
-        ),
-        widget.TextBox(
-            background=blue,
-            foreground=crust,
-            text="",
-            font=font_nerd,
-            fontsize=icon_size,
-            padding=0,
-        ),
-        widget.CPU(
-            background=blue,
-            foreground=crust,
-            width=48,
-            format="{load_percent:.0f}%",
-        ),
-        widget.Spacer(
-            background=blue,
-            length=8,
         ),
         widget.TextBox(
             background=blue,
@@ -480,6 +505,8 @@ def init_widgets_list():
             foreground=crust,
             width=48,
             format="{MemPercent:.0f}%",
+            mouse_callbacks={"Button1": lazy.spawn(
+                terminal + " -e " + process_monitor)},
             **slash_forward,
         ),
         widget.Net(
@@ -516,7 +543,6 @@ def init_widgets_list():
             font=font_nerd,
             fontsize=icon_size2,
             padding=0,
-            mouse_callbacks={"Button1": lazy.spawn(weather)},
         ),
         widget.OpenWeather(
             background=yellow,
@@ -543,7 +569,6 @@ def init_widgets_list():
             font=font_nerd,
             fontsize=icon_size,
             padding=0,
-            mouse_callbacks={"Button1": lazy.spawn(calendar)},
         ),
         widget.Clock(
             background=peach,
@@ -568,7 +593,6 @@ def init_widgets_list():
             font=font_nerd,
             fontsize=icon_size,
             padding=0,
-            mouse_callbacks={"Button1": lazy.spawn(clock)},
         ),
         widget.Clock(
             background=red,
