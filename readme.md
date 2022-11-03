@@ -64,8 +64,6 @@ There are a lot of Picom forks, but I decided to stick to the main one (made by 
 - [Directory history](https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/dirhistory)
 - [Sudo](https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/sudo)
 
-**<p align="center">Autosuggestions and syntax highlighting are not included in my repository.</p>**
-
 ## Rofi
 I'm **not** an author of the Rofi config included in this repository. It's: [Catppuccin for Rofi - Siduck's Theme](https://github.com/catppuccin/rofi/tree/main/basic).
 
@@ -119,7 +117,7 @@ sudo pacman -S --needed base-devel
 3. Install basic packages:
 ```
 sudo pacman -S xorg-server xorg-xinit qtile git zsh kitty starship firefox rofi \
-neofetch alsa-utils flameshot gnome-keyring lxsession-gtk3 lxappearance
+neofetch alsa-utils flameshot htop gnome-keyring lxsession-gtk3 lxappearance
 ```
 
 4. Install AUR helper *yay* :
