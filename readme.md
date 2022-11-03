@@ -118,7 +118,7 @@ sudo pacman -S --needed base-devel
 3. Install basic packages:
 ```
 sudo pacman -S xorg-server xorg-xinit qtile git zsh kitty starship firefox \
-rofi neofetch flameshot alsa-utils lxsession-gtk3 lxappearance
+rofi neofetch flameshot alsa-utils gnome-keyring lxsession-gtk3 lxappearance
 ```
 
 4. Install AUR helper *yay* :
@@ -151,20 +151,10 @@ sudo pacman -S nvidia nvidia-settings lib32-nvidia-utils
 git clone https://github.com/Pollot/dotfiles
 ```
 
-2. Install fonts:
+2. Install dotfiles:
 ```
 cd dotfiles/installation
-sudo ./install-fonts.sh
-```
-
-3. Install configuration files:
-```
-./install-configs.sh
-```
-
-4. Install Zsh plugins:
-```
-./install-zsh.sh
+./install.sh
 ```
 
 ### Finishing
