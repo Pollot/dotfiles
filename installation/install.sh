@@ -35,6 +35,8 @@ echo -e "\nZsh plugins installed."
 
 # Fonts
 
+sudo
+
 cp -r fonts/google /usr/share/fonts
 
 cp -r fonts/nerd-fonts /usr/share/fonts
