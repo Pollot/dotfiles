@@ -18,6 +18,7 @@
 - Colour scheme: [Catppuccin](#catppuccin)
 - Wallpapers: [Catppuccin](#wallpapers)
 - GTK theme: [Catppuccin](https://github.com/catppuccin/gtk)
+- Cursor theme: [Volantes](https://www.gnome-look.org/p/1356095)
 - Compositor: [Picom](#picom)
 - Shell: [Zsh](#zsh)
 - Terminal: [Kitty](https://sw.kovidgoyal.net/kitty/)
@@ -164,11 +165,11 @@ cd dotfiles/installation
 sudo reboot
 ```
 
-2. X server session should automatically start up after logging in
+2. X server session should automatically start up after logging in.
 
-3. Use lxappearance to change your GTK theme
+3. Use lxappearance to change your GTK and cursor theme.
 
-4. Use nvidia-settings to change your displays configuration
+4. Use nvidia-settings to change your displays configuration.
 
 5. Configure audio - for example install PipeWire:
 ```

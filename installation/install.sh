@@ -1,7 +1,7 @@
 #!/bin/sh
 
 if [[ $EUID -eq 0 ]]; then
-  echo "This script must NOT be run as root." 1>&2
+  echo -e "\nThis script must NOT be run as root."
   exit 1
 fi
 
@@ -9,38 +9,36 @@ cd ..
 
 # Configuration files
 
-cp -r .config/* $HOME/.config
-
-cp -r scripts $HOME
+cp -r .config $HOME
 
 cp -r Wallpapers $HOME
 
+cp -r scripts $HOME
+
+cp -r .icons $HOME
+
 cp bash/.bash_profile $HOME
 
-echo -e "Configuration files installed.\n"
+echo -e "\nConfiguration files installed.\n"
 
 
 # Zsh plugins
 
-git clone https://github.com/zsh-users/zsh-autosuggestions $HOME/.config/zsh
+git clone https://github.com/zsh-users/zsh-autosuggestions $HOME/.config/zsh/zsh-autosuggestions
 
 echo
 
-git clone https://github.com/zsh-users/zsh-syntax-highlighting $HOME/.config/zsh
+git clone https://github.com/zsh-users/zsh-syntax-highlighting $HOME/.config/zsh/zsh-syntax-highlighting
 
 ln -s $HOME/.config/zsh/.zshrc $HOME/.zshrc
 
-echo -e "\nZsh plugins installed."
+echo -e "\nZsh plugins installed.\n"
 
 
 # Fonts
 
-sudo
+sudo cp -r fonts /usr/share
 
-cp -r fonts/google /usr/share/fonts
-
-cp -r fonts/nerd-fonts /usr/share/fonts
-
-fc-cache -r
+sudo fc-cache -r
 
 echo -e "\nFonts installed."
