@@ -61,8 +61,8 @@ weather = "firefox https://openweathermap.org/city/756135"
 clock = "firefox https://www.timeanddate.com/worldclock/"
 calendar = "firefox https://calendar.google.com/calendar/"
 
-screenshot_full = "flameshot full"
-screenshot_gui = "flameshot gui"
+screenshot_full = "xfce4-screenshooter -f -s Pictures/screenshots"
+screenshot_selection = "xfce4-screenshooter -r -s Pictures/screenshots"
 
 gap_size = 8
 font_size = 16
@@ -232,8 +232,8 @@ keys = [
         desc="Makes screenshot",
         ),
     Key([mod], "Print",
-        lazy.spawn(screenshot_gui),
-        desc="Makes screenshot with gui",
+        lazy.spawn(screenshot_selection),
+        desc="Makes screenshot with selection",
         ),
 ]
 
