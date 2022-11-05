@@ -557,7 +557,7 @@ def init_widgets_list():
         ),
         widget.Clock(
             foreground=peach,
-            format="%a, %b %-m",
+            format="%a, %b %-d",
             mouse_callbacks={"Button1": lazy.spawn(calendar)},
             decorations=[underline(peach), rounded("left")],
         ),
