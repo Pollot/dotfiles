@@ -343,6 +343,10 @@ def underline(colour_user):
     )
 
 
+def no_text(text):
+    return ""
+
+
 widget_defaults = dict(
     background=mantle,
     foreground=text,
@@ -403,28 +407,40 @@ def init_widgets_list():
             this_screen_border=blue,
             decorations=[rounded("left")],
         ),
-        widget.Spacer(
+        widget.Systray(
             background=transparent,
-            length=8,
-        ),
-        widget.TaskList(
-            background=transparent,
-            border=mauve,
-            unfocused_border=overlay0,
-            padding=3,
-            margin_y=1,
-            spacing=6,
             icon_size=icon_size,
-            txt_floating="[Float] ",
-            txt_maximized="[Max] ",
-            txt_minimized="[Min] ",
+            padding=15,
         ),
         widget.Spacer(
             background=transparent,
             length=10,
         ),
-        widget.Systray(
+        widget.TaskList(
             background=transparent,
+            border=None,
+            padding=4,
+            margin=-2,
+            icon_size=icon_size,
+            font=font_nerd,
+            fontsize=icon_size,
+            txt_floating="禎",
+            txt_maximized="",
+            txt_minimized="",
+            parse_text=no_text,
+        ),
+        widget.Spacer(
+            background=transparent,
+            length=bar.STRETCH,
+        ),
+        widget.WindowName(
+            background=transparent,
+            width=bar.CALCULATED,
+            format="{name}",
+        ),
+        widget.Spacer(
+            background=transparent,
+            length=bar.STRETCH,
         ),
         widget.Spacer(
             background=transparent,
@@ -466,7 +482,8 @@ def init_widgets_list():
         widget.CheckUpdates(
             colour_no_updates=blue,
             colour_have_updates=blue,
-            update_interval=1800,
+            distro="Arch",
+            update_interval=600,
             no_update_string="Up to date",
             display_format="{updates}",
             execute=terminal + " -e sudo pacman -Syu",
@@ -577,7 +594,7 @@ def init_widgets_screen1():
 
 def init_widgets_screen2():
     widgets_screen2 = init_widgets_list()
-    del widgets_screen2[8]  # removing systray
+    del widgets_screen2[6]  # removing systray
     return widgets_screen2
 
 
@@ -602,6 +619,8 @@ screens = [
             background=transparent,
         )
     ),
+
+
 ]
 
 
