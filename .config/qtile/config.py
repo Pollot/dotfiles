@@ -368,7 +368,7 @@ def init_widgets_list():
         ),
         widget.CurrentScreen(
             background=crust,
-            active_color=blue,
+            active_color=mauve,
             inactive_color=overlay0,
             active_text="",
             inactive_text="",
@@ -404,7 +404,7 @@ def init_widgets_list():
             highlight_color=[mantle, mantle],
             block_highlight_text_color=mauve,
             other_current_screen_border=mauve,
-            other_screen_border=overlay0,
+            other_screen_border=mantle,
             this_current_screen_border=mauve,
             this_screen_border=overlay0,
             decorations=[rounded("left")],
