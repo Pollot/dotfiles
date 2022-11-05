@@ -57,6 +57,7 @@ browser = "firefox"
 menu = "rofi -show drun"
 audio = "alsamixer"
 process_monitor = "htop"
+notifications_history = "dunstctl history-pop"
 
 screenshot_full = "flameshot full"
 screenshot_gui = "flameshot gui"
@@ -373,6 +374,7 @@ def init_widgets_list():
             inactive_text="",
             font=font_nerd,
             fontsize=40,
+            mouse_callbacks={"Button1": lazy.spawn(notifications_history)},
             decorations=[rounded("left")],
         ),
         widget.Spacer(
