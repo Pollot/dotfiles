@@ -76,8 +76,8 @@ icon_size2 = 26  # group and weather icons
 font_default = "Open Sans"
 font_nerd = "FiraCode Nerd Font Mono"
 
-wlp1 = "~/Wallpapers/cat.png"
-wlp2 = "~/Wallpapers/flatppuccin.png"
+wlp1 = "~/Wallpapers/flatppuccin.png"
+wlp2 = "~/Wallpapers/cat.png"
 
 
 ##########################
