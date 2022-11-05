@@ -25,6 +25,7 @@
 - Prompt: [Starship](https://starship.rs/)
 - Launcher: [Rofi](#rofi)
 - Fetch: [Neofetch](https://github.com/dylanaraps/neofetch)
+- Notifications: [Dunst](https://dunst-project.org/)
 - Nerd Font: [Fira Code](#nerd-font)
 - Bootloader: [Grub](#grub)
 
@@ -117,7 +118,8 @@ sudo pacman -S --needed base-devel
 3. Install basic packages:
 ```
 sudo pacman -S xorg-server xorg-xinit qtile git zsh kitty starship firefox rofi \
-neofetch alsa-utils flameshot htop gnome-keyring lxsession-gtk3 lxappearance
+neofetch alsa-utils flameshot htop gnome-keyring lxsession-gtk3 lxappearance \
+dunst
 ```
 
 4. Install AUR helper *yay* :
