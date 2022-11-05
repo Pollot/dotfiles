@@ -175,4 +175,14 @@ sudo pacman -S pipewire lib32-pipewire pipewire-alsa \
 pipewire-pulse pipewire-jack lib32-pipewire-jack
 ```
 
+### Optional
+1. Enable automatic unlocking gnome-keyring on login. Edit ```/etc/pam.d/login``` with root priviligies and add the following lines [full guide](https://wiki.archlinux.org/title/GNOME/Keyring):
+```
+auth       optional     pam_gnome_keyring.so
+
+session    optional     pam_gnome_keyring.so auto_start
+
+password   optional     pam_gnome_keyring.so
+```
+
 <h3 align="center">Enjoy</h3>
