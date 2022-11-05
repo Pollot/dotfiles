@@ -430,6 +430,7 @@ def init_widgets_list():
             txt_maximized="",
             txt_minimized="",
             parse_text=no_text,
+            urgent_alert_method="text",
         ),
         widget.Spacer(
             background=transparent,
