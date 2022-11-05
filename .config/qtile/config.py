@@ -382,7 +382,7 @@ def init_widgets_list():
         widget.CurrentLayoutIcon(
             background=mantle,
             use_mask=True,
-            foreground=blue,
+            foreground=mauve,
             scale=0.6,
         ),
         widget.Spacer(
