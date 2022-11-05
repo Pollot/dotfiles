@@ -324,8 +324,16 @@ layout_theme = {
 }
 
 layouts = [
-    layout.MonadTall(**layout_theme),
-    layout.MonadWide(**layout_theme),
+    layout.MonadTall(
+        new_client_position="top",
+        change_size=40,
+        **layout_theme,
+    ),
+    layout.MonadWide(
+        new_client_position="top",
+        change_size=40,
+        **layout_theme,
+    ),
     layout.RatioTile(**layout_theme),
     layout.Max(**layout_theme),
     # layout.Floating(**layout_theme),
@@ -341,7 +349,7 @@ layouts = [
 
 
 #########################
-######## Widgets ########
+###### Decorations ######
 #########################
 
 def arrow(path_user):
@@ -376,6 +384,10 @@ def underline(colour_user):
 def no_text(text):
     return ""
 
+
+#########################
+######## Widgets ########
+#########################
 
 widget_defaults = dict(
     background=mantle,
@@ -619,6 +631,10 @@ def init_widgets_list():
     return widgets_list
 
 
+#########################
+######## Screens ########
+#########################
+
 def init_widgets_screen1():
     widgets_screen1 = init_widgets_list()
     return widgets_screen1
@@ -669,14 +685,11 @@ mouse = [
           lazy.window.bring_to_front()),
 ]
 
-bring_front_click = False
-
 floating_layout = layout.Floating(
     border_focus=red,
     border_normal=base,
     border_width=2,
     float_rules=[
-        # Run the utility of `xprop` to see the wm class and name of an X client.
         *layout.Floating.default_float_rules,
         Match(wm_class="pavucontrol"),
     ]
@@ -689,6 +702,8 @@ floating_layout = layout.Floating(
 
 dgroups_key_binder = None
 dgroups_app_rules = []  # type: list
+
+bring_front_click = "floating_only"
 
 follow_mouse_focus = True
 cursor_warp = True
