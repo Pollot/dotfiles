@@ -56,6 +56,7 @@ terminal = "kitty"
 browser = "firefox"
 menu = "rofi -show drun"
 audio = "alsamixer"
+audio2 = "pavucontrol"
 process_monitor = "htop"
 notifications_history = "dunstctl history-pop"
 
@@ -461,6 +462,7 @@ def init_widgets_list():
         widget.Volume(
             foreground=mauve,
             volume_app=terminal + " -e " + audio,
+            mouse_callbacks={"Button1": lazy.spawn(audio2)},
             decorations=[underline(mauve), rounded("left")],
         ),
         widget.Spacer(
@@ -650,6 +652,7 @@ floating_layout = layout.Floating(
     float_rules=[
         # Run the utility of `xprop` to see the wm class and name of an X client.
         *layout.Floating.default_float_rules,
+        Match(wm_class="pavucontrol"),
     ]
 )
 
