@@ -76,7 +76,7 @@ icon_size2 = 26  # group and weather icons
 font_default = "Open Sans"
 font_nerd = "FiraCode Nerd Font Mono"
 
-wlp1 = "~/Wallpapers/flatppuccin.png"
+wlp1 = "~/Wallpapers/cat.png"
 wlp2 = "~/Wallpapers/flatppuccin.png"
 
 
@@ -367,7 +367,6 @@ def init_widgets_list():
             decorations=[rounded("right")],
         ),
         widget.CurrentScreen(
-            background=crust,
             active_color=mauve,
             inactive_color=overlay0,
             active_text="",
@@ -378,21 +377,19 @@ def init_widgets_list():
             decorations=[rounded("left")],
         ),
         widget.Spacer(
-            background=mantle,
+            background=transparent,
             length=10,
+            decorations=[rounded("right")],
         ),
         widget.CurrentLayoutIcon(
-            background=mantle,
             use_mask=True,
             foreground=mauve,
             scale=0.6,
         ),
         widget.Spacer(
-            background=mantle,
-            length=12,
+            length=10,
         ),
         widget.GroupBox(
-            background=mantle,
             disable_drag=True,
             padding=6,
             margin_y=5,
@@ -401,7 +398,7 @@ def init_widgets_list():
             highlight_method="line",
             active=text,
             inactive=overlay0,
-            highlight_color=[mantle, mantle],
+            highlight_color=[transparent, transparent],
             block_highlight_text_color=mauve,
             other_current_screen_border=mauve,
             other_screen_border=mantle,
@@ -439,7 +436,7 @@ def init_widgets_list():
         widget.WindowName(
             background=transparent,
             width=bar.CALCULATED,
-            format="{name}",
+            format="{state} {name}",
         ),
         widget.Spacer(
             background=transparent,
@@ -510,7 +507,7 @@ def init_widgets_list():
         ),
         widget.Memory(
             foreground=green,
-            format="{MemPercent:>2.0f}%",
+            format="{MemPercent:.0f}%",
             mouse_callbacks={"Button1": lazy.spawn(
                 terminal + " -e " + process_monitor)},
             decorations=[underline(green), rounded("left")],

@@ -48,10 +48,8 @@ I use **Catppuccin Mocha** palette in my configurations.
 
 ## Wallpapers
 [Official repository](https://github.com/catppuccin/wallpapers). Wallpapers I use:
-- [Pokemons](https://github.com/catppuccin/wallpapers/blob/main/misc/cat_bunnies.png) by [elkrien](https://github.com/elkrien)
-- [Sound](https://github.com/catppuccin/wallpapers/blob/main/misc/cat-sound.png) by [elkrien](https://github.com/elkrien)
-- [Arch](https://github.com/catppuccin/wallpapers/blob/main/os/arch-black-4k.png) by [elkrien](https://github.com/elkrien)
-- [Hashtags](https://github.com/catppuccin/wallpapers/blob/main/minimalistic/hashtags-black.png) by [elkrien](https://github.com/elkrien)
+- Modified version (gimp file included) of [unicat](https://github.com/catppuccin/wallpapers/blob/main/minimalistic/black5_unicat.png) by [Pocco81](https://github.com/Pocco81)
+- [Flatppuccin](https://github.com/catppuccin/wallpapers/blob/main/flatppuccin/flatppuccin_4k_macchiato.png) by [Adal Zanabria](https://github.com/AdalZanabria)
 
 ## Picom
 There are a lot of Picom forks, but I decided to stick to the main one (made by [yshui](https://github.com/yshui)). However, the latest version is required. The easiest way to install it is by using the [AUR](https://aur.archlinux.org/).
