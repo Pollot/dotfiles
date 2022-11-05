@@ -453,6 +453,8 @@ def init_widgets_list():
             text="墳",
             font=font_nerd,
             fontsize=icon_size,
+            mouse_callbacks={"Button1": lazy.spawn(
+                "amixer set Master toggle")},
             decorations=[underline(mauve)],
         ),
         widget.Spacer(
