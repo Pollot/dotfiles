@@ -129,11 +129,11 @@ keys = [
         ),
     Key([mod, "shift"], "return",
         lazy.spawn(menu),
-        desc="Spawn a command using a rofi"
+        desc="Launch rofi"
         ),
     Key([mod], "b",
         lazy.spawn(browser),
-        desc="Launch a browser"
+        desc="Launch browser"
         ),
     Key([mod, "shift"], "c",
         lazy.window.kill(),
@@ -151,44 +151,46 @@ keys = [
         ),
     Key([mod, "shift"], "r",
         lazy.reload_config(),
-        desc="Reload the config"
+        desc="Reload config"
         ),
     # Switch between monitors
     Key([mod], "w",
         lazy.to_screen(0),
-        desc="Move focus to monitor 1"
+        desc="Move focus to screen 0"
         ),
     Key([mod], "e",
         lazy.to_screen(1),
-        desc="Move focus to monitor 2"
-        ),
-    Key([mod], "period",
-        lazy.next_screen(),
-        desc="Move focus to the next monitor"
-        ),
-    Key([mod], "comma",
-        lazy.prev_screen(),
-        desc="Move focus to the prev monitor"
+        desc="Move focus to screen 1"
         ),
     # Switch between windows
     Key([mod], "j",
-        # lazy.layout.previous(),
-        lazy.group.prev_window(),
-        desc="Move focus to the previous window"
+        lazy.layout.up(),
+        desc="Move focus up"
         ),
     Key([mod], "k",
-        # lazy.layout.next(),
+        lazy.layout.down(),
+        desc="Move focus down"
+        ),
+    Key([mod], "h",
+        lazy.layout.left(),
+        desc="Move focus left"
+        ),
+    Key([mod], "l",
+        lazy.layout.right(),
+        desc="Move focus right"
+        ),
+    Key([mod], "space",
         lazy.group.next_window(),
-        desc="Move focus to the next window"
+        desc="Move focus to next window in the group"
         ),
     # Move windows
     Key([mod, "shift"], "j",
-        lazy.layout.shuffle_down(),
-        desc="Move window down"
-        ),
-    Key([mod, "shift"], "k",
         lazy.layout.shuffle_up(),
         desc="Move window up"
+        ),
+    Key([mod, "shift"], "k",
+        lazy.layout.shuffle_down(),
+        desc="Move window down"
         ),
     Key([mod, "shift"], "h",
         lazy.layout.shuffle_left(),
@@ -198,20 +200,45 @@ keys = [
         lazy.layout.shuffle_right(),
         desc="Move window right"
         ),
-    # Window controls
-    Key([mod], "h",
+    Key([mod, "shift"], "w",
+        lazy.window.toscreen(0),
+        desc="Move window to screen 0"
+        ),
+    Key([mod, "shift"], "e",
+        lazy.window.toscreen(1),
+        desc="Move window to screen 1"
+        ),
+    # Resize windows
+    Key([mod, "control"], "j",
+        lazy.layout.shrink(),
+        desc="Shrink window"
+        ),
+    Key([mod, "control"], "k",
+        lazy.layout.grow(),
+        desc="Expand window"
+        ),
+    Key([mod, "control"], "h",
         lazy.layout.shrink_main(),
         desc="Shrink master pane"
         ),
-    Key([mod], "l",
+    Key([mod, "control"], "l",
         lazy.layout.grow_main(),
         desc="Expand master pane"
         ),
-    Key([mod], "m",
+    Key([mod, "control"], "m",
+        lazy.layout.maximize(),
+        desc="Maximize window"
+        ),
+    Key([mod, "control"], "n",
+        lazy.layout.normalize(),
+        desc="Normalize"
+        ),
+    # Change windows state
+    Key([mod, "shift"], "m",
         lazy.window.toggle_maximize(),
         desc="Toggle window maximize"
         ),
-    Key([mod], "n",
+    Key([mod, "shift"], "n",
         lazy.window.toggle_minimize(),
         desc="Toggle window minimize"
         ),
@@ -234,13 +261,14 @@ keys = [
         lazy.window.bring_to_front(),
         desc="Cycle next floating windows",
         ),
+    # Screenshots
     Key([], "Print",
         lazy.spawn(screenshot_full),
-        desc="Makes screenshot",
+        desc="Make screenshot",
         ),
     Key([mod], "Print",
         lazy.spawn(screenshot_gui),
-        desc="Makes screenshot with gui (selection)",
+        desc="Make screenshot with gui (selection)",
         ),
 ]
 
@@ -623,8 +651,6 @@ screens = [
             background=transparent,
         )
     ),
-
-
 ]
 
 
@@ -643,10 +669,8 @@ mouse = [
           lazy.window.bring_to_front()),
 ]
 
-dgroups_key_binder = None
-dgroups_app_rules = []  # type: list
 bring_front_click = False
-cursor_warp = False
+
 floating_layout = layout.Floating(
     border_focus=red,
     border_normal=base,
@@ -663,7 +687,11 @@ floating_layout = layout.Floating(
 ######### Rules ##########
 ##########################
 
+dgroups_key_binder = None
+dgroups_app_rules = []  # type: list
+
 follow_mouse_focus = True
+cursor_warp = True
 
 auto_fullscreen = True
 auto_minimize = False
