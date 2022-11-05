@@ -58,14 +58,14 @@ menu = "rofi -show drun"
 audio = "alsamixer"
 process_monitor = "htop"
 
+screenshot_full = "flameshot full"
+screenshot_gui = "flameshot gui"
+
 location = "Warsaw"
 
 weather = "firefox https://openweathermap.org/city/756135"
 clock = "firefox https://www.timeanddate.com/worldclock/"
 calendar = "firefox https://calendar.google.com/calendar/"
-
-screenshot_full = "flameshot full"
-screenshot_gui = "flameshot gui"
 
 gap_size = 8
 font_size = 16
@@ -393,18 +393,18 @@ def init_widgets_list():
             background=mantle,
             disable_drag=True,
             padding=6,
+            margin_y=5,
             font=font_nerd,
             fontsize=icon_size2,
             highlight_method="line",
-            margin_y=5,
             active=text,
             inactive=overlay0,
             highlight_color=[mantle, mantle],
-            block_highlight_text_color=blue,
+            block_highlight_text_color=mauve,
             other_current_screen_border=mauve,
             other_screen_border=overlay0,
             this_current_screen_border=mauve,
-            this_screen_border=blue,
+            this_screen_border=overlay0,
             decorations=[rounded("left")],
         ),
         widget.Systray(
