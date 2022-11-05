@@ -40,10 +40,12 @@ from libqtile.lazy import lazy
 
 from qtile_extras import widget
 from qtile_extras.widget.decorations import PowerLineDecoration
+from qtile_extras.widget.decorations import BorderDecoration
 from qtile_extras.widget.decorations import RectDecoration
 
 # OpenWeatherMap API key and symbols
 from owm import owm_api, owm_symbols
+
 
 ##########################
 ####### Variables ########
@@ -73,8 +75,8 @@ icon_size2 = 26  # group and weather icons
 font_default = "Open Sans"
 font_nerd = "FiraCode Nerd Font Mono"
 
-wlp1 = "~/Wallpapers/pokemons.png"
-wlp2 = "~/Wallpapers/sound.png"
+wlp1 = "~/Wallpapers/flatppuccin.png"
+wlp2 = "~/Wallpapers/flatppuccin.png"
 
 
 ##########################
@@ -110,6 +112,8 @@ base = "#1e1e2e"
 mantle = "#181825"
 crust = "#11111b"
 
+# Last 2 digits set alpha channel
+transparent = "#00000000"
 
 ##########################
 ######## Keybinds ########
@@ -310,57 +314,41 @@ layouts = [
 ######## Widgets ########
 #########################
 
-# Decorations
-arrow_right = {
-    "decorations": [PowerLineDecoration(path="arrow_right")]
-}
+def arrow(path_user):
+    return PowerLineDecoration(path="arrow_"+path_user)
 
-arrow_left = {
-    "decorations": [PowerLineDecoration(path="arrow_left")]
-}
 
-rounded_right = {
-    "decorations": [PowerLineDecoration(path="rounded_right")]
-}
+def rounded(path_user):
+    return PowerLineDecoration(path="rounded_"+path_user)
 
-rounded_left = {
-    "decorations": [PowerLineDecoration(path="rounded_left")]
-}
 
-slash_back = {
-    "decorations": [PowerLineDecoration(path="back_slash")]
-}
+def slash(path_user):
+    return PowerLineDecoration(path=path_user+"_slash")
 
-slash_forward = {
-    "decorations": [PowerLineDecoration(path="forward_slash")]
-}
 
-border_mauve = {
-    "decorations": [RectDecoration(
-        colour=mauve,
+def border():
+    return RectDecoration(
+        use_widget_background=True,
         radius=10,
         filled=True,
         padding_y=4,
-        group=True
-    )]
-}
+        group=True,
+    )
 
-border_blue = {
-    "decorations": [RectDecoration(
-        colour=blue,
-        radius=10,
-        filled=True,
-        padding_y=4,
-        group=True
-    )]
-}
+
+def underline(colour_user):
+    return BorderDecoration(
+        colour=colour_user,
+        border_width=[0, 0, 2, 0]
+    )
+
 
 widget_defaults = dict(
-    background=base,
+    background=mantle,
     foreground=text,
     font=font_default,
     fontsize=font_size,
-    padding=8,
+    padding=0,
 )
 
 extension_defaults = widget_defaults.copy()
@@ -369,8 +357,9 @@ extension_defaults = widget_defaults.copy()
 def init_widgets_list():
     widgets_list = [
         widget.Spacer(
-            background=crust,
-            length=8,
+            background=transparent,
+            length=1,
+            decorations=[rounded("right")],
         ),
         widget.CurrentScreen(
             background=crust,
@@ -380,13 +369,16 @@ def init_widgets_list():
             inactive_text="",
             font=font_nerd,
             fontsize=40,
-            **rounded_right,
+            decorations=[rounded("left")],
+        ),
+        widget.Spacer(
+            background=mantle,
+            length=10,
         ),
         widget.CurrentLayoutIcon(
             background=mantle,
             use_mask=True,
             foreground=blue,
-            padding=0,
             scale=0.6,
         ),
         widget.Spacer(
@@ -396,6 +388,7 @@ def init_widgets_list():
         widget.GroupBox(
             background=mantle,
             disable_drag=True,
+            padding=6,
             font=font_nerd,
             fontsize=icon_size2,
             highlight_method="line",
@@ -408,202 +401,170 @@ def init_widgets_list():
             other_screen_border=overlay0,
             this_current_screen_border=mauve,
             this_screen_border=blue,
-            **rounded_left,
+            decorations=[rounded("left")],
         ),
         widget.Spacer(
+            background=transparent,
             length=8,
         ),
         widget.TaskList(
+            background=transparent,
             border=mauve,
             unfocused_border=overlay0,
             padding=3,
             margin_y=1,
             spacing=6,
             icon_size=icon_size,
-            txt_floating="[Floating] ",
-            txt_maximized="[Maximized] ",
-            txt_minimized="[Minimized] ",
+            txt_floating="[Float] ",
+            txt_maximized="[Max] ",
+            txt_minimized="[Min] ",
+        ),
+        widget.Spacer(
+            background=transparent,
+            length=10,
         ),
         widget.Systray(
+            background=transparent,
         ),
         widget.Spacer(
+            background=transparent,
             length=10,
-        ),
-        widget.Spacer(
-            length=10,
-            **border_mauve,
+            decorations=[rounded("right")],
         ),
         widget.TextBox(
-            foreground=crust,
+            foreground=mauve,
             text="墳",
             font=font_nerd,
             fontsize=icon_size,
-            padding=0,
-            **border_mauve,
+            decorations=[underline(mauve)],
         ),
         widget.Spacer(
             length=6,
-            **border_mauve,
+            decorations=[underline(mauve)],
         ),
         widget.Volume(
-            foreground=crust,
-            padding=0,
+            foreground=mauve,
             volume_app=terminal + " -e " + audio,
-            **border_mauve,
+            decorations=[underline(mauve), rounded("left")],
         ),
         widget.Spacer(
+            background=transparent,
             length=10,
-            **border_mauve,
-        ),
-        widget.Spacer(
-            length=10,
-        ),
-        widget.Spacer(
-            length=10,
-            **border_blue,
+            decorations=[rounded("right")],
         ),
         widget.TextBox(
-            foreground=crust,
+            foreground=blue,
             text="ﮮ",
             font=font_nerd,
             fontsize=icon_size,
-            padding=0,
-            **border_blue,
+            decorations=[underline(blue)],
         ),
         widget.Spacer(
             length=6,
-            **border_blue,
+            decorations=[underline(blue)],
         ),
         widget.CheckUpdates(
-            colour_no_updates=crust,
-            colour_have_updates=crust,
+            colour_no_updates=blue,
+            colour_have_updates=blue,
             update_interval=1800,
             no_update_string="Up to date",
             display_format="{updates}",
             execute=terminal + " -e sudo pacman -Syu",
-            padding=0,
-            **border_blue,
+            decorations=[underline(blue), rounded("left")],
         ),
         widget.Spacer(
+            background=transparent,
             length=10,
-            **border_blue,
-        ),
-        widget.Spacer(
-            length=10,
-            **rounded_right,
+            decorations=[rounded("right")],
         ),
         widget.TextBox(
-            background=blue,
-            foreground=crust,
+            foreground=green,
             text="",
             font=font_nerd,
             fontsize=icon_size,
-            padding=0,
-        ),
-        widget.Memory(
-            background=blue,
-            foreground=crust,
-            width=48,
-            format="{MemPercent:.0f}%",
-            mouse_callbacks={"Button1": lazy.spawn(
-                terminal + " -e " + process_monitor)},
-            **slash_forward,
-        ),
-        widget.Net(
-            background=green,
-            foreground=crust,
-            format="{down}",
-            width=76,
-        ),
-        widget.TextBox(
-            background=green,
-            foreground=crust,
-            text="",
-            font=font_nerd,
-            padding=0,
-        ),
-        widget.Net(
-            background=green,
-            foreground=crust,
-            format="{up}",
-            width=76,
-            **slash_forward,
+            decorations=[underline(green)],
         ),
         widget.Spacer(
-            background=yellow,
-            length=8,
+            length=6,
+            decorations=[underline(green)],
+        ),
+        widget.Memory(
+            foreground=green,
+            format="{MemPercent:>2.0f}%",
+            mouse_callbacks={"Button1": lazy.spawn(
+                terminal + " -e " + process_monitor)},
+            decorations=[underline(green), rounded("left")],
+        ),
+        widget.Spacer(
+            background=transparent,
+            length=10,
+            decorations=[rounded("right")],
         ),
         widget.OpenWeather(
-            background=yellow,
-            foreground=crust,
+            foreground=yellow,
             app_key=owm_api,
             location=location,
             format="{icon}",
             weather_symbols=owm_symbols,
             font=font_nerd,
             fontsize=icon_size2,
-            padding=0,
+            decorations=[underline(yellow)],
+        ),
+        widget.Spacer(
+            length=6,
+            decorations=[underline(yellow)],
         ),
         widget.OpenWeather(
-            background=yellow,
-            foreground=crust,
+            foreground=yellow,
             location=location,
             app_key=owm_api,
-            format="{main_temp: .0f}°{units_temperature}",
-            padding=3,
+            format="{main_temp:.0f}°{units_temperature}",
             mouse_callbacks={"Button1": lazy.spawn(weather)},
+            decorations=[underline(yellow), rounded("left")],
         ),
         widget.Spacer(
-            background=yellow,
-            length=5,
-            **slash_forward,
-        ),
-        widget.Spacer(
-            background=peach,
-            length=8,
+            background=transparent,
+            length=10,
+            decorations=[rounded("right")],
         ),
         widget.TextBox(
-            background=peach,
-            foreground=crust,
+            foreground=peach,
             text="",
             font=font_nerd,
             fontsize=icon_size,
-            padding=0,
+            decorations=[underline(peach)],
+        ),
+        widget.Spacer(
+            length=6,
+            decorations=[underline(peach)],
         ),
         widget.Clock(
-            background=peach,
-            foreground=crust,
+            foreground=peach,
             format="%a, %b %-m",
-            padding=6,
             mouse_callbacks={"Button1": lazy.spawn(calendar)},
+            decorations=[underline(peach), rounded("left")],
         ),
         widget.Spacer(
-            background=peach,
-            length=2,
-            **slash_forward,
-        ),
-        widget.Spacer(
-            background=red,
-            length=8,
+            background=transparent,
+            length=10,
+            decorations=[rounded("right")],
         ),
         widget.TextBox(
-            background=red,
-            foreground=crust,
+            foreground=red,
             text="",
             font=font_nerd,
             fontsize=icon_size,
-            padding=0,
-        ),
-        widget.Clock(
-            background=red,
-            foreground=crust,
-            format="%-H:%M:%S",
-            padding=5,
-            mouse_callbacks={"Button1": lazy.spawn(clock)},
+            decorations=[underline(red)],
         ),
         widget.Spacer(
-            background=red,
-            length=8,
+            length=6,
+            decorations=[underline(red)],
+        ),
+        widget.Clock(
+            foreground=red,
+            format="%-H:%M:%S",
+            mouse_callbacks={"Button1": lazy.spawn(clock)},
+            decorations=[underline(red), rounded("left")],
         ),
     ]
     return widgets_list
@@ -616,7 +577,7 @@ def init_widgets_screen1():
 
 def init_widgets_screen2():
     widgets_screen2 = init_widgets_list()
-    del widgets_screen2[7]  # removing systray
+    del widgets_screen2[8]  # removing systray
     return widgets_screen2
 
 
@@ -628,6 +589,7 @@ screens = [
             init_widgets_screen1(),
             32,
             margin=[gap_size, gap_size, 0, gap_size],
+            background=transparent,
         )
     ),
     Screen(
@@ -637,7 +599,8 @@ screens = [
             init_widgets_screen2(),
             32,
             margin=[gap_size, gap_size, 0, gap_size],
-        ),
+            background=transparent,
+        )
     ),
 ]
 
@@ -693,7 +656,7 @@ wl_input_rules = None
 ####### Autostart ########
 ##########################
 
-@hook.subscribe.startup_once
+@ hook.subscribe.startup_once
 def autostart():
     home = os.path.expanduser('~/.config/qtile/autostart.sh')
     subprocess.Popen([home])
