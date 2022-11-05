@@ -176,7 +176,7 @@ pipewire-pulse pipewire-jack lib32-pipewire-jack
 ```
 
 ### Optional
-1. Enable automatic unlocking gnome-keyring on login. Edit ```/etc/pam.d/login``` with root priviligies and add the following lines [full guide](https://wiki.archlinux.org/title/GNOME/Keyring):
+1. Enable automatic unlocking gnome-keyring on login. Edit ```/etc/pam.d/login``` with root priviligies and add the following lines [(full guide)](https://wiki.archlinux.org/title/GNOME/Keyring):
 ```
 auth       optional     pam_gnome_keyring.so
 
