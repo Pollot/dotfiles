@@ -1,5 +1,5 @@
 # Screenshots
-<img src="screenshots/unixporn.jpg">
+<img src="screenshots/update.jpg">
 
 # Table of Contents
 - [List of software](#list-of-software)
