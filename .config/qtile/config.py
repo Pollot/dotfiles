@@ -496,17 +496,15 @@ def init_widgets_list():
             fontsize=icon_size,
             mouse_callbacks={"Button1": lazy.spawn(
                 "amixer set Master toggle")},
-            decorations=[underline(mauve)],
         ),
         widget.Spacer(
             length=6,
-            decorations=[underline(mauve)],
         ),
         widget.Volume(
             foreground=mauve,
             volume_app=terminal + " -e " + audio,
             mouse_callbacks={"Button1": lazy.spawn(audio2)},
-            decorations=[underline(mauve), rounded("left")],
+            decorations=[rounded("left")],
         ),
         widget.Spacer(
             background=transparent,
@@ -518,11 +516,9 @@ def init_widgets_list():
             text="ﮮ",
             font=font_nerd,
             fontsize=icon_size,
-            decorations=[underline(blue)],
         ),
         widget.Spacer(
             length=6,
-            decorations=[underline(blue)],
         ),
         widget.CheckUpdates(
             colour_no_updates=blue,
@@ -532,7 +528,7 @@ def init_widgets_list():
             no_update_string="Up to date",
             display_format="{updates}",
             execute=terminal + " -e sudo pacman -Syu",
-            decorations=[underline(blue), rounded("left")],
+            decorations=[rounded("left")],
         ),
         widget.Spacer(
             background=transparent,
@@ -544,18 +540,16 @@ def init_widgets_list():
             text="",
             font=font_nerd,
             fontsize=icon_size,
-            decorations=[underline(green)],
         ),
         widget.Spacer(
             length=6,
-            decorations=[underline(green)],
         ),
         widget.Memory(
             foreground=green,
             format="{MemPercent:.0f}%",
             mouse_callbacks={"Button1": lazy.spawn(
                 terminal + " -e " + process_monitor)},
-            decorations=[underline(green), rounded("left")],
+            decorations=[rounded("left")],
         ),
         widget.Spacer(
             background=transparent,
@@ -570,11 +564,9 @@ def init_widgets_list():
             weather_symbols=owm_symbols,
             font=font_nerd,
             fontsize=icon_size2,
-            decorations=[underline(yellow)],
         ),
         widget.Spacer(
             length=6,
-            decorations=[underline(yellow)],
         ),
         widget.OpenWeather(
             foreground=yellow,
@@ -582,7 +574,7 @@ def init_widgets_list():
             app_key=owm_api,
             format="{main_temp:.0f}°{units_temperature}",
             mouse_callbacks={"Button1": lazy.spawn(weather)},
-            decorations=[underline(yellow), rounded("left")],
+            decorations=[rounded("left")],
         ),
         widget.Spacer(
             background=transparent,
@@ -594,17 +586,15 @@ def init_widgets_list():
             text="",
             font=font_nerd,
             fontsize=icon_size,
-            decorations=[underline(peach)],
         ),
         widget.Spacer(
             length=6,
-            decorations=[underline(peach)],
         ),
         widget.Clock(
             foreground=peach,
             format="%a, %b %-d",
             mouse_callbacks={"Button1": lazy.spawn(calendar)},
-            decorations=[underline(peach), rounded("left")],
+            decorations=[rounded("left")],
         ),
         widget.Spacer(
             background=transparent,
@@ -616,17 +606,15 @@ def init_widgets_list():
             text="",
             font=font_nerd,
             fontsize=icon_size,
-            decorations=[underline(red)],
         ),
         widget.Spacer(
             length=6,
-            decorations=[underline(red)],
         ),
         widget.Clock(
             foreground=red,
             format="%-H:%M:%S",
             mouse_callbacks={"Button1": lazy.spawn(clock)},
-            decorations=[underline(red), rounded("left")],
+            decorations=[rounded("left")],
         ),
     ]
     return widgets_list
