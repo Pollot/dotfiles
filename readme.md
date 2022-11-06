@@ -116,7 +116,8 @@ sudo pacman -S --needed base-devel
 3. Install basic packages:
 ```
 sudo pacman -S xorg-server xorg-xinit qtile git zsh kitty starship firefox rofi neofetch \
-alsa-utils pavucontrol flameshot htop gnome-keyring lxsession-gtk3 lxappearance dunst
+alsa-utils pavucontrol flameshot htop gnome-keyring lxsession-gtk3 lxappearance dunst \
+pacman-contrib
 ```
 
 4. Install AUR helper *yay* :

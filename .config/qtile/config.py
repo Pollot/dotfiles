@@ -523,8 +523,8 @@ def init_widgets_list():
         widget.CheckUpdates(
             colour_no_updates=blue,
             colour_have_updates=blue,
-            distro="Arch",
-            update_interval=600,
+            distro="Arch_checkupdates",
+            update_interval=1800,
             no_update_string="Up to date",
             display_format="{updates}",
             execute=terminal + " -e sudo pacman -Syu",
