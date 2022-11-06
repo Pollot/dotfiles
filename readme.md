@@ -1,7 +1,7 @@
 # Screenshot
 <img src="screenshots/update1.png">
 
-# Table of Contents
+# Table of contents
 - [List of software](#list-of-software)
     - [Qtile](#qtile)
     - [Catppuccin](#catppuccin)
@@ -11,7 +11,12 @@
     - [Rofi](#rofi)
     - [Nerd Font](#nerd-font)
     - [Grub](#grub)
-- [Installation on Arch](#installation-on-arch)
+- [Installation](#installation)
+    - [Basic configuration](#basic-configuration)
+    - [Packages](#packages)
+    - [Dotfiles](#dotfiles)
+    - [Final steps](#final-steps)
+- [Recommended packages](#recommended-packages)
 
 # List of software
 - Window manager: [Qtile](#qtile)
@@ -74,7 +79,7 @@ I use **Fira Code Nerd Font Mono**. You can download its latest release from: [N
 ## Grub
 **Not included in my repository**. I use: [Catppuccin for Grub](https://github.com/catppuccin/grub).
 
-# Installation on Arch
+# Installation
 
 ### Basic configuration
 1. Install Arch using the [official installation guide](https://wiki.archlinux.org/title/installation_guide).
@@ -153,10 +158,10 @@ git clone https://github.com/Pollot/dotfiles
 2. Install dotfiles:
 ```
 cd dotfiles/installation
-./install-arch.sh
+./install-full.sh
 ```
 
-### Finishing
+### Final steps
 
 1. Reboot:
 ```
@@ -176,7 +181,7 @@ pipewire-pulse pipewire-jack lib32-pipewire-jack
 ```
 
 ### Optional
-Enable automatic unlocking gnome-keyring on login. Edit ```/etc/pam.d/login``` with root priviligies and add the following lines [(full guide)](https://wiki.archlinux.org/title/GNOME/Keyring):
+Enable automatic unlocking gnome-keyring on login. Edit ```/etc/pam.d/login``` with root priviligies and add the following lines ([full guide](https://wiki.archlinux.org/title/GNOME/Keyring)):
 ```
 auth       optional     pam_gnome_keyring.so
 
@@ -184,3 +189,9 @@ session    optional     pam_gnome_keyring.so auto_start
 
 password   optional     pam_gnome_keyring.so
 ```
+
+# Recommended packages
+- Disks utility: [gnome-disk-utility](https://archlinux.org/packages/extra/x86_64/gnome-disk-utility/)
+- GUI file manager: [nemo](https://wiki.archlinux.org/title/Nemo)
+- TUI file manager: [lf](https://archlinux.org/packages/community/x86_64/lf/)
+- Text/Code editor: [visual-studio-code-bin](https://aur.archlinux.org/packages/visual-studio-code-bin)<sup>AUR</sup>
