@@ -63,9 +63,9 @@ notifications_history = "dunstctl history-pop"
 screenshot_full = "flameshot full"
 screenshot_gui = "flameshot gui"
 
-location = "Warsaw"
+city_id = "756135"  # openweathermap.org/city/[city id]
 
-weather = "firefox https://openweathermap.org/city/756135"
+weather = "firefox https://openweathermap.org/city/" + city_id
 clock = "firefox https://www.timeanddate.com/worldclock/"
 calendar = "firefox https://calendar.google.com/calendar/"
 
@@ -559,7 +559,7 @@ def init_widgets_list():
         widget.OpenWeather(
             foreground=yellow,
             app_key=owm_api,
-            location=location,
+            cityid=city_id,
             format="{icon}",
             weather_symbols=owm_symbols,
             font=font_nerd,
@@ -570,7 +570,7 @@ def init_widgets_list():
         ),
         widget.OpenWeather(
             foreground=yellow,
-            location=location,
+            cityid=city_id,
             app_key=owm_api,
             format="{main_temp:.0f}°{units_temperature}",
             mouse_callbacks={"Button1": lazy.spawn(weather)},
