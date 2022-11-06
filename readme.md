@@ -129,7 +129,7 @@ cd
 
 5. Install AUR packages (don't remove qtile-extras build dependencies):
 ```
-yay -S qtile-extras-git picom-git catppuccin-gtk-theme-mocha
+yay -S qtile-extras-git picom-git catppuccin-gtk-theme-mocha qt5-styleplugins
 ```
 
 6. Install psutil:
