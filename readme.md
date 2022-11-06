@@ -1,5 +1,5 @@
-# Screenshots
-<img src="screenshots/update.jpg">
+# Screenshot
+<img src="screenshots/update1.png">
 
 # Table of Contents
 - [List of software](#list-of-software)
