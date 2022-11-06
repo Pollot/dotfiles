@@ -478,6 +478,7 @@ def init_widgets_list():
             background=transparent,
             width=bar.CALCULATED,
             format="{state} {name}",
+            max_chars=70,
         ),
         widget.Spacer(
             background=transparent,
