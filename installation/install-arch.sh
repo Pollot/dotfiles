@@ -41,4 +41,4 @@ sudo cp -r fonts /usr/share
 
 sudo fc-cache -r
 
-echo -e "\nFonts installed."
+echo -e "\nFonts installed.\n"

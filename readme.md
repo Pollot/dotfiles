@@ -11,7 +11,7 @@
     - [Rofi](#rofi)
     - [Nerd Font](#nerd-font)
     - [Grub](#grub)
-- [Installation](#installation)
+- [Installation on Arch](#installation-on-arch)
 
 # List of software
 - Window manager: [Qtile](#qtile)
@@ -74,7 +74,7 @@ I use **Fira Code Nerd Font Mono**. You can download its latest release from: [N
 ## Grub
 **Not included in my repository**. I use: [Catppuccin for Grub](https://github.com/catppuccin/grub).
 
-# Installation
+# Installation on Arch
 
 ### Basic configuration
 1. Install Arch using the [official installation guide](https://wiki.archlinux.org/title/installation_guide).
@@ -137,7 +137,7 @@ yay -S qtile-extras-git picom-git catppuccin-gtk-theme-mocha qt5-styleplugins
 pip install psutil
 ```
 
-7. Install drivers. On Nvidia graphic's card follow [this guide](https://wiki.archlinux.org/title/NVIDIA). **For the Maxwell (NV110/GMXXX) series and newer:**
+7. Install drivers. On Nvidia graphics card follow [this guide](https://wiki.archlinux.org/title/NVIDIA). **For the Maxwell (NV110/GMXXX) series and newer:**
 ```
 sudo pacman -S nvidia nvidia-settings lib32-nvidia-utils
 ```
@@ -152,7 +152,7 @@ git clone https://github.com/Pollot/dotfiles
 2. Install dotfiles:
 ```
 cd dotfiles/installation
-./install.sh
+./install-arch.sh
 ```
 
 ### Finishing
@@ -175,7 +175,7 @@ pipewire-pulse pipewire-jack lib32-pipewire-jack
 ```
 
 ### Optional
-1. Enable automatic unlocking gnome-keyring on login. Edit ```/etc/pam.d/login``` with root priviligies and add the following lines [(full guide)](https://wiki.archlinux.org/title/GNOME/Keyring):
+Enable automatic unlocking gnome-keyring on login. Edit ```/etc/pam.d/login``` with root priviligies and add the following lines [(full guide)](https://wiki.archlinux.org/title/GNOME/Keyring):
 ```
 auth       optional     pam_gnome_keyring.so
 
@@ -183,5 +183,3 @@ session    optional     pam_gnome_keyring.so auto_start
 
 password   optional     pam_gnome_keyring.so
 ```
-
-<h3 align="center">Enjoy</h3>
