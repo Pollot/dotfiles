@@ -695,7 +695,7 @@ dgroups_app_rules = []  # type: list
 bring_front_click = "floating_only"
 
 follow_mouse_focus = True
-cursor_warp = True
+cursor_warp = False
 
 auto_fullscreen = True
 auto_minimize = False
