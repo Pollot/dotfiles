@@ -191,7 +191,7 @@ password   optional     pam_gnome_keyring.so
 ```
 
 # Recommended packages
-- Disks utility: [gnome-disk-utility](https://archlinux.org/packages/extra/x86_64/gnome-disk-utility/)
-- GUI file manager: [nemo](https://wiki.archlinux.org/title/Nemo)
+- Disk utility: [gnome-disk-utility](https://archlinux.org/packages/extra/x86_64/gnome-disk-utility/)
+- GUI file manager: [nemo](https://wiki.archlinux.org/title/Nemo) (and [nemo-fileroller](https://archlinux.org/packages/?name=nemo-fileroller) extension)
 - TUI file manager: [lf](https://archlinux.org/packages/community/x86_64/lf/)
 - Text/Code editor: [visual-studio-code-bin](https://aur.archlinux.org/packages/visual-studio-code-bin)<sup>AUR</sup>
