@@ -118,14 +118,20 @@ sudo pacman -Syu
 sudo pacman -S --needed base-devel
 ```
 
-3. Install basic packages:
+3. Install audio server:
+```
+sudo pacman -S pipewire lib32-pipewire pipewire-alsa pipewire-pulse \
+pipewire-jack lib32-pipewire-jack wireplumber
+```
+
+4. Install basic packages:
 ```
 sudo pacman -S xorg-server xorg-xinit qtile git zsh kitty starship firefox rofi neofetch \
 alsa-utils pavucontrol flameshot htop gnome-keyring lxsession-gtk3 lxappearance dunst \
 pacman-contrib
 ```
 
-4. Install AUR helper *yay* :
+5. Install AUR helper *yay* :
 ```
 git clone https://aur.archlinux.org/yay
 cd yay
@@ -133,17 +139,17 @@ makepkg -si
 cd
 ```
 
-5. Install AUR packages (don't remove qtile-extras build dependencies):
+6. Install AUR packages (don't remove qtile-extras build dependencies):
 ```
 yay -S qtile-extras-git picom-git catppuccin-gtk-theme-mocha qt5-styleplugins
 ```
 
-6. Install psutil:
+7. Install psutil:
 ```
 pip install psutil
 ```
 
-7. Install drivers. On Nvidia graphics card follow [this guide](https://wiki.archlinux.org/title/NVIDIA). **For the Maxwell (NV110/GMXXX) series and newer:**
+8. Install drivers. On Nvidia graphics card follow [this guide](https://wiki.archlinux.org/title/NVIDIA). **For the Maxwell (NV110/GMXXX) series and newer:**
 ```
 sudo pacman -S nvidia nvidia-settings lib32-nvidia-utils
 ```
@@ -165,7 +171,7 @@ cd dotfiles/installation
 
 1. Reboot:
 ```
-sudo reboot
+reboot
 ```
 
 2. X server session should automatically start up after logging in.
@@ -173,12 +179,6 @@ sudo reboot
 3. Use lxappearance to change your GTK and cursor theme.
 
 4. Use nvidia-settings to change your displays configuration.
-
-5. Configure audio - for example install PipeWire:
-```
-sudo pacman -S pipewire lib32-pipewire pipewire-alsa \
-pipewire-pulse pipewire-jack lib32-pipewire-jack
-```
 
 ### Optional
 Enable automatic unlocking gnome-keyring on login. Edit ```/etc/pam.d/login``` with root priviligies and add the following lines ([full guide](https://wiki.archlinux.org/title/GNOME/Keyring)):
