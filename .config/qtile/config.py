@@ -486,7 +486,7 @@ def window_name():
 #### Normal Widgets ####
 ########################
 # Defined as standard variables:
-# They can be mirrored in other
+# They can be mirrored on other
 # screens to save resources.
 
 volume_text = widget.TextBox(
