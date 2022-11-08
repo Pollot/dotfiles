@@ -631,6 +631,7 @@ def init_widgets_screen1():
 
 def init_widgets_screen2():
     widgets_screen2 = init_widgets_list()
+    del widgets_screen2[16:20]  # removing check updates
     del widgets_screen2[6]  # removing systray
     return widgets_screen2
 
