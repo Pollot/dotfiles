@@ -11,7 +11,7 @@
     - [Rofi](#rofi)
     - [Nerd Font](#nerd-font)
     - [Grub](#grub)
-- [Installation](#installation)
+- [Installation on Arch](#installation-on-arch)
     - [Basic configuration](#basic-configuration)
     - [Packages](#packages)
     - [Dotfiles](#dotfiles)
@@ -79,7 +79,7 @@ I use **Fira Code Nerd Font Mono**. You can download its latest release from: [N
 ## Grub
 **Not included in my repository**. I use: [Catppuccin for Grub](https://github.com/catppuccin/grub).
 
-# Installation
+# Installation on Arch
 
 ### Basic configuration
 1. Install Arch using the [official installation guide](https://wiki.archlinux.org/title/installation_guide).
@@ -141,7 +141,8 @@ cd
 
 6. Install AUR packages (don't remove qtile-extras build dependencies):
 ```
-yay -S qtile-extras-git picom-git catppuccin-gtk-theme-mocha qt5-styleplugins
+yay -S qtile-extras-git picom-git catppuccin-gtk-theme-mocha qt5-styleplugins \
+betterlockscreen
 ```
 
 7. Install psutil:
