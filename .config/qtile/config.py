@@ -69,6 +69,8 @@ weather_app = "firefox https://openweathermap.org/city/" + city_id
 clock_app = "firefox https://www.timeanddate.com/worldclock/"
 calendar_app = "firefox https://calendar.google.com/calendar/"
 
+lockscreen = "betterlockscreen -l"
+
 gap_size = 8
 font_size = 16
 icon_size = 22
@@ -269,6 +271,11 @@ keys = [
     Key([mod], "Print",
         lazy.spawn(screenshot_gui),
         desc="Make screenshot with gui (selection)",
+        ),
+    # Lock screen
+    Key([mod], "x",
+        lazy.spawn(lockscreen),
+        desc="Lock screen",
         ),
 ]
 
