@@ -128,7 +128,7 @@ pipewire-jack lib32-pipewire-jack wireplumber
 ```
 sudo pacman -S xorg-server xorg-xinit qtile git zsh kitty starship firefox rofi neofetch \
 alsa-utils pavucontrol flameshot htop gnome-keyring lxsession-gtk3 lxappearance dunst \
-pacman-contrib
+pacman-contrib xss-lock
 ```
 
 5. Install AUR helper *yay* :
@@ -142,7 +142,7 @@ cd
 6. Install AUR packages (don't remove qtile-extras build dependencies):
 ```
 yay -S qtile-extras-git picom-git catppuccin-gtk-theme-mocha qt5-styleplugins \
-xss-lock betterlockscreen
+betterlockscreen
 ```
 
 7. Install psutil:
