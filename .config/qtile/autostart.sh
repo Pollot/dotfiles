@@ -4,4 +4,7 @@
 picom &
 
 # Authentication agent
-lxsession
+lxsession &
+
+# Lock screen
+xss-lock betterlockscreen -l
