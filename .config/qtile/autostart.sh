@@ -7,4 +7,4 @@ picom &
 lxsession &
 
 # Lock screen
-xss-lock betterlockscreen -l
+xss-lock -- betterlockscreen -l
