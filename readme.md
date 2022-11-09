@@ -142,7 +142,7 @@ cd
 6. Install AUR packages (don't remove qtile-extras build dependencies):
 ```
 yay -S qtile-extras-git picom-git catppuccin-gtk-theme-mocha qt5-styleplugins \
-betterlockscreen
+xss-lock betterlockscreen
 ```
 
 7. Install psutil:
@@ -180,11 +180,6 @@ reboot
 3. Use lxappearance to change your GTK and cursor theme.
 
 4. Use nvidia-settings to change your displays configuration.
-
-5. Enable lock screen:
-```
-sudo systemctl enable betterlockscreen@$USER
-```
 
 ### Optional
 Enable automatic unlocking gnome-keyring on login. Edit ```/etc/pam.d/login``` with root priviligies and add the following lines ([full guide](https://wiki.archlinux.org/title/GNOME/Keyring)):
