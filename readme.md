@@ -181,6 +181,11 @@ reboot
 
 4. Use nvidia-settings to change your displays configuration.
 
+5. Enable lock screen:
+```
+sudo systemctl enable betterlockscreen@$USER
+```
+
 ### Optional
 Enable automatic unlocking gnome-keyring on login. Edit ```/etc/pam.d/login``` with root priviligies and add the following lines ([full guide](https://wiki.archlinux.org/title/GNOME/Keyring)):
 ```
