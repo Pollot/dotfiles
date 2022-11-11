@@ -16,7 +16,10 @@
     - [Packages](#packages)
     - [Dotfiles](#dotfiles)
     - [Final steps](#final-steps)
-- [Recommended packages](#recommended-packages)
+- [Post installation](#post-installation)
+- [Optional software](#optional-software)
+    - [Recommended packages](#recommended-packages)
+    - [Gaming](#gaming)
 
 # List of software
 - Window manager: [Qtile](#qtile)
@@ -176,7 +179,7 @@ reboot
 
 4. Use lxappearance to change your GTK and cursor theme.
 
-### Post install
+# Post installation
 1. Set Xorg keyboard layout:
 ```
 setxkbmap -layout [layout]
@@ -198,21 +201,51 @@ session    optional     pam_gnome_keyring.so auto_start
 password   optional     pam_gnome_keyring.so
 ```
 
-# Recommended packages
+# Optional software
+
+### Recommended packages
+
 - Flatpak: [flatpak](https://flatpak.org/setup/Arch)
 - Nvidia VA-API driver: [libva-nvidia-driver](https://aur.archlinux.org/packages/libva-nvidia-driver)<sup>AUR</sup>
 - Disk utility: [gnome-disk-utility](https://archlinux.org/packages/extra/x86_64/gnome-disk-utility/)
-- GUI file manager: [nemo](https://wiki.archlinux.org/title/Nemo) (with [nemo-fileroller](https://archlinux.org/packages/?name=nemo-fileroller) extension)
+- GUI file manager: [nemo](https://wiki.archlinux.org/title/Nemo), [nemo-fileroller](https://archlinux.org/packages/?name=nemo-fileroller)
 - TUI file manager: [lf](https://archlinux.org/packages/community/x86_64/lf/)
 - Text/Code editor: [visual-studio-code-bin](https://aur.archlinux.org/packages/visual-studio-code-bin)<sup>AUR</sup>
 - Password manager: [keepassxc](https://archlinux.org/packages/community/x86_64/keepassxc/)
 - Github client: [github-cli](https://archlinux.org/packages/community/x86_64/github-cli/)
-- Communication: [signal-desktop](https://archlinux.org/packages/community/x86_64/signal-desktop/)
+- Communication: [discord](https://wiki.archlinux.org/title/Discord), [signal-desktop](https://archlinux.org/packages/community/x86_64/signal-desktop/)
 
-Installation of **all** recommended packages:
+Installation:
 ```
 sudo pacman -S flatpak gnome-disk-utility nemo nemo-fileroller lf keepassxc github-cli \
-signal-desktop
+discord signal-desktop
 
 yay -S libva-nvidia-driver visual-studio-code-bin
+```
+
+### Gaming
+
+Recommended packages:
+- [steam](https://wiki.archlinux.org/title/steam)
+- [lutris](https://archlinux.org/packages/community/any/lutris/)
+- [ProtonUp-Qt](https://flathub.org/apps/details/net.davidotek.pupgui2)
+- [xone-dkms](https://aur.archlinux.org/packages/xone-dkms)<sup>AUR</sup> (requires [linux-headers](https://archlinux.org/packages/core/x86_64/linux-headers/))
+
+Installation:
+```
+sudo pacman -S steam lutris linux-headers
+
+yay -S xone-dkms
+
+flatpak install flathub net.davidotek.pupgui2
+```
+
+Lutris wine dependencies:
+```
+sudo pacman -S --needed wine-staging giflib lib32-giflib libpng lib32-libpng libldap lib32-libldap gnutls lib32-gnutls \
+mpg123 lib32-mpg123 openal lib32-openal v4l-utils lib32-v4l-utils libpulse lib32-libpulse libgpg-error \
+lib32-libgpg-error alsa-plugins lib32-alsa-plugins alsa-lib lib32-alsa-lib libjpeg-turbo lib32-libjpeg-turbo \
+sqlite lib32-sqlite libxcomposite lib32-libxcomposite libxinerama lib32-libgcrypt libgcrypt lib32-libxinerama \
+ncurses lib32-ncurses ocl-icd lib32-ocl-icd libxslt lib32-libxslt libva lib32-libva gtk3 \
+lib32-gtk3 gst-plugins-base-libs lib32-gst-plugins-base-libs vulkan-icd-loader lib32-vulkan-icd-loader
 ```
