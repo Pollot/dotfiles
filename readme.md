@@ -84,9 +84,10 @@ I use **Fira Code Nerd Font Mono**. You can download its latest release from: [N
 ### Basic configuration
 1. Install Arch using the [official installation guide](https://wiki.archlinux.org/title/installation_guide).
 
-2. Create a user and add it to the wheel group:
+2. Enable multilib repository (required for 32-bit software and libraries on 64-bit installs). Uncomment the ```[multilib]``` section in ```/etc/pacman.conf```:
 ```
-useradd -mG wheel [username]
+[multilib]
+Include = /etc/pacman.d/mirrorlist
 ```
 
 3. Uncomment the following line in ```/etc/sudoers``` to allow members of the wheel group to use sudo:
@@ -94,18 +95,17 @@ useradd -mG wheel [username]
 %wheel ALL=(ALL:ALL) ALL
 ```
 
-4. Set user's password:
+4. Create a user and add it to the wheel group:
+```
+useradd -mG wheel [username]
+```
+
+5. Set user's password:
 ```
 passwd [username]
 ```
 
-5. Log out from the root account and log into the newly created one.
-
-6. Enable multilib repository (required for 32-bit software and libraries on 64-bit installs). Uncomment the [multilib] section in ```/etc/pacman.conf```:
-```
-[multilib]
-Include = /etc/pacman.d/mirrorlist
-```
+6. Log out from the root account and log into the newly created one.
 
 ### Packages
 1. Update system:
@@ -126,9 +126,9 @@ pipewire-jack lib32-pipewire-jack wireplumber
 
 4. Install basic packages:
 ```
-sudo pacman -S xorg-server xorg-xinit qtile git zsh kitty starship firefox rofi neofetch \
-alsa-utils pavucontrol flameshot htop gnome-keyring lxsession-gtk3 lxappearance dunst \
-pacman-contrib xss-lock
+sudo pacman -S xorg-server xorg-xinit git zsh kitty starship firefox rofi neofetch alsa-utils \
+pavucontrol flameshot htop gnome-keyring lxsession-gtk3 lxappearance dunst pacman-contrib \
+xss-lock
 ```
 
 5. Install AUR helper *yay* :
@@ -139,18 +139,13 @@ makepkg -si
 cd
 ```
 
-6. Install AUR packages (don't remove qtile-extras build dependencies):
+6. Install AUR packages:
 ```
-yay -S qtile-extras-git picom-git catppuccin-gtk-theme-mocha qt5-styleplugins \
+yay -S qtile-git qtile-extras-git picom-git catppuccin-gtk-theme-mocha qt5-styleplugins \
 betterlockscreen
 ```
 
-7. Install psutil:
-```
-pip install psutil
-```
-
-8. Install drivers. On Nvidia graphics card follow [this guide](https://wiki.archlinux.org/title/NVIDIA). **For the Maxwell (NV110/GMXXX) series and newer:**
+7. Install drivers. On Nvidia graphics card follow [this guide](https://wiki.archlinux.org/title/NVIDIA). **For the Maxwell (NV110/GMXXX) series and newer:**
 ```
 sudo pacman -S nvidia nvidia-settings lib32-nvidia-utils
 ```
@@ -177,12 +172,12 @@ reboot
 
 2. X server session should automatically start up after logging in.
 
-3. Use lxappearance to change your GTK and cursor theme.
+3. Use nvidia-settings to change your displays configuration.
 
-4. Use nvidia-settings to change your displays configuration.
+4. Use lxappearance to change your GTK and cursor theme.
 
 ### Optional
-Enable automatic unlocking gnome-keyring on login. Edit ```/etc/pam.d/login``` with root priviligies and add the following lines ([full guide](https://wiki.archlinux.org/title/GNOME/Keyring)):
+1. Enable automatic unlocking gnome-keyring on login. Edit ```/etc/pam.d/login``` with root priviligies and add the following lines ([full guide](https://wiki.archlinux.org/title/GNOME/Keyring)):
 ```
 auth       optional     pam_gnome_keyring.so
 
@@ -193,6 +188,15 @@ password   optional     pam_gnome_keyring.so
 
 # Recommended packages
 - Disk utility: [gnome-disk-utility](https://archlinux.org/packages/extra/x86_64/gnome-disk-utility/)
-- GUI file manager: [nemo](https://wiki.archlinux.org/title/Nemo) (and [nemo-fileroller](https://archlinux.org/packages/?name=nemo-fileroller) extension)
+- GUI file manager: [nemo](https://wiki.archlinux.org/title/Nemo) (with [nemo-fileroller](https://archlinux.org/packages/?name=nemo-fileroller) extension)
 - TUI file manager: [lf](https://archlinux.org/packages/community/x86_64/lf/)
 - Text/Code editor: [visual-studio-code-bin](https://aur.archlinux.org/packages/visual-studio-code-bin)<sup>AUR</sup>
+- Password manager: [keepassxc](https://archlinux.org/packages/community/x86_64/keepassxc/)
+- Github client: [github-cli](https://archlinux.org/packages/community/x86_64/github-cli/)
+
+Installation of **all** recommended packages:
+```
+sudo pacman -S gnome-disk-utility nemo nemo-fileroller lf keepassxc github-cli
+
+yay -S visual-studio-code-bin
+```
