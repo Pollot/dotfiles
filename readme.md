@@ -207,10 +207,12 @@ password   optional     pam_gnome_keyring.so
 - Text/Code editor: [visual-studio-code-bin](https://aur.archlinux.org/packages/visual-studio-code-bin)<sup>AUR</sup>
 - Password manager: [keepassxc](https://archlinux.org/packages/community/x86_64/keepassxc/)
 - Github client: [github-cli](https://archlinux.org/packages/community/x86_64/github-cli/)
+- Communication: [signal-desktop](https://archlinux.org/packages/community/x86_64/signal-desktop/)
 
 Installation of **all** recommended packages:
 ```
-sudo pacman -S flatpak gnome-disk-utility nemo nemo-fileroller lf keepassxc github-cli
+sudo pacman -S flatpak gnome-disk-utility nemo nemo-fileroller lf keepassxc github-cli \
+signal-desktop
 
 yay -S libva-nvidia-driver visual-studio-code-bin
 ```
