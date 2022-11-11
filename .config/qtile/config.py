@@ -34,8 +34,22 @@
 import os
 import subprocess
 
-from libqtile import bar, layout, widget, hook, qtile
-from libqtile.config import Click, Drag, Group, Key, Match, Rule, Screen
+from libqtile import (
+    bar,
+    layout,
+    widget,
+    hook,
+    qtile,
+)
+from libqtile.config import (
+    Click,
+    Drag,
+    Group,
+    Key,
+    Match,
+    Rule,
+    Screen,
+)
 from libqtile.lazy import lazy
 
 from qtile_extras import widget
@@ -317,8 +331,6 @@ for i in groups:
                 ),
         ]
     )
-
-dgroups_key_binder = None
 
 # Moves windows to chosen groups
 dgroups_app_rules = [
@@ -749,9 +761,6 @@ auto_minimize = False
 focus_on_window_activation = "smart"
 
 reconfigure_screens = True
-
-# When using the Wayland backend, this can be used to configure input devices.
-wl_input_rules = None
 
 wmname = "Qtile"
 
