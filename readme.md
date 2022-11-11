@@ -176,7 +176,7 @@ reboot
 
 4. Use lxappearance to change your GTK and cursor theme.
 
-### Optional
+### Post install
 1. Set Xorg keyboard layout:
 ```
 setxkbmap -layout [layout]
