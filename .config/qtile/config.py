@@ -325,6 +325,7 @@ dgroups_app_rules = [
     Rule(Match(wm_class="firefox"), group="3"),
     Rule(Match(wm_class="keepassxc"), group="4"),
     Rule(Match(wm_class="lutris"), group="5"),
+    Rule(Match(wm_class="steam"), group="5"),
     Rule(Match(wm_class="discord"), group="6"),
 ]
 
