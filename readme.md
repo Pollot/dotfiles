@@ -187,7 +187,7 @@ setxkbmap -layout [layout]
 sudo pacman -S reflector
 sudo systemctl enable reflector.service
 ```
-Reflector service parameters are specified in ```/etc/xdg/reflector/reflector.conf```.
+Reflector service parameters are specified in ```/etc/xdg/reflector/reflector.conf```. Customize it to your preference.
 
 3. Enable automatic unlocking gnome-keyring on login. Edit ```/etc/pam.d/login``` with root priviligies and add the following lines ([full guide](https://wiki.archlinux.org/title/GNOME/Keyring)):
 ```
