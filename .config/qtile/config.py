@@ -518,6 +518,13 @@ def window_name():
     )
 
 
+def separator():
+    return widget.Sep(
+        background=transparent,
+        padding=20,
+    )
+
+
 ########################
 #### Normal Widgets ####
 ########################
@@ -667,7 +674,7 @@ def widgets_screen1():
 
         spacer_rounded, current_layout_icon(), spacer_normal, group_box(),
 
-        systray(), spacer_transparent, tasklist(),
+        systray(), separator(), tasklist(),
 
         spacer_stretch, window_name(), spacer_stretch,
 
@@ -688,7 +695,8 @@ def widgets_screen1():
 
 def widgets_screen2():
     widgets = widgets_screen1()
-    del widgets[6]  # remove systray
+    del widgets[6:8]  # remove systray and separator
+    widgets.insert(6, spacer_transparent)  # add spacer before tasklist
     return widgets
 
 
