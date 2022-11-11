@@ -87,8 +87,9 @@ lockscreen = "betterlockscreen -l"
 
 gap_size = 8
 font_size = 16
-icon_size = 22
-icon_size2 = 26  # group and weather icons
+icon_small = 20
+icon_normal = 22
+icon_big = 26  # group and weather icons
 
 font_default = "Open Sans"
 font_nerd = "FiraCode Nerd Font Mono"
@@ -466,7 +467,7 @@ def group_box():
         padding=6,
         margin_y=5,
         font=font_nerd,
-        fontsize=icon_size2,
+        fontsize=icon_big,
         highlight_method="line",
         active=text,
         inactive=overlay0,
@@ -483,8 +484,8 @@ def group_box():
 def systray():
     return widget.Systray(
         background=transparent,
-        icon_size=icon_size,
-        padding=15,
+        icon_size=icon_small,
+        padding=10,
     )
 
 
@@ -498,9 +499,9 @@ def tasklist():
         border=None,
         padding=4,
         margin=-2,
-        icon_size=icon_size,
+        icon_size=icon_small,
         font=font_nerd,
-        fontsize=icon_size,
+        fontsize=icon_small,
         txt_floating="禎",
         txt_maximized="",
         txt_minimized="",
@@ -521,7 +522,7 @@ def window_name():
 def separator():
     return widget.Sep(
         background=transparent,
-        padding=20,
+        padding=10,
     )
 
 
@@ -536,7 +537,7 @@ volume_text = widget.TextBox(
     foreground=mauve,
     text="墳",
     font=font_nerd,
-    fontsize=icon_size,
+    fontsize=icon_normal,
     mouse_callbacks={"Button1": lazy.spawn(
         "amixer set Master toggle")},
 )
@@ -552,7 +553,7 @@ updates_text = widget.TextBox(
     foreground=blue,
     text="ﮮ",
     font=font_nerd,
-    fontsize=icon_size,
+    fontsize=icon_normal,
 )
 
 updates = widget.CheckUpdates(
@@ -570,7 +571,7 @@ memory_text = widget.TextBox(
     foreground=green,
     text="",
     font=font_nerd,
-    fontsize=icon_size,
+    fontsize=icon_normal,
 )
 
 memory = widget.Memory(
@@ -588,7 +589,7 @@ owm_text = widget.OpenWeather(
     format="{icon}",
     weather_symbols=owm_symbols,
     font=font_nerd,
-    fontsize=icon_size2,
+    fontsize=icon_big,
 )
 
 owm = widget.OpenWeather(
@@ -604,7 +605,7 @@ calendar_text = widget.TextBox(
     foreground=peach,
     text="",
     font=font_nerd,
-    fontsize=icon_size,
+    fontsize=icon_normal,
 )
 
 calendar = widget.Clock(
@@ -618,7 +619,7 @@ clock_text = widget.TextBox(
     foreground=red,
     text="",
     font=font_nerd,
-    fontsize=icon_size,
+    fontsize=icon_normal,
 )
 
 clock = widget.Clock(
