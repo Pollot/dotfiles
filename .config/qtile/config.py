@@ -34,8 +34,8 @@
 import os
 import subprocess
 
-from libqtile import bar, layout, widget, hook
-from libqtile.config import Click, Drag, Group, Key, Match, Screen
+from libqtile import bar, layout, widget, hook, qtile
+from libqtile.config import Click, Drag, Group, Key, Match, Rule, Screen
 from libqtile.lazy import lazy
 
 from qtile_extras import widget
@@ -317,6 +317,22 @@ for i in groups:
                 ),
         ]
     )
+
+dgroups_key_binder = None
+
+# Moves windows to chosen groups
+dgroups_app_rules = [
+    Rule(Match(wm_class="firefox"), group="3"),
+    Rule(Match(wm_class="keepassxc"), group="4"),
+    Rule(Match(wm_class="lutris"), group="5"),
+    Rule(Match(wm_class="discord"), group="6"),
+]
+
+
+@hook.subscribe.client_managed
+def auto_switch(window):
+    if window.group.name != qtile.current_group.name:
+        window.group.cmd_toscreen()
 
 
 #########################
@@ -720,9 +736,6 @@ floating_layout = layout.Floating(
 #########################
 ######### Rules #########
 #########################
-
-dgroups_key_binder = None
-dgroups_app_rules = []  # type: list
 
 bring_front_click = "floating_only"
 
