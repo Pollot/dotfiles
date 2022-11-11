@@ -300,9 +300,9 @@ keys = [
 
 groups = [
     Group("1", label="", layout="monadtall"),
-    Group("2", label="", layout="monadtall"),
+    Group("2", label="", layout="monadtall"),
     Group("3", label="", layout="monadtall"),
-    Group("4", label="", layout="monadtall"),
+    Group("4", label="ﳳ", layout="max"),
     Group("5", label="調", layout="max"),
     Group("6", label="ﭮ", layout="max"),
 ]
