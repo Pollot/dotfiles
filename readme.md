@@ -199,6 +199,8 @@ password   optional     pam_gnome_keyring.so
 ```
 
 # Recommended packages
+- Flatpak: [flatpak](https://flatpak.org/setup/Arch)
+- Nvidia VA-API driver: [libva-nvidia-driver](https://aur.archlinux.org/packages/libva-nvidia-driver)<sup>AUR</sup>
 - Disk utility: [gnome-disk-utility](https://archlinux.org/packages/extra/x86_64/gnome-disk-utility/)
 - GUI file manager: [nemo](https://wiki.archlinux.org/title/Nemo) (with [nemo-fileroller](https://archlinux.org/packages/?name=nemo-fileroller) extension)
 - TUI file manager: [lf](https://archlinux.org/packages/community/x86_64/lf/)
@@ -208,7 +210,7 @@ password   optional     pam_gnome_keyring.so
 
 Installation of **all** recommended packages:
 ```
-sudo pacman -S gnome-disk-utility nemo nemo-fileroller lf keepassxc github-cli
+sudo pacman -S flatpak gnome-disk-utility nemo nemo-fileroller lf keepassxc github-cli
 
-yay -S visual-studio-code-bin
+yay -S libva-nvidia-driver visual-studio-code-bin
 ```
