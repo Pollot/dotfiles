@@ -177,7 +177,19 @@ reboot
 4. Use lxappearance to change your GTK and cursor theme.
 
 ### Optional
-1. Enable automatic unlocking gnome-keyring on login. Edit ```/etc/pam.d/login``` with root priviligies and add the following lines ([full guide](https://wiki.archlinux.org/title/GNOME/Keyring)):
+1. Set Xorg keyboard layout:
+```
+setxkbmap -layout [layout]
+```
+
+2. Install and enable [reflector](https://wiki.archlinux.org/title/reflector):
+```
+sudo pacman -S reflector
+sudo systemctl enable reflector.service
+```
+Reflector service parameters are specified in ```/etc/xdg/reflector/reflector.conf```.
+
+3. Enable automatic unlocking gnome-keyring on login. Edit ```/etc/pam.d/login``` with root priviligies and add the following lines ([full guide](https://wiki.archlinux.org/title/GNOME/Keyring)):
 ```
 auth       optional     pam_gnome_keyring.so
 
