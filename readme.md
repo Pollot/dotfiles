@@ -228,11 +228,13 @@ Then open printer configuration software and add your printer.
 - Github client: [github-cli](https://archlinux.org/packages/community/x86_64/github-cli/)
 - Communication: [discord](https://wiki.archlinux.org/title/Discord), [signal-desktop](https://archlinux.org/packages/community/x86_64/signal-desktop/)
 - Office suite: [libreoffice-fresh](https://wiki.archlinux.org/title/LibreOffice)
+- Graphic design: [gimp](https://wiki.archlinux.org/title/GIMP)
+- Video editing: [kdenlive](https://archlinux.org/packages/extra/x86_64/kdenlive/)
 
 Installation:
 ```
 sudo pacman -S flatpak gnome-disk-utility nemo nemo-fileroller lf keepassxc github-cli \
-discord signal-desktop
+discord signal-desktop libreoffice-fresh gimp kdenlive
 
 yay -S libva-nvidia-driver visual-studio-code-bin
 ```
