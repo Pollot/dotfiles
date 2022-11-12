@@ -547,7 +547,6 @@ volume = widget.Volume(
     foreground=mauve,
     volume_app=terminal + " -e " + audio,
     mouse_callbacks={"Button1": lazy.spawn(audio2)},
-    # decorations=[rounded("left")],
 )
 
 updates_text = widget.TextBox(
@@ -565,7 +564,6 @@ updates = widget.CheckUpdates(
     no_update_string="Up to date",
     display_format="{updates}",
     execute=terminal + " -e sudo pacman -Syu",
-    # decorations=[rounded("left")],
 )
 
 memory_text = widget.TextBox(
@@ -580,7 +578,6 @@ memory = widget.Memory(
     format="{MemPercent:.0f}%",
     mouse_callbacks={"Button1": lazy.spawn(
         terminal + " -e " + process_monitor)},
-    # decorations=[rounded("left")],
 )
 
 owm_text = widget.OpenWeather(
@@ -599,7 +596,6 @@ owm = widget.OpenWeather(
     app_key=owm_api,
     format="{main_temp:.0f}°{units_temperature}",
     mouse_callbacks={"Button1": lazy.spawn(weather_app)},
-    # decorations=[rounded("left")],
 )
 
 calendar_text = widget.TextBox(
@@ -613,7 +609,6 @@ calendar = widget.Clock(
     foreground=peach,
     format="%a, %b %-d",
     mouse_callbacks={"Button1": lazy.spawn(calendar_app)},
-    # decorations=[rounded("left")],
 )
 
 clock_text = widget.TextBox(
@@ -648,7 +643,7 @@ spacer_rounded = widget.Spacer(
 )
 
 spacer_normal = widget.Spacer(
-    length=10,
+    length=20,
 )
 
 spacer_small = widget.Spacer(
@@ -674,7 +669,7 @@ def widgets_screen1():
     widgets = [
         spacer_left, current_screen(),
 
-        spacer_rounded, current_layout_icon(), spacer_normal, group_box(),
+        spacer_rounded, current_layout_icon(), spacer_small, group_box(),
 
         systray(), separator(), tasklist(),
 
