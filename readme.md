@@ -227,6 +227,7 @@ Then open printer configuration software and add your printer.
 - Password manager: [keepassxc](https://archlinux.org/packages/community/x86_64/keepassxc/)
 - Github client: [github-cli](https://archlinux.org/packages/community/x86_64/github-cli/)
 - Communication: [discord](https://wiki.archlinux.org/title/Discord), [signal-desktop](https://archlinux.org/packages/community/x86_64/signal-desktop/)
+- Office suite: [libreoffice-fresh](https://wiki.archlinux.org/title/LibreOffice)
 
 Installation:
 ```
