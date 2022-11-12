@@ -137,8 +137,11 @@ xss-lock
 5. Install AUR helper *yay* :
 ```
 git clone https://aur.archlinux.org/yay
+
 cd yay
+
 makepkg -si
+
 cd
 ```
 
@@ -163,6 +166,7 @@ git clone https://github.com/Pollot/dotfiles
 2. Install dotfiles:
 ```
 cd dotfiles/installation
+
 ./install-full.sh
 ```
 
@@ -188,7 +192,8 @@ setxkbmap -layout [layout]
 2. Install and enable [reflector](https://wiki.archlinux.org/title/reflector):
 ```
 sudo pacman -S reflector
-sudo systemctl enable reflector.service
+
+sudo systemctl enable reflector
 ```
 Reflector service parameters are specified in ```/etc/xdg/reflector/reflector.conf```. Customize it to your preference.
 
@@ -200,6 +205,14 @@ session    optional     pam_gnome_keyring.so auto_start
 
 password   optional     pam_gnome_keyring.so
 ```
+
+4. Configure your printer. Install required packages:
+```
+sudo pacman -S cups system-config-printer
+
+sudo systemctl enable cups
+```
+Then open printer configuration software and add your printer.
 
 # Optional software
 
@@ -225,7 +238,6 @@ yay -S libva-nvidia-driver visual-studio-code-bin
 
 ### Gaming
 
-Recommended packages:
 - [steam](https://wiki.archlinux.org/title/steam)
 - [lutris](https://archlinux.org/packages/community/any/lutris/)
 - [ProtonUp-Qt](https://flathub.org/apps/details/net.davidotek.pupgui2)
