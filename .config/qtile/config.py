@@ -335,6 +335,7 @@ for i in groups:
 
 # Moves windows to chosen groups
 dgroups_app_rules = [
+    Rule(Match(wm_class="code"), group="2"),
     Rule(Match(wm_class="firefox"), group="3"),
     Rule(Match(wm_class="keepassxc"), group="4"),
     Rule(Match(wm_class="lutris"), group="5"),
