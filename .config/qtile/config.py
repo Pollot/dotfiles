@@ -162,7 +162,7 @@ keys = [
         desc="Toggle between layouts"
         ),
     # Qtile
-    Key([mod, "shift"], "q",
+    Key([mod, "control", "shift"], "q",
         lazy.shutdown(),
         desc="Shutdown Qtile"
         ),
