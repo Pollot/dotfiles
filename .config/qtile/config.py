@@ -682,15 +682,15 @@ def widgets_screen1():
 
         spacer_rounded, volume_text, spacer_small, volume,
 
-        spacer_rounded, updates_text, spacer_small, updates,
+        spacer_normal, updates_text, spacer_small, updates,
 
-        spacer_rounded, memory_text, spacer_small, memory,
+        spacer_normal, memory_text, spacer_small, memory,
 
-        spacer_rounded, owm_text, spacer_small, owm,
+        spacer_normal, owm_text, spacer_small, owm,
 
-        spacer_rounded, calendar_text, spacer_small, calendar,
+        spacer_normal, calendar_text, spacer_small, calendar,
 
-        spacer_rounded, clock_text, spacer_small, clock,
+        spacer_normal, clock_text, spacer_small, clock,
     ]
     return widgets
 
