@@ -89,32 +89,31 @@ I use **Fira Code Nerd Font Mono**. You can download its latest release from: [N
 <h1 align="center">Arch</h1>
 
 # Installation
+Install Arch using the [official installation guide](https://wiki.archlinux.org/title/installation_guide).
 
 ### Basic configuration
-1. Install Arch using the [official installation guide](https://wiki.archlinux.org/title/installation_guide).
-
-2. Enable multilib repository (required for 32-bit software and libraries on 64-bit installs). Uncomment the ```[multilib]``` section in ```/etc/pacman.conf```:
+1. Enable multilib repository (required for 32-bit software and libraries on 64-bit installs). Uncomment the ```[multilib]``` section in ```/etc/pacman.conf```:
 ```
 [multilib]
 Include = /etc/pacman.d/mirrorlist
 ```
 
-3. Uncomment the following line in ```/etc/sudoers``` to allow members of the wheel group to use sudo:
+2. Uncomment the following line in ```/etc/sudoers``` to allow members of the wheel group to use sudo:
 ```
 %wheel ALL=(ALL:ALL) ALL
 ```
 
-4. Create a user and add it to the wheel group:
+3. Create a user and add it to the wheel group:
 ```
 useradd -mG wheel [username]
 ```
 
-5. Set user's password:
+4. Set user's password:
 ```
 passwd [username]
 ```
 
-6. Log out from the root account and log into the newly created one.
+5. Log out from the root account and log into the newly created one.
 
 ### Packages
 1. Update system:
