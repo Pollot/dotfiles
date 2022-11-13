@@ -173,7 +173,7 @@ git clone https://github.com/Pollot/dotfiles
 ```
 cd dotfiles/installation
 
-./install-full.sh
+./install-arch.sh
 ```
 
 ### Final steps
