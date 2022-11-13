@@ -27,15 +27,10 @@
 - Launcher: [Rofi](#rofi)
 - Fetch: [Neofetch](https://github.com/dylanaraps/neofetch)
 - Notifications: [Dunst](https://dunst-project.org/)
-- Nerd Font: [Fira Code](#nerd-font)
+- Nerd font: [Fira Code](#nerd-font)
 - Bootloader: [Grub](#grub)
 
-## Catppuccin
-Catppuccin is a community-driven pastel theme that aims to be the middle ground between low and high contrast themes. It consists of 4 soothing warm palettes with 26 eye-candy colors each, perfect for coding, designing, and much more!
-- [Official repository](https://github.com/catppuccin/catppuccin)
-- [Project's documentation](https://github.com/catppuccin/catppuccin/tree/dev/docs)
 
-I use **Catppuccin Mocha** palette in my configurations.
 ## Qtile
 #### Information:
 - [Official website](http://www.qtile.org/)
@@ -43,9 +38,15 @@ I use **Catppuccin Mocha** palette in my configurations.
 - [Qtile extras documentation](https://qtile-extras.readthedocs.io/en/stable/index.html)
 #### Dependencies:
 - [Qtile extras](https://qtile-extras.readthedocs.io/en/stable/manual/install.html)
-- [Psutil](https://pypi.org/project/psutil/)
 - [Nerd font](#nerd-font)
 - [Open Sans font](https://fonts.google.com/specimen/Open+Sans)
+
+## Catppuccin
+Catppuccin is a community-driven pastel theme that aims to be the middle ground between low and high contrast themes. It consists of 4 soothing warm palettes with 26 eye-candy colors each, perfect for coding, designing, and much more!
+- [Official repository](https://github.com/catppuccin/catppuccin)
+- [Project's documentation](https://github.com/catppuccin/catppuccin/tree/dev/docs)
+
+I use **Catppuccin Mocha** palette in my configurations.
 
 ## Wallpapers
 [Official repository](https://github.com/catppuccin/wallpapers). Wallpapers I use:
@@ -73,7 +74,7 @@ I use **Fira Code Nerd Font Mono**. You can download its latest release from: [N
 **<p align="center">Remember to install the mono variant of chosen Nerd Font. Icons are not centered in the regular version.</p>**
 
 ## Grub
-**Not included in my repository**. I use: [Catppuccin for Grub](https://github.com/catppuccin/grub).
+**Not included in my repository**. I use [Catppuccin for Grub](https://github.com/catppuccin/grub).
 
 # [Installation on Fedora](installation/fedora.md)
 
