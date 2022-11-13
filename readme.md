@@ -11,15 +11,17 @@
     - [Rofi](#rofi)
     - [Nerd Font](#nerd-font)
     - [Grub](#grub)
-- [Installation on Arch](#installation-on-arch)
-    - [Basic configuration](#basic-configuration)
-    - [Packages](#packages)
-    - [Dotfiles](#dotfiles)
-    - [Final steps](#final-steps)
-- [Post installation](#post-installation)
-- [Optional software](#optional-software)
-    - [Recommended packages](#recommended-packages)
-    - [Gaming](#gaming)
+- Arch
+    - [Installation](#installation)
+        - [Basic configuration](#basic-configuration)
+        - [Packages](#packages)
+        - [Dotfiles](#dotfiles)
+        - [Final steps](#final-steps)
+    - [Post installation](#post-installation)
+    - [Optional software](#optional-software)
+        - [Recommended packages](#recommended-packages)
+        - [Gaming](#gaming)
+- Fedora
 
 # List of software
 - Window manager: [Qtile](#qtile)
@@ -82,7 +84,11 @@ I use **Fira Code Nerd Font Mono**. You can download its latest release from: [N
 ## Grub
 **Not included in my repository**. I use: [Catppuccin for Grub](https://github.com/catppuccin/grub).
 
-# Installation on Arch
+---
+
+<h1 align="center">Arch</h1>
+
+# Installation
 
 ### Basic configuration
 1. Install Arch using the [official installation guide](https://wiki.archlinux.org/title/installation_guide).
@@ -184,9 +190,9 @@ reboot
 4. Use lxappearance to change your GTK and cursor theme.
 
 # Post installation
-1. Set Xorg keyboard layout:
+1. Change X11 keyboard layout in autostart.sh:
 ```
-setxkbmap -layout [layout]
+setxkbmap [your layout]
 ```
 
 2. Install and enable [reflector](https://wiki.archlinux.org/title/reflector):
@@ -264,3 +270,7 @@ sqlite lib32-sqlite libxcomposite lib32-libxcomposite libxinerama lib32-libgcryp
 ncurses lib32-ncurses ocl-icd lib32-ocl-icd libxslt lib32-libxslt libva lib32-libva gtk3 \
 lib32-gtk3 gst-plugins-base-libs lib32-gst-plugins-base-libs vulkan-icd-loader lib32-vulkan-icd-loader
 ```
+
+---
+
+<h1 align="center">Fedora</h1>
