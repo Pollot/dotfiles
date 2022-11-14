@@ -108,7 +108,7 @@ reboot
 4. Use lxappearance to change your GTK and cursor theme.
 
 # Post installation
-1. Change X11 keyboard layout in autostart.sh:
+1. Change X11 keyboard layout in ```~/.config/X11/xinitrc```:
 ```
 setxkbmap [your layout]
 ```

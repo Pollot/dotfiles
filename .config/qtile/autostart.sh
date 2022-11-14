@@ -1,8 +1,5 @@
 #!/bin/sh
 
-# Keyboard layout
-setxkbmap pl &
-
 # Compositor
 picom &
 
