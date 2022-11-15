@@ -15,8 +15,6 @@ cp -r Wallpapers $HOME
 
 cp -r .icons $HOME
 
-cp bash/.bash_profile $HOME
-
 echo -e "\nConfiguration files installed.\n"
 
 
