@@ -20,9 +20,12 @@ You can read about full configuration options in the [DNF docs](https://dnf.read
 
 4. Install drivers. For Nvidia graphics card follow [this guide](https://rpmfusion.org/Howto/NVIDIA).
 
-5. [Configure Xorg as the default GNOME session](https://docs.fedoraproject.org/en-US/quick-docs/configuring-xorg-as-default-gnome-session/) if you don't use and plan to use Wayland.
+5. Configure Xorg as the default display server on GDM if you don't use and plan to use Wayland. Open ```/etc/gdm/custom.conf``` and uncomment the following line:
+```
+WaylandEnable=false
+```
 
-6. Change GDM monitors configuration if it's wrong ([forum post](https://ask.fedoraproject.org/t/login-screen-on-wrong-monitor/4242/3)):
+6. Change GDM monitors configuration if it's wrong:
 ```
 sudo cp ~/.config/monitors.xml /var/lib/gdm/.config/ 
 ```
