@@ -82,9 +82,9 @@ screenshot_gui = "flameshot gui"
 
 city_id = "756135"  # openweathermap.org/city/[city id]
 
-weather_app = "firefox https://openweathermap.org/city/" + city_id
-clock_app = "firefox https://www.timeanddate.com/worldclock/"
-calendar_app = "firefox https://calendar.google.com/calendar/"
+weather_app = "gnome-weather"
+clock_app = "gnome-clocks"
+calendar_app = "gnome-calendar"
 
 lockscreen = "betterlockscreen -l"
 
