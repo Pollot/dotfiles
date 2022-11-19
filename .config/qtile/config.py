@@ -53,9 +53,6 @@ from libqtile.config import (
 from libqtile.lazy import lazy
 
 from qtile_extras import widget
-from qtile_extras.widget.decorations import PowerLineDecoration
-from qtile_extras.widget.decorations import BorderDecoration
-from qtile_extras.widget.decorations import RectDecoration
 
 # OpenWeatherMap API key and symbols
 from owm import owm_api, owm_symbols
@@ -73,6 +70,12 @@ audio = "alsamixer"
 audio2 = "pavucontrol"
 process_monitor = "htop"
 notifications_history = "dunstctl history-pop"
+
+# Updates widget
+distro = "Fedora"
+update = "sudo dnf update"
+# distro="Arch_checkupdates"
+# update="sudo pacman -Syu"
 
 screenshot_full = "flameshot full"
 screenshot_gui = "flameshot gui"
@@ -133,6 +136,7 @@ crust = "#11111b"
 
 # Last 2 digits set alpha channel
 transparent = "#00000000"
+
 
 ##########################
 ######## Keybinds ########
@@ -386,39 +390,6 @@ layouts = [
 ]
 
 
-#########################
-###### Decorations ######
-#########################
-
-def arrow(path_user):
-    return PowerLineDecoration(path="arrow_"+path_user)
-
-
-def rounded(path_user):
-    return PowerLineDecoration(path="rounded_"+path_user)
-
-
-def slash(path_user):
-    return PowerLineDecoration(path=path_user+"_slash")
-
-
-def border():
-    return RectDecoration(
-        use_widget_background=True,
-        radius=10,
-        filled=True,
-        padding_y=4,
-        group=True,
-    )
-
-
-def underline(colour_user):
-    return BorderDecoration(
-        colour=colour_user,
-        border_width=[0, 0, 2, 0]
-    )
-
-
 ##########################
 #### Widgets defaults ####
 ##########################
@@ -450,7 +421,6 @@ def current_screen():
         font=font_nerd,
         fontsize=40,
         mouse_callbacks={"Button1": lazy.spawn(notifications_history)},
-        decorations=[rounded("left")],
     )
 
 
@@ -472,58 +442,36 @@ def group_box():
         highlight_method="line",
         active=text,
         inactive=overlay0,
-        highlight_color=[transparent, transparent],
+        highlight_color=[mantle, mantle],
         block_highlight_text_color=mauve,
         other_current_screen_border=mauve,
         other_screen_border=mantle,
         this_current_screen_border=mauve,
         this_screen_border=overlay0,
-        decorations=[rounded("left")],
     )
 
 
 def systray():
     return widget.Systray(
-        background=transparent,
         icon_size=icon_small,
         padding=10,
     )
-
-
-def no_text(text):
-    return ""
 
 
 def tasklist():
     return widget.TaskList(
-        background=transparent,
-        border=None,
-        padding=4,
-        margin=-2,
-        icon_size=icon_small,
-        font=font_nerd,
-        fontsize=icon_small,
-        txt_floating="禎",
-        txt_maximized="",
-        txt_minimized="",
-        parse_text=no_text,
-        urgent_border=transparent,
-    )
-
-
-def window_name():
-    return widget.WindowName(
-        background=transparent,
-        width=bar.CALCULATED,
-        format="{state} {name}",
-        max_chars=70,
-    )
-
-
-def separator():
-    return widget.Sep(
-        background=transparent,
+        highlight_method="block",
+        title_width_method="uniform",
+        border=surface0,
         padding=10,
+        margin_y=-6,
+        rounded=False,
+        icon_size=icon_small,
+        # font=font_nerd,
+        fontsize=font_size,
+        txt_floating=" 禎 ",
+        txt_maximized="  ",
+        txt_minimized="  ",
     )
 
 
@@ -554,16 +502,19 @@ updates_text = widget.TextBox(
     text="ﮮ",
     font=font_nerd,
     fontsize=icon_normal,
+    mouse_callbacks={"Button1": lazy.spawn(
+        terminal + " -e sudo pacman - Syu")},
 )
 
 updates = widget.CheckUpdates(
     colour_no_updates=blue,
     colour_have_updates=blue,
-    distro="Arch_checkupdates",
     update_interval=1800,
     no_update_string="Up to date",
     display_format="{updates}",
-    execute=terminal + " -e sudo pacman -Syu",
+    initial_text="Checking...",
+    distro=distro,
+    execute=terminal + " -e " + update,
 )
 
 memory_text = widget.TextBox(
@@ -622,7 +573,6 @@ clock = widget.Clock(
     foreground=red,
     format="%-H:%M:%S",
     mouse_callbacks={"Button1": lazy.spawn(clock_app)},
-    decorations=[rounded("left")],
 )
 
 
@@ -630,34 +580,16 @@ clock = widget.Clock(
 ######## Spacers ########
 #########################
 
-spacer_left = widget.Spacer(
-    background=transparent,
-    length=1,
-    decorations=[rounded("right")],
-)
-
-spacer_rounded = widget.Spacer(
-    background=transparent,
-    length=10,
-    decorations=[rounded("right")],
-)
-
 spacer_normal = widget.Spacer(
     length=20,
 )
 
-spacer_small = widget.Spacer(
-    length=6,
-)
-
-spacer_transparent = widget.Spacer(
-    background=transparent,
+spacer_medium = widget.Spacer(
     length=10,
 )
 
-spacer_stretch = widget.Spacer(
-    background=transparent,
-    length=bar.STRETCH,
+spacer_small = widget.Spacer(
+    length=6,
 )
 
 
@@ -667,15 +599,13 @@ spacer_stretch = widget.Spacer(
 
 def widgets_screen1():
     widgets = [
-        spacer_left, current_screen(),
+        # spacer_medium, current_screen(),
 
-        spacer_rounded, current_layout_icon(), spacer_small, group_box(),
+        spacer_medium, current_layout_icon(), spacer_small, group_box(),
 
-        systray(), separator(), tasklist(),
+        systray(), spacer_normal, tasklist(),
 
-        spacer_stretch, window_name(), spacer_stretch,
-
-        spacer_rounded, volume_text, spacer_small, volume,
+        spacer_normal, volume_text, spacer_small, volume,
 
         spacer_normal, updates_text, spacer_small, updates,
 
@@ -685,15 +615,15 @@ def widgets_screen1():
 
         spacer_normal, calendar_text, spacer_small, calendar,
 
-        spacer_normal, clock_text, spacer_small, clock,
+        spacer_normal, clock_text, spacer_small, clock, spacer_medium,
     ]
     return widgets
 
 
 def widgets_screen2():
     widgets = widgets_screen1()
-    del widgets[6:8]  # remove systray and separator
-    widgets.insert(6, spacer_transparent)  # add spacer before tasklist
+    del widgets[4:6]  # remove systray and normal spacer
+    widgets.insert(4, spacer_medium)  # add medium spacer before tasklist
     return widgets
 
 
@@ -708,8 +638,7 @@ screens = [
         top=bar.Bar(
             widgets_screen1(),
             32,
-            margin=[gap_size, gap_size, 0, gap_size],
-            background=transparent,
+            background=mantle,
         )
     ),
     Screen(
@@ -718,8 +647,7 @@ screens = [
         top=bar.Bar(
             widgets_screen2(),
             32,
-            margin=[gap_size, gap_size, 0, gap_size],
-            background=transparent,
+            background=mantle,
         )
     ),
 ]
@@ -736,7 +664,7 @@ mouse = [
     Drag([mod], "Button3",
          lazy.window.set_size_floating(),
          start=lazy.window.get_size()),
-    Click([mod], "Button2",
+    Click([mod], "Button1",
           lazy.window.bring_to_front()),
 ]
 
@@ -755,13 +683,13 @@ floating_layout = layout.Floating(
 ######### Rules #########
 #########################
 
-bring_front_click = "floating_only"
-
 follow_mouse_focus = True
 cursor_warp = False
 
 auto_fullscreen = True
 auto_minimize = False
+
+bring_front_click = True
 
 focus_on_window_activation = "smart"
 
