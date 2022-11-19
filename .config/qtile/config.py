@@ -466,12 +466,12 @@ def tasklist():
         padding=10,
         margin_y=-6,
         rounded=False,
-        icon_size=icon_small,
+        icon_size=0,
         # font=font_nerd,
         fontsize=font_size,
         txt_floating=" 禎 ",
-        txt_maximized="  ",
-        txt_minimized="  ",
+        txt_maximized=" ⤢ ",
+        txt_minimized=" ⚊ ",
     )
 
 
