@@ -95,16 +95,17 @@ cd dotfiles/installation
 ```
 
 ### Final steps
-1. Reboot:
+1. Reboot. X server session should automatically start up after logging in.
 ```
 reboot
 ```
 
-2. X server session should automatically start up after logging in.
+2. Use nvidia-settings to change your displays configuration. Save changes to X configuration file to preserve them (requires root privileges):
+```
+sudo nvidia-settings
+```
 
-3. Use nvidia-settings to change your displays configuration.
-
-4. Use lxappearance to change your GTK and cursor theme.
+3. Use lxappearance to change your GTK and cursor theme.
 
 # Post installation
 1. Change X11 keyboard layout in ```~/.config/X11/xinitrc-qtile```:
