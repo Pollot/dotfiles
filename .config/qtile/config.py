@@ -66,8 +66,8 @@ mod = "mod4"
 terminal = "kitty"
 browser = "firefox"
 menu = "rofi -show drun"
-audio = "alsamixer"
-audio2 = "pavucontrol"
+audio = "pavucontrol"
+audio2 = "alsamixer"
 process_monitor = "htop"
 notifications_history = "dunstctl history-pop"
 
@@ -493,8 +493,8 @@ volume_text = widget.TextBox(
 
 volume = widget.Volume(
     foreground=mauve,
-    volume_app=terminal + " -e " + audio,
-    mouse_callbacks={"Button1": lazy.spawn(audio2)},
+    volume_app=terminal + " -e " + audio2,
+    mouse_callbacks={"Button1": lazy.spawn(audio)},
 )
 
 updates_text = widget.TextBox(
