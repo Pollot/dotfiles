@@ -97,8 +97,8 @@ icon_big = 26  # group and weather icons
 font_default = "Open Sans"
 font_nerd = "JetBrainsMono Nerd Font Mono"
 
-wlp1 = "~/Wallpapers/landscape.jpg"
-wlp2 = "~/Wallpapers/cat.png"
+wlp1 = "~/Wallpapers/city.jpg"
+wlp2 = "~/Wallpapers/stardust.jpg"
 
 
 #########################
