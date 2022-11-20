@@ -84,14 +84,7 @@ sudo nvidia-settings
 3. Use lxappearance to change your GTK and cursor theme.
 
 # Post installation:
-Enable automatic unlocking gnome-keyring on login. Edit ```/etc/pam.d/login``` with root priviligies and add the following lines ([full guide](https://wiki.archlinux.org/title/GNOME/Keyring)):
-```
-auth       optional     pam_gnome_keyring.so
-
-session    optional     pam_gnome_keyring.so auto_start
-
-password   optional     pam_gnome_keyring.so
-```
+There's nothing here yet.
 
 # Optional software
 
