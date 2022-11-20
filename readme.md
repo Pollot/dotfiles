@@ -1,5 +1,7 @@
 # Screenshot
-<img src="screenshots/update1.png">
+<img src="screenshots/update2.png">
+
+[<p align="center">Screenshots of previous versions</p>](screenshots/screenshots.md)
 
 # Table of contents
 - [List of software](#list-of-software)
