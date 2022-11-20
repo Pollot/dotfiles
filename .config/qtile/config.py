@@ -95,9 +95,9 @@ icon_normal = 22
 icon_big = 26  # group and weather icons
 
 font_default = "Open Sans"
-font_nerd = "FiraCode Nerd Font Mono"
+font_nerd = "JetBrains Mono Nerd Font Mono"
 
-wlp1 = "~/Wallpapers/flatppuccin.png"
+wlp1 = "~/Wallpapers/landscape.jpg"
 wlp2 = "~/Wallpapers/cat.png"
 
 
@@ -603,9 +603,9 @@ def widgets_screen1():
 
         spacer_medium, current_layout_icon(), spacer_small, group_box(),
 
-        systray(), spacer_normal, tasklist(),
+        systray(), spacer_medium, tasklist(),
 
-        spacer_normal, volume_text, spacer_small, volume,
+        spacer_medium, volume_text, spacer_small, volume,
 
         spacer_normal, updates_text, spacer_small, updates,
 
@@ -622,8 +622,7 @@ def widgets_screen1():
 
 def widgets_screen2():
     widgets = widgets_screen1()
-    del widgets[4:6]  # remove systray and normal spacer
-    widgets.insert(4, spacer_medium)  # add medium spacer before tasklist
+    del widgets[4:6]  # remove systray and medium spacer
     return widgets
 
 
