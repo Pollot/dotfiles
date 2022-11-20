@@ -4,7 +4,7 @@
 picom &
 
 # Authentication agent
-lxsession &
+/usr/libexec/polkit-gnome-authentication-agent-1 &
 
 # Lock screen
-xss-lock -- betterlockscreen -l
+xss-lock -- i3lock -c 000000
