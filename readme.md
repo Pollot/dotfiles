@@ -49,14 +49,12 @@ Catppuccin is a community-driven pastel theme that aims to be the middle ground 
 I use **Catppuccin Mocha** palette in my configurations.
 
 ## Wallpapers
-[Official repository](https://github.com/catppuccin/wallpapers). Wallpapers I use:
-- Modified version (gimp file included) of [unicat](https://github.com/catppuccin/wallpapers/blob/main/minimalistic/black5_unicat.png) by [Pocco81](https://github.com/Pocco81)
-- [Flatppuccin](https://github.com/catppuccin/wallpapers/blob/main/flatppuccin/flatppuccin_4k_macchiato.png) by [Adal Zanabria](https://github.com/AdalZanabria)
+- [City](https://www.reddit.com/r/ImageGoNord/comments/xqbzjm/catppuccin_3840x2160_cityscape_synthwave_with/)
+- [Stardust](https://www.reddit.com/r/ImageGoNord/comments/thuant/catppuccin_stardust_1920x1080_with_imagegonord/)
 
 ## Picom
-There are a lot of Picom forks, but I decided to stick to the main one (made by [yshui](https://github.com/yshui)). However, the latest version is required. The easiest way to install it is by using the [AUR](https://aur.archlinux.org/).
+There are a lot of Picom forks, but I decided to stick to the main one (made by [yshui](https://github.com/yshui)). However, the latest version is required.
 - [Official repository](https://github.com/yshui/picom)
-- [AUR package](https://aur.archlinux.org/packages/picom-git)
 
 ## Zsh
 [Official website](https://www.zsh.org/). Plugins I use:
@@ -69,7 +67,7 @@ There are a lot of Picom forks, but I decided to stick to the main one (made by 
 I'm **not** an author of the Rofi config included in this repository. It's: [Catppuccin for Rofi - Siduck's Theme](https://github.com/catppuccin/rofi/tree/main/basic).
 
 ## Nerd Font
-I use **Fira Code Nerd Font Mono**. You can download its latest release from: [Nerd Fonts website](https://www.nerdfonts.com/font-downloads).
+I use **JetBrainsMono Nerd Font Mono**. You can download its latest release from: [Nerd Fonts website](https://www.nerdfonts.com/font-downloads).
 
 **<p align="center">Remember to install the mono variant of chosen Nerd Font. Icons are not centered in the regular version.</p>**
 
