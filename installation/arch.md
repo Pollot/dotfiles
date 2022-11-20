@@ -56,8 +56,8 @@ pipewire-jack lib32-pipewire-jack wireplumber
 4. Install basic packages:
 ```
 sudo pacman -S xorg-server xorg-xinit git zsh kitty starship firefox rofi neofetch alsa-utils \
-pavucontrol flameshot htop gnome-keyring lxsession-gtk3 lxappearance dunst pacman-contrib \
-xss-lock
+pavucontrol flameshot htop gnome-keyring polkit-gnome lxappearance dunst pacman-contrib \
+xss-lock i3lock gnome-clocks gnome-weather gnome-calendar
 ```
 
 5. Install AUR helper *yay* :
@@ -73,8 +73,7 @@ cd
 
 6. Install AUR packages:
 ```
-yay -S qtile-git qtile-extras-git picom-git catppuccin-gtk-theme-mocha qt5-styleplugins \
-betterlockscreen
+yay -S qtile-git qtile-extras-git picom-git qt5-styleplugins
 ```
 
 7. Install drivers. On Nvidia graphics card follow [this guide](https://wiki.archlinux.org/title/NVIDIA). **For the Maxwell (NV110/GMXXX) series and newer:**
@@ -108,7 +107,7 @@ reboot
 4. Use lxappearance to change your GTK and cursor theme.
 
 # Post installation
-1. Change X11 keyboard layout in ```~/.config/X11/xinitrc```:
+1. Change X11 keyboard layout in ```~/.config/X11/xinitrc-qtile```:
 ```
 setxkbmap [your layout]
 ```
