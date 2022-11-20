@@ -13,6 +13,8 @@ cp -r .config $HOME
 
 cp -r Wallpapers $HOME
 
+cp -r .themes $HOME
+
 cp -r .icons $HOME
 
 cp bash/.bash_profile $HOME
