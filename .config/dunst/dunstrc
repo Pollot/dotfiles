@@ -5,6 +5,8 @@
     frame_width = 2
     separator_color= frame
     
+    follow = mouse
+
     corner_radius = 15
 
     font = "Open Sans" 14
