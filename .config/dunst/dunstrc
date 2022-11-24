@@ -6,7 +6,13 @@
     
     corner_radius = 15
 
-    font = Open Sans 14
+    font = "Open Sans" 14
+
+    offset = 10x40
+
+    width = 400
+
+    gap_size = 8
 
 
 [urgency_low]
