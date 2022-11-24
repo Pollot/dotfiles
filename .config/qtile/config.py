@@ -86,7 +86,7 @@ weather_app = "gnome-weather"
 clock_app = "gnome-clocks"
 calendar_app = "gnome-calendar"
 
-lockscreen = "betterlockscreen -l"
+lockscreen = "i3lock -c 000000"
 
 gap_size = 8
 font_size = 16
@@ -376,8 +376,8 @@ layouts = [
         change_size=40,
         **layout_theme,
     ),
-    layout.RatioTile(**layout_theme),
     layout.Max(**layout_theme),
+    # layout.RatioTile(**layout_theme),
     # layout.Floating(**layout_theme),
     # layout.Columns(**layout_theme),
     # layout.Stack(num_stacks=2, **layout_theme),
@@ -416,10 +416,10 @@ def current_screen():
     return widget.CurrentScreen(
         active_color=mauve,
         inactive_color=overlay0,
-        active_text="",
-        inactive_text="",
+        active_text="",
+        inactive_text="",
         font=font_nerd,
-        fontsize=40,
+        fontsize=34,
         mouse_callbacks={"Button1": lazy.spawn(notifications_history)},
     )
 
@@ -599,9 +599,9 @@ spacer_small = widget.Spacer(
 
 def widgets_screen1():
     widgets = [
-        # spacer_medium, current_screen(),
+        spacer_medium, current_screen(),
 
-        spacer_medium, current_layout_icon(), spacer_small, group_box(),
+        spacer_normal, current_layout_icon(), spacer_small, group_box(),
 
         systray(), spacer_medium, tasklist(),
 
@@ -622,7 +622,7 @@ def widgets_screen1():
 
 def widgets_screen2():
     widgets = widgets_screen1()
-    del widgets[4:6]  # remove systray and medium spacer
+    del widgets[6:8]  # remove systray and medium spacer
     return widgets
 
 
