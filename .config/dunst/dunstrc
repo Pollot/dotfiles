@@ -4,7 +4,9 @@
     frame_color = "#F38BA8"
     frame_width = 2
     separator_color= frame
-    
+    # set it to the same value as in picom config
+    corner_radius = 15
+
     follow = mouse
 
     font = "Open Sans" 14
