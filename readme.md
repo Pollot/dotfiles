@@ -69,9 +69,14 @@ There are a lot of Picom forks, but I decided to stick to the main one (made by 
 I'm **not** an author of the Rofi config included in this repository. It's: [Catppuccin for Rofi - Siduck's Theme](https://github.com/catppuccin/rofi/tree/main/basic).
 
 ## Nerd Font
-I use **JetBrainsMono Nerd Font Mono**. You can download its latest release from: [Nerd Fonts website](https://www.nerdfonts.com/font-downloads).
+I use **FiraCode Nerd Font Mono**. However, You can download any Nerd Font you like from: [Nerd Fonts website](https://www.nerdfonts.com/font-downloads). **Remember to install the mono variant of chosen Nerd Font - icons are not centered in the regular version.**
 
-**<p align="center">Remember to install the mono variant of chosen Nerd Font. Icons are not centered in the regular version.</p>**
+To quickly install FiraCode and JetBrainsMono Nerd Fonts included in this repository, you can use my script:
+```
+cd dotfiles/installation
+
+sudo ./install-fonts.sh
+```
 
 ## Grub
 **Not included in my repository**. I use [Catppuccin for Grub](https://github.com/catppuccin/grub).
