@@ -11,6 +11,7 @@
         - [lf](#lf)
     - [Gaming](#gaming)
         - [xone](#xone)
+- [Extras](#extras)
 
 # Installation
 Install Fedora using an iso from the [official website](https://getfedora.org/). **Remember to update your system after installation.**
@@ -137,3 +138,18 @@ flatpak install flathub net.davidotek.pupgui2
 
 #### xone
 - [GitHub repository with installation guide](https://github.com/medusalix/xone)
+
+# Extras
+
+### WireGuard VPN
+
+1. Download configuration file from your VPN service provider.
+
+2. Rename it to ```wg.conf``` - interface name will be set to the file name.
+
+3. Add it to the Network Manager using the following command:
+```
+sudo nmcli connection import type wireguard file [path]/wg.conf
+```
+
+4. Use ```nm-connection-editor``` to change its settings (e.g. name, auto-connection).
