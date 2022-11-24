@@ -7,11 +7,9 @@
     
     follow = mouse
 
-    corner_radius = 15
-
     font = "Open Sans" 14
 
-    offset = 10x40
+    offset = 8x40
 
     width = 400
 
