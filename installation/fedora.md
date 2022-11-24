@@ -90,7 +90,7 @@ There's nothing here yet.
 # Optional software
 
 ### Recommended packages
-- GUI file manager: [nemo](https://packages.fedoraproject.org/pkgs/nemo/nemo/), [nemo-fileroller](https://packages.fedoraproject.org/pkgs/nemo-extensions/nemo-fileroller/)
+- GUI file manager: [nemo &darr;](#nemo)
 - TUI file manager: [lf &darr;](#lf)
 - Text/Code editor: [Visual Studio Code &darr;](#visual-studio-code)
 - Password manager: [keepassxc](https://packages.fedoraproject.org/pkgs/keepassxc/keepassxc/)
@@ -103,6 +103,23 @@ Installation:
 sudo dnf install nemo nemo-fileroller keepassxc gimp kdenlive
 
 flatpak install flathub com.discordapp.Discord org.signal.Signal
+```
+#### Nemo
+- [Package](https://packages.fedoraproject.org/pkgs/nemo/nemo/)
+
+1. Install Nemo and chosen extensions:
+```
+sudo dnf install nemo nemo-fileroller
+```
+
+2. Set Nemo as default file browser:
+```
+xdg-mime default nemo.desktop inode/directory application/x-gnome-saved-search
+```
+
+3. Change the default terminal emulator to kitty:
+```
+gsettings set org.cinnamon.desktop.default-applications.terminal exec kitty
 ```
 
 #### Visual Studio Code
