@@ -57,7 +57,7 @@ pipewire-jack lib32-pipewire-jack wireplumber
 ```
 sudo pacman -S xorg-server xorg-xinit git zsh kitty starship firefox rofi neofetch alsa-utils \
 pavucontrol flameshot htop gnome-keyring polkit-gnome lxappearance dunst pacman-contrib \
-xss-lock i3lock gnome-clocks gnome-weather gnome-calendar
+xss-lock i3lock gnome-clocks gnome-weather gnome-calendar network-manager-applet
 ```
 
 5. Install AUR helper *yay* :
