@@ -45,7 +45,7 @@ sudo cp ~/.config/monitors.xml /var/lib/gdm/.config/
 ### Packages
 1. [RPM](https://packages.fedoraproject.org/):
 ```
-sudo dnf install zsh kitty rofi neofetch pavucontrol flameshot htop polkit-gnome \
+sudo dnf install zsh kitty rofi neofetch pavucontrol flameshot htop polkit-gnome picom \
 lxappearance dunst xss-lock i3lock qt5-qtstyleplugins network-manager-applet
 ```
 
@@ -91,8 +91,8 @@ There's nothing here yet.
 
 ### Recommended packages
 - GUI file manager: [nemo](https://packages.fedoraproject.org/pkgs/nemo/nemo/), [nemo-fileroller](https://packages.fedoraproject.org/pkgs/nemo-extensions/nemo-fileroller/)
-- TUI file manager: [lf ﰬ](#lf)
-- Text/Code editor: [Visual Studio Code ﰬ](#visual-studio-code)
+- TUI file manager: [lf &darr;](#lf)
+- Text/Code editor: [Visual Studio Code &darr;](#visual-studio-code)
 - Password manager: [keepassxc](https://packages.fedoraproject.org/pkgs/keepassxc/keepassxc/)
 - Communication: [Discord](https://flathub.org/apps/details/com.discordapp.Discord)<sup>Flatpak</sup>, [Signal](https://flathub.org/apps/details/org.signal.Signal)<sup>Flatpak</sup>
 - Graphic design: [gimp](https://packages.fedoraproject.org/pkgs/gimp/gimp/)
