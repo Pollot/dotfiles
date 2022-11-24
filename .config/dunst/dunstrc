@@ -2,6 +2,7 @@
 
 [global]
     frame_color = "#F38BA8"
+    frame_width = 2
     separator_color= frame
     
     corner_radius = 15
