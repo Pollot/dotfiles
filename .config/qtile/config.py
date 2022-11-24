@@ -74,8 +74,8 @@ notifications_history = "dunstctl history-pop"
 # Updates widget
 distro = "Fedora"
 update = "sudo dnf update"
-# distro="Arch_checkupdates"
-# update="sudo pacman -Syu"
+# distro = "Arch_checkupdates"
+# update = "sudo pacman -Syu"
 
 screenshot_full = "flameshot full"
 screenshot_gui = "flameshot gui"
@@ -95,7 +95,7 @@ icon_normal = 22
 icon_big = 26  # group and weather icons
 
 font_default = "Open Sans"
-font_nerd = "JetBrainsMono Nerd Font Mono"
+font_nerd = "FiraCode Nerd Font Mono"
 
 wlp1 = "~/Wallpapers/city.jpg"
 wlp2 = "~/Wallpapers/stardust.jpg"

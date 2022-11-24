@@ -9,7 +9,7 @@
 
     follow = mouse
 
-    font = "Open Sans" 14
+    font = "Open Sans 14"
 
     offset = 8x40
 
