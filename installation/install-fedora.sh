@@ -17,6 +17,8 @@ cp -r .themes $HOME
 
 cp -r .icons $HOME
 
+cp bash/fedora/.bash_profile $HOME
+
 echo -e "\nConfiguration files installed.\n"
 
 

@@ -17,7 +17,7 @@ cp -r .themes $HOME
 
 cp -r .icons $HOME
 
-cp bash/.bash_profile $HOME
+cp bash/arch/.bash_profile $HOME
 
 echo -e "\nConfiguration files installed.\n"
 
