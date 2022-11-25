@@ -54,8 +54,14 @@ from libqtile.lazy import lazy
 
 from qtile_extras import widget
 
+# Colours
+from colours import *
+
 # OpenWeatherMap API key and symbols
 from owm import owm_api, owm_symbols
+
+# Power menu
+from powermenu import show_power_menu
 
 
 ##########################
@@ -98,51 +104,15 @@ wlp1 = "~/Wallpapers/city.jpg"
 wlp2 = "~/Wallpapers/stardust.jpg"
 
 
-#########################
-######## Colours ########
-#########################
-# Source: https://github.com/catppuccin/catppuccin
-
-rosewater = "#f5e0dc"
-flamingo = "#f2cdcd"
-pink = "#f5c2e7"
-mauve = "#cba6f7"
-red = "#f38ba8"
-maroon = "#eba0ac"
-peach = "#fab387"
-yellow = "#f9e2af"
-green = "#a6e3a1"
-teal = "#94e2d5"
-sky = "#89dceb"
-sapphire = "#74c7ec"
-blue = "#89b4fa"
-lavender = "#b4befe"
-text = "#cdd6f4"
-subtext1 = "#bac2de"
-subtext0 = "#a6adc8"
-overlay2 = "#9399b2"
-overlay1 = "#7f849c"
-overlay0 = "#6c7086"
-surface2 = "#585b70"
-surface1 = "#45475a"
-surface0 = "#313244"
-base = "#1e1e2e"
-mantle = "#181825"
-crust = "#11111b"
-
-# Last 2 digits set alpha channel
-transparent = "#00000000"
-
-
 ##########################
 ######## Keybinds ########
 ##########################
 
 keys = [
     # Basics
-    Key([mod, "control", "shift"], "q",
-        lazy.shutdown(),
-        desc="Shutdown Qtile"
+    Key([mod, "shift"], "q",
+        lazy.function(show_power_menu),
+        desc="Show power menu"
         ),
     Key([mod, "shift"], "r",
         lazy.reload_config(),
