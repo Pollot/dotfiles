@@ -66,6 +66,7 @@ mod = "mod4"
 terminal = "kitty"
 browser = "firefox"
 menu = "rofi -show drun"
+file_browser = "nemo"
 audio = "pavucontrol"
 audio2 = "alsamixer"
 process_monitor = "htop"
@@ -143,7 +144,7 @@ transparent = "#00000000"
 ##########################
 
 keys = [
-    # Basics
+    # Applications
     Key([mod], "Return",
         lazy.spawn(terminal),
         desc="Launch terminal"
@@ -156,14 +157,21 @@ keys = [
         lazy.spawn(browser),
         desc="Launch browser"
         ),
-    Key([mod, "shift"], "c",
-        lazy.window.kill(),
-        desc="Kill focused window"
+    Key([mod], "n",
+        lazy.spawn(file_browser),
+        desc="Launch file browser"
         ),
-    # Layouts
-    Key([mod], "Tab",
-        lazy.next_layout(),
-        desc="Toggle between layouts"
+    Key([mod], "x",
+        lazy.spawn(lockscreen),
+        desc="Lock screen",
+        ),
+    Key([], "Print",
+        lazy.spawn(screenshot_full),
+        desc="Make screenshot",
+        ),
+    Key([mod], "Print",
+        lazy.spawn(screenshot_gui),
+        desc="Make screenshot with gui (selection)",
         ),
     # Qtile
     Key([mod, "control", "shift"], "q",
@@ -173,6 +181,16 @@ keys = [
     Key([mod, "shift"], "r",
         lazy.reload_config(),
         desc="Reload config"
+        ),
+    # Basics
+    Key([mod, "shift"], "c",
+        lazy.window.kill(),
+        desc="Kill focused window"
+        ),
+    # Layouts
+    Key([mod], "Tab",
+        lazy.next_layout(),
+        desc="Toggle between layouts"
         ),
     # Switch between monitors
     Key([mod], "w",
@@ -246,10 +264,6 @@ keys = [
         lazy.layout.grow_main(),
         desc="Expand master pane"
         ),
-    Key([mod, "control"], "m",
-        lazy.layout.maximize(),
-        desc="Maximize window"
-        ),
     Key([mod, "control"], "n",
         lazy.layout.normalize(),
         desc="Normalize"
@@ -281,20 +295,6 @@ keys = [
         lazy.group.next_window(),
         lazy.window.bring_to_front(),
         desc="Cycle next floating windows",
-        ),
-    # Screenshots
-    Key([], "Print",
-        lazy.spawn(screenshot_full),
-        desc="Make screenshot",
-        ),
-    Key([mod], "Print",
-        lazy.spawn(screenshot_gui),
-        desc="Make screenshot with gui (selection)",
-        ),
-    # Lock screen
-    Key([mod], "x",
-        lazy.spawn(lockscreen),
-        desc="Lock screen",
         ),
 ]
 
