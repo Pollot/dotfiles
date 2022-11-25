@@ -55,7 +55,7 @@ pipewire-jack lib32-pipewire-jack wireplumber
 
 4. Install basic packages:
 ```
-sudo pacman -S xorg-server xorg-xinit git zsh kitty starship firefox rofi neofetch alsa-utils \
+sudo pacman -S xorg-server xorg-xinit git zsh kitty sxhkd starship firefox rofi neofetch alsa-utils \
 pavucontrol flameshot htop gnome-keyring polkit-gnome lxappearance dunst pacman-contrib \
 xss-lock i3lock gnome-clocks gnome-weather gnome-calendar network-manager-applet
 ```
@@ -95,17 +95,19 @@ cd dotfiles/installation
 ```
 
 ### Final steps
-1. Reboot. X server session should automatically start up after logging in.
+1. Add ```sxhkd``` daemon to systemd:
 ```
-reboot
+sudo systemctl enable sxhkd
 ```
 
-2. Use nvidia-settings to change your displays configuration. Save changes to X configuration file to preserve them (requires root privileges):
+2. Reboot. X server session should automatically start up after logging in.
+
+3. Use nvidia-settings to change your displays configuration. Save changes to X configuration file to preserve them (requires root privileges):
 ```
 sudo nvidia-settings
 ```
 
-3. Use lxappearance to change your GTK and cursor theme.
+4. Use lxappearance to change your GTK and cursor theme.
 
 # Post installation
 1. Change X11 keyboard layout in ```~/.config/X11/xinitrc-qtile```:

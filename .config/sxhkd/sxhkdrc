@@ -1,0 +1,39 @@
+# Terminal
+mod4 + Return
+    kitty
+
+# Launcher
+mod4 + shift + Return
+    rofi -show drun
+
+# Browser
+mod4 + b
+    firefox
+
+# File browser
+mod4 + n
+    nemo
+
+# Text editor
+mod4 + v
+    code
+
+# Keepass
+mod4 + s
+    keepassxc
+
+# Discord
+mod4 + d
+    flatpak run com.discordapp.Discord
+
+# Lock screen
+mod4 + x
+    i3lock -c 000000
+
+# Screenshot
+Print
+    flameshot full
+
+# Screenshot with GUI
+mod4 + Print
+    flameshot gui

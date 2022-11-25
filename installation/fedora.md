@@ -45,8 +45,8 @@ sudo cp ~/.config/monitors.xml /var/lib/gdm/.config/
 ### Packages
 1. [RPM](https://packages.fedoraproject.org/):
 ```
-sudo dnf install zsh kitty rofi neofetch pavucontrol flameshot htop polkit-gnome gtk-murrine-engine \
-picom lxappearance dunst xss-lock i3lock qt5-qtstyleplugins network-manager-applet 
+sudo dnf install zsh kitty sxhkd rofi neofetch pavucontrol flameshot htop polkit-gnome picom \
+lxappearance gtk-murrine-engine dunst xss-lock i3lock qt5-qtstyleplugins network-manager-applet 
 ```
 
 2. [Copr](https://copr.fedorainfracloud.org/):
@@ -75,14 +75,19 @@ cd dotfiles/installation
 ```
 
 ### Final steps
-1. Reboot and start a Qtile session.
+1. Add ```sxhkd``` daemon to systemd:
+```
+sudo systemctl enable sxhkd
+```
 
-2. Use nvidia-settings to change your displays configuration. Save changes to X configuration file to preserve them (requires root privileges):
+2. Reboot and start a Qtile session.
+
+3. Use nvidia-settings to change your displays configuration. Save changes to X configuration file to preserve them (requires root privileges):
 ```
 sudo nvidia-settings
 ```
 
-3. Use lxappearance to change your GTK and cursor theme.
+4. Use lxappearance to change your GTK and cursor theme.
 
 # Post installation:
 There's nothing here yet.
