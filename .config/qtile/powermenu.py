@@ -18,7 +18,8 @@ def show_power_menu(qtile):
             pos_y=0.1,
             width=0.1,
             height=0.5,
-            highlight=surface0,
+            highlight_method='border',
+            highlight=text,
             mouse_callbacks={
                 "Button1": lazy.spawn("shutdown now")
             }
@@ -29,7 +30,8 @@ def show_power_menu(qtile):
             pos_y=0.1,
             width=0.1,
             height=0.5,
-            highlight=surface0,
+            highlight_method='border',
+            highlight=text,
             mouse_callbacks={
                 "Button1": lazy.shutdown()
             }
@@ -40,7 +42,8 @@ def show_power_menu(qtile):
             pos_y=0.1,
             width=0.1,
             height=0.5,
-            highlight=surface0,
+            highlight_method='border',
+            highlight=text,
             mouse_callbacks={
                 "Button1": lazy.spawn("reboot")
             }
@@ -73,11 +76,11 @@ def show_power_menu(qtile):
 
     layout = PopupRelativeLayout(
         qtile,
-        width=800,
-        height=200,
+        width=600,
+        height=150,
         controls=controls,
         background=mantle,
-        initial_focus=True,
+        initial_focus=0,
     )
 
     layout.show(centered=True)
