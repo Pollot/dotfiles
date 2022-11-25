@@ -95,19 +95,14 @@ cd dotfiles/installation
 ```
 
 ### Final steps
-1. Add ```sxhkd``` daemon to systemd (for current user):
-```
-systemctl --user enable sxhkd
-```
+1. Reboot. X server session should automatically start up after logging in.
 
-2. Reboot. X server session should automatically start up after logging in.
-
-3. Use nvidia-settings to change your displays configuration. Save changes to X configuration file to preserve them (requires root privileges):
+2. Use nvidia-settings to change your displays configuration. Save changes to X configuration file to preserve them (requires root privileges):
 ```
 sudo nvidia-settings
 ```
 
-4. Use lxappearance to change your GTK and cursor theme.
+3. Use lxappearance to change your GTK and cursor theme.
 
 # Post installation
 1. Change X11 keyboard layout in ```~/.config/X11/xinitrc-qtile```:

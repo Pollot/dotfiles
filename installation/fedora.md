@@ -75,19 +75,14 @@ cd dotfiles/installation
 ```
 
 ### Final steps
-1. Add ```sxhkd``` daemon to systemd (for current user):
-```
-systemctl --user enable sxhkd
-```
+1. Reboot and start a Qtile session.
 
-2. Reboot and start a Qtile session.
-
-3. Use nvidia-settings to change your displays configuration. Save changes to X configuration file to preserve them (requires root privileges):
+2. Use nvidia-settings to change your displays configuration. Save changes to X configuration file to preserve them (requires root privileges):
 ```
 sudo nvidia-settings
 ```
 
-4. Use lxappearance to change your GTK and cursor theme.
+3. Use lxappearance to change your GTK and cursor theme.
 
 # Post installation:
 There's nothing here yet.

@@ -3,6 +3,9 @@
 # Compositor
 picom &
 
+# Hotkey daemon
+sxhkd &
+
 # Authentication agent
 /usr/libexec/polkit-gnome-authentication-agent-1 &
 
