@@ -45,8 +45,8 @@ sudo cp ~/.config/monitors.xml /var/lib/gdm/.config/
 ### Packages
 1. [RPM](https://packages.fedoraproject.org/):
 ```
-sudo dnf install zsh kitty rofi neofetch pavucontrol flameshot htop polkit-gnome picom \
-lxappearance dunst xss-lock i3lock qt5-qtstyleplugins network-manager-applet
+sudo dnf install zsh kitty rofi neofetch pavucontrol flameshot htop polkit-gnome gtk-murrine-engine \
+picom lxappearance dunst xss-lock i3lock qt5-qtstyleplugins network-manager-applet 
 ```
 
 2. [Copr](https://copr.fedorainfracloud.org/):
