@@ -74,7 +74,7 @@ mod = "mod4"
 notification = "notify-send -t 1000 'Qtile'"
 
 # Applications for widgets mouse callbacks
-terminal = "kitty"
+terminal = "kitty --class floating"
 audio = "pavucontrol"
 audio2 = "alsamixer"
 process_monitor = "htop"
@@ -599,7 +599,11 @@ floating_layout = layout.Floating(
     border_width=2,
     float_rules=[
         *layout.Floating.default_float_rules,
+        Match(wm_class="floating"),
         Match(wm_class="pavucontrol"),
+        Match(wm_class="org.gnome.Weather"),
+        Match(wm_class="gnome-calendar"),
+        Match(wm_class="org.gnome.clocks"),
     ]
 )
 
