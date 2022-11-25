@@ -62,15 +62,25 @@ from owm import owm_api, owm_symbols
 ####### Variables ########
 ##########################
 
+# mod4 -> Windows key ; mod1 -> ALT
 mod = "mod4"
+
+# Default applications
 terminal = "kitty"
 browser = "firefox"
 menu = "rofi -show drun"
 file_browser = "nemo"
+keepass = "keepassxc"
+screenshot_full = "flameshot full"
+screenshot_gui = "flameshot gui"
+lockscreen = "i3lock -c 000000"
 audio = "pavucontrol"
 audio2 = "alsamixer"
 process_monitor = "htop"
 notifications_history = "dunstctl history-pop"
+weather_app = "gnome-weather"
+clock_app = "gnome-clocks"
+calendar_app = "gnome-calendar"
 
 # Updates widget
 distro = "Fedora"
@@ -78,16 +88,8 @@ update = "sudo dnf update"
 # distro = "Arch_checkupdates"
 # update = "sudo pacman -Syu"
 
-screenshot_full = "flameshot full"
-screenshot_gui = "flameshot gui"
-
+# OWM widget
 city_id = "756135"  # openweathermap.org/city/[city id]
-
-weather_app = "gnome-weather"
-clock_app = "gnome-clocks"
-calendar_app = "gnome-calendar"
-
-lockscreen = "i3lock -c 000000"
 
 gap_size = 8
 font_size = 16
@@ -105,7 +107,6 @@ wlp2 = "~/Wallpapers/stardust.jpg"
 #########################
 ######## Colours ########
 #########################
-
 # Source: https://github.com/catppuccin/catppuccin
 
 rosewater = "#f5e0dc"
@@ -159,6 +160,10 @@ keys = [
         ),
     Key([mod], "n",
         lazy.spawn(file_browser),
+        desc="Launch file browser"
+        ),
+    Key([mod], "k",
+        lazy.spawn(keepass),
         desc="Launch file browser"
         ),
     Key([mod], "x",
