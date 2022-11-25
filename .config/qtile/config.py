@@ -69,7 +69,6 @@ notification = "notify-send -t 1000 'Qtile'"
 
 # Applications for widgets mouse callbacks
 terminal = "kitty"
-notifications_history = "dunstctl history-pop"
 audio = "pavucontrol"
 audio2 = "alsamixer"
 process_monitor = "htop"
@@ -382,17 +381,6 @@ extension_defaults = widget_defaults.copy()
 # They need to be independent
 # from other screens.
 
-def current_screen():
-    return widget.CurrentScreen(
-        active_color=mauve,
-        inactive_color=overlay0,
-        active_text="",
-        inactive_text="",
-        font=font_nerd,
-        fontsize=34,
-        mouse_callbacks={"Button1": lazy.spawn(notifications_history)},
-    )
-
 
 def current_layout_icon():
     return widget.CurrentLayoutIcon(
@@ -569,9 +557,7 @@ spacer_small = widget.Spacer(
 
 def widgets_screen1():
     widgets = [
-        spacer_medium, current_screen(),
-
-        spacer_normal, current_layout_icon(), spacer_small, group_box(),
+        spacer_medium, current_layout_icon(), spacer_small, group_box(),
 
         systray(), spacer_medium, tasklist(),
 
@@ -592,7 +578,7 @@ def widgets_screen1():
 
 def widgets_screen2():
     widgets = widgets_screen1()
-    del widgets[6:8]  # remove systray and medium spacer
+    del widgets[4:6]  # remove systray and medium spacer
     return widgets
 
 
