@@ -65,6 +65,8 @@ from owm import owm_api, owm_symbols
 # mod4 -> Windows key ; mod1 -> ALT
 mod = "mod4"
 
+notification = "notify-send -t 1000 'Qtile'"
+
 # Applications for widgets mouse callbacks
 terminal = "kitty"
 notifications_history = "dunstctl history-pop"
@@ -283,12 +285,14 @@ for i in groups:
             Key([mod],
                 i.name,
                 lazy.group[i.name].toscreen(),
+                lazy.spawn(notification + " 'Group " + i.name + "'"),
                 desc="Switch to group {}".format(i.name),
                 ),
             # mod1 + control + letter of group = switch to & move focused window to group
             Key([mod, "control"],
                 i.name,
                 lazy.window.togroup(i.name, switch_group=True),
+                lazy.spawn(notification + " 'Group " + i.name + "'"),
                 desc="Switch to & move focused window to group {}".format(
                     i.name),
                 ),
@@ -316,6 +320,8 @@ dgroups_app_rules = [
 def auto_switch(window):
     if window.group.name != qtile.current_group.name:
         window.group.cmd_toscreen()
+        qtile.cmd_spawn(notification + " 'Group " +
+                        qtile.current_group.name + "'")
 
 
 #########################
