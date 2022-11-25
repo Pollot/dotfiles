@@ -75,9 +75,9 @@ cd dotfiles/installation
 ```
 
 ### Final steps
-1. Add ```sxhkd``` daemon to systemd:
+1. Add ```sxhkd``` daemon to systemd (for current user):
 ```
-sudo systemctl enable sxhkd
+systemctl --user enable sxhkd
 ```
 
 2. Reboot and start a Qtile session.
