@@ -67,20 +67,24 @@ mod = "mod4"
 
 # Default applications
 terminal = "kitty"
-browser = "firefox"
 menu = "rofi -show drun"
+browser = "firefox"
 file_browser = "nemo"
+text_editor = "code"
 keepass = "keepassxc"
+discord = "flatpak run com.discordapp.Discord"
+lockscreen = "i3lock -c 000000"
 screenshot_full = "flameshot full"
 screenshot_gui = "flameshot gui"
-lockscreen = "i3lock -c 000000"
+
+# Applications for widgets mouse callbacks
+notifications_history = "dunstctl history-pop"
 audio = "pavucontrol"
 audio2 = "alsamixer"
 process_monitor = "htop"
-notifications_history = "dunstctl history-pop"
 weather_app = "gnome-weather"
-clock_app = "gnome-clocks"
 calendar_app = "gnome-calendar"
+clock_app = "gnome-clocks"
 
 # Updates widget
 distro = "Fedora"
@@ -162,8 +166,16 @@ keys = [
         lazy.spawn(file_browser),
         desc="Launch file browser"
         ),
-    Key([mod], "k",
+    Key([mod], "v",
+        lazy.spawn(text_editor),
+        desc="Launch file browser"
+        ),
+    Key([mod], "s",
         lazy.spawn(keepass),
+        desc="Launch file browser"
+        ),
+    Key([mod], "d",
+        lazy.spawn(discord),
         desc="Launch file browser"
         ),
     Key([mod], "x",
