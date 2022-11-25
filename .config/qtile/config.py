@@ -65,19 +65,8 @@ from owm import owm_api, owm_symbols
 # mod4 -> Windows key ; mod1 -> ALT
 mod = "mod4"
 
-# Default applications
-terminal = "kitty"
-menu = "rofi -show drun"
-browser = "firefox"
-file_browser = "nemo"
-text_editor = "code"
-keepass = "keepassxc"
-discord = "flatpak run com.discordapp.Discord"
-lockscreen = "i3lock -c 000000"
-screenshot_full = "flameshot full"
-screenshot_gui = "flameshot gui"
-
 # Applications for widgets mouse callbacks
+terminal = "kitty"
 notifications_history = "dunstctl history-pop"
 audio = "pavucontrol"
 audio2 = "alsamixer"
@@ -149,48 +138,7 @@ transparent = "#00000000"
 ##########################
 
 keys = [
-    # Applications
-    Key([mod], "Return",
-        lazy.spawn(terminal),
-        desc="Launch terminal"
-        ),
-    Key([mod, "shift"], "return",
-        lazy.spawn(menu),
-        desc="Launch rofi"
-        ),
-    Key([mod], "b",
-        lazy.spawn(browser),
-        desc="Launch browser"
-        ),
-    Key([mod], "n",
-        lazy.spawn(file_browser),
-        desc="Launch file browser"
-        ),
-    Key([mod], "v",
-        lazy.spawn(text_editor),
-        desc="Launch file browser"
-        ),
-    Key([mod], "s",
-        lazy.spawn(keepass),
-        desc="Launch file browser"
-        ),
-    Key([mod], "d",
-        lazy.spawn(discord),
-        desc="Launch file browser"
-        ),
-    Key([mod], "x",
-        lazy.spawn(lockscreen),
-        desc="Lock screen",
-        ),
-    Key([], "Print",
-        lazy.spawn(screenshot_full),
-        desc="Make screenshot",
-        ),
-    Key([mod], "Print",
-        lazy.spawn(screenshot_gui),
-        desc="Make screenshot with gui (selection)",
-        ),
-    # Qtile
+    # Basics
     Key([mod, "control", "shift"], "q",
         lazy.shutdown(),
         desc="Shutdown Qtile"
@@ -199,7 +147,6 @@ keys = [
         lazy.reload_config(),
         desc="Reload config"
         ),
-    # Basics
     Key([mod, "shift"], "c",
         lazy.window.kill(),
         desc="Kill focused window"
