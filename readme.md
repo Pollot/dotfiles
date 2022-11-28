@@ -1,4 +1,7 @@
-# Screenshot
+# Screenshots
+
+### Qtile
+
 <img src="screenshots/update2.png">
 
 [Screenshots of previous versions](screenshots/screenshots.md)
@@ -14,10 +17,10 @@
     - [Nerd Font](#nerd-font)
     - [Grub](#grub)
 - [Installation on Fedora](installation/fedora.md)
-- [Installation on Arch](installation/arch.md)
+- [Installation on Arch (deprecated)](installation/arch.md)
 
 # List of software
-- Window manager: [Qtile](#qtile)
+- Window manager: [Qtile](#qtile), [Awesome](#awesome)
 - Colour scheme: [Catppuccin](#catppuccin)
 - Wallpapers: [Catppuccin](#wallpapers)
 - GTK theme: [Catppuccin](https://github.com/catppuccin/gtk)
@@ -42,6 +45,9 @@
 - [Qtile extras](https://qtile-extras.readthedocs.io/en/stable/manual/install.html)
 - [Nerd font](#nerd-font)
 - [Open Sans font](https://fonts.google.com/specimen/Open+Sans)
+
+## Awesome
+To do.
 
 ## Catppuccin
 Catppuccin is a community-driven pastel theme that aims to be the middle ground between low and high contrast themes. It consists of 4 soothing warm palettes with 26 eye-candy colors each, perfect for coding, designing, and much more!
@@ -83,4 +89,4 @@ sudo ./install-fonts.sh
 
 # [Installation on Fedora](installation/fedora.md)
 
-# [Installation on Arch](installation/arch.md)
+# [Installation on Arch (deprecated)](installation/arch.md)
