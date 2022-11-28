@@ -1,3 +1,5 @@
+### **These instructions are deprecated because I don't use Arch anymore. I recommend using Fedora instead.**
+
 # Table of contents
 - [Installation](#installation)
     - [Basic configuration](#basic-configuration)
