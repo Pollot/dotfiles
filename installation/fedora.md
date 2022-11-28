@@ -32,21 +32,26 @@ You can read about full configuration options in the [DNF docs](https://dnf.read
 
 5. Install drivers. For Nvidia graphics card follow [this guide](https://rpmfusion.org/Howto/NVIDIA).
 
-6. Configure Xorg as the default GDM display server if you don't use and plan to use Wayland. Open ```/etc/gdm/custom.conf``` and uncomment the following line:
+6. Reboot and make sure that drivers installed successful.
+
+7. Configure Xorg as the default GDM display server if you don't use and plan to use Wayland. Open ```/etc/gdm/custom.conf``` and uncomment the following line:
 ```
 WaylandEnable=false
 ```
 
-7. Change GDM monitors configuration if it's wrong:
+8. Change GDM monitors configuration if it's wrong:
 ```
 sudo cp ~/.config/monitors.xml /var/lib/gdm/.config/ 
 ```
 
+9. Remove applications you won't use.
+
 ### Packages
 1. [RPM](https://packages.fedoraproject.org/):
 ```
-sudo dnf install zsh kitty sxhkd rofi neofetch pavucontrol flameshot htop polkit-gnome picom \
-lxappearance gtk-murrine-engine dunst xss-lock i3lock qt5-qtstyleplugins network-manager-applet 
+sudo dnf install awesome zsh kitty sxhkd rofi neofetch pavucontrol flameshot htop polkit-gnome \
+picom lxappearance gtk-murrine-engine dunst xss-lock i3lock qt5-qtstyleplugins \
+network-manager-applet
 ```
 
 2. [Copr](https://copr.fedorainfracloud.org/):
