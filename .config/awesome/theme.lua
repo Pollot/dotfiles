@@ -50,22 +50,23 @@ crust     = "#11111b"
 -----------------
 
 theme.font          = "Open Sans 12"
+theme.taglist_font  = "FiraCode Nerd Font Mono 28"
 
-theme.bg_normal     = "#222222"
-theme.bg_focus      = "#535d6c"
-theme.bg_urgent     = "#ff0000"
-theme.bg_minimize   = "#444444"
+theme.bg_normal     = mantle
+theme.bg_focus      = surface0
+theme.bg_urgent     = red
+theme.bg_minimize   = surface2
 theme.bg_systray    = theme.bg_normal
 
-theme.fg_normal     = "#aaaaaa"
-theme.fg_focus      = "#ffffff"
+theme.fg_normal     = text
+theme.fg_focus      = text
 theme.fg_urgent     = "#ffffff"
 theme.fg_minimize   = "#ffffff"
 
-theme.useless_gap   = dpi(0)
-theme.border_width  = dpi(1)
-theme.border_normal = "#000000"
-theme.border_focus  = "#535d6c"
+theme.useless_gap   = dpi(4)
+theme.border_width  = dpi(2)
+theme.border_normal = base
+theme.border_focus  = mauve
 theme.border_marked = "#91231c"
 
 -- There are other variable sets
