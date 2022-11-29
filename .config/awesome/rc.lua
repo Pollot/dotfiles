@@ -73,16 +73,16 @@ modkey = "Mod4"
 -- Table of layouts to cover with awful.layout.inc, order matters.
 awful.layout.layouts = {
     awful.layout.suit.tile,
-    awful.layout.suit.tile.bottom,
-    awful.layout.suit.fair.horizontal,
-    awful.layout.suit.spiral,
     awful.layout.suit.floating,
     awful.layout.suit.max,
-    awful.layout.suit.max.fullscreen,
     -- awful.layout.suit.tile.left,
+    -- awful.layout.suit.tile.bottom,
     -- awful.layout.suit.tile.top,
     -- awful.layout.suit.fair,
+    -- awful.layout.suit.fair.horizontal,
+    -- awful.layout.suit.spiral,
     -- awful.layout.suit.spiral.dwindle,
+    -- awful.layout.suit.max.fullscreen,
     -- awful.layout.suit.magnifier,
     -- awful.layout.suit.corner.nw,
     -- awful.layout.suit.corner.ne,
@@ -185,7 +185,7 @@ awful.screen.connect_for_each_screen(function(s)
     -- Each screen has its own tag table.
     local names = { "", "", "", "ﳳ", "調", "ﭮ" }
     local l = awful.layout.suit  -- Just to save some typing: use an alias.
-    local layouts = { l.tile, l.tile, l.tile, l.max, l.max, l.max }
+    local layouts = { l.tile, l.tile, l.tile, l.tile, l.max, l.tile }
     awful.tag(names, s, layouts)
 
     -- Create a promptbox for each screen
