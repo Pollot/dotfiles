@@ -120,9 +120,6 @@ menubar.utils.terminal = terminal -- Set the terminal for applications that requ
 ----- Wibar -----
 -----------------
 
--- Keyboard map indicator and switcher
-mykeyboardlayout = awful.widget.keyboardlayout()
-
 -- Create a textclock widget
 mytextclock = wibox.widget.textclock()
 
@@ -188,7 +185,7 @@ awful.screen.connect_for_each_screen(function(s)
     -- Each screen has its own tag table.
     local names = { "", "", "", "ﳳ", "調", "ﭮ" }
     local l = awful.layout.suit  -- Just to save some typing: use an alias.
-    local layouts = { l.floating, l.tile, l.floating, l.fair, l.max, l.floating }
+    local layouts = { l.tile, l.tile, l.tile, l.max, l.max, l.max }
     awful.tag(names, s, layouts)
 
     -- Create a promptbox for each screen
@@ -223,17 +220,16 @@ awful.screen.connect_for_each_screen(function(s)
         layout = wibox.layout.align.horizontal,
         { -- Left widgets
             layout = wibox.layout.fixed.horizontal,
-            mylauncher,
+            spacing = 10,
+            s.mylayoutbox,
+            -- mylauncher,
             s.mytaglist,
-            s.mypromptbox,
+            wibox.widget.systray(),
         },
         s.mytasklist, -- Middle widget
         { -- Right widgets
             layout = wibox.layout.fixed.horizontal,
-            mykeyboardlayout,
-            wibox.widget.systray(),
             mytextclock,
-            s.mylayoutbox,
         },
     }
 end)
@@ -300,7 +296,7 @@ globalkeys = gears.table.join(
         {description = "go back", group = "client"}),
 
     -- Standard program
-    awful.key({ modkey, "Control" }, "r", awesome.restart,
+    awful.key({ modkey, "Shift"   }, "r", awesome.restart,
               {description = "reload awesome", group = "awesome"}),
     awful.key({ modkey, "Shift"   }, "q", awesome.quit,
               {description = "quit awesome", group = "awesome"}),
