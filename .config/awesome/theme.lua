@@ -67,7 +67,7 @@ theme.useless_gap   = dpi(4)
 theme.border_width  = dpi(2)
 theme.border_normal = base
 theme.border_focus  = mauve
-theme.border_marked = "#91231c"
+theme.border_marked = red
 
 -- There are other variable sets
 -- overriding the default one when
@@ -101,8 +101,8 @@ theme.taglist_squares_unsel = theme_assets.taglist_squares_unsel(
 -- menu_[bg|fg]_[normal|focus]
 -- menu_[border_color|border_width]
 theme.menu_submenu_icon = themes_path.."default/submenu.png"
-theme.menu_height = dpi(15)
-theme.menu_width  = dpi(100)
+theme.menu_height = dpi(25)
+theme.menu_width  = dpi(200)
 
 -- You can add as many variables as
 -- you wish and access them by using
