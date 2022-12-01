@@ -94,17 +94,25 @@ awful.layout.layouts = {
 ------ Menu ------
 ------------------
 
--- Create a launcher widget and a main menu
+-- Default awesome menu
 myawesomemenu = {
-   { "hotkeys", function() hotkeys_popup.show_help(nil, awful.screen.focused()) end },
-   { "manual", terminal .. " -e man awesome" },
-   { "edit config", editor_cmd .. " " .. awesome.conffile },
-   { "restart", awesome.restart },
-   { "quit", function() awesome.quit() end },
+   { "Hotkeys", function() hotkeys_popup.show_help(nil, awful.screen.focused()) end },
+   { "Manual", terminal .. " -e man awesome" },
+   { "Config", editor_cmd .. " " .. awesome.conffile },
+   { "Restart", awesome.restart },
+   { "Quit", function() awesome.quit() end },
 }
 
-mymainmenu = awful.menu({ items = { { "awesome", myawesomemenu, beautiful.awesome_icon },
-                                    { "open terminal", terminal }
+-- Power menu
+mypowermenu = {
+    { "Log out", function() awesome.quit() end },
+    { "Shutdown", "shutdown now" },
+    { "Reboot", "reboot" },
+}
+
+mymainmenu = awful.menu({ items = { { "Power menu", mypowermenu },
+                                    { "Awesome", myawesomemenu  },
+                                    { "Terminal", terminal }
                                   }
                         })
 
@@ -347,10 +355,10 @@ globalkeys = gears.table.join(
 
 clientkeys = gears.table.join(
     --- Client ---
-    awful.key({ modkey, "Shift" }, "Return", function (c) c:swap(awful.client.getmaster())  end,
+    awful.key({ modkey, "Shift" }, "Return", function (c) c:swap(awful.client.getmaster())   end,
               {description = "move to master", group = "client"}),
 
-    awful.key({ modkey, "Shift" }, "c",      function (c) c:kill()                          end,
+    awful.key({ modkey, "Shift" }, "c",      function (c) c:kill()                           end,
               {description = "close", group = "client"}),
 
     awful.key({ modkey,         }, "t",      function (c) c.ontop = not c.ontop              end,
@@ -394,7 +402,7 @@ clientkeys = gears.table.join(
         end ,
         {description = "minimize", group = "state"}),
 
-    awful.key({ modkey,         }, "f",  awful.client.floating.toggle                          ,
+    awful.key({ modkey,         }, "f",  awful.client.floating.toggle                            ,
               {description = "toggle floating", group = "state"})
 )
 
