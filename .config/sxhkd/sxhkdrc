@@ -3,7 +3,7 @@ mod4 + Return
     kitty
 
 # Launcher
-mod4 + shift + Return
+mod4 + r
     rofi -show drun
 
 # Browser
@@ -11,15 +11,15 @@ mod4 + b
     firefox
 
 # File browser
-mod4 + n
+mod4 + v
     nemo
 
 # Text editor
-mod4 + v
+mod4 + c
     code
 
 # Keepass
-mod4 + s
+mod4 + p
     keepassxc
 
 # Discord
