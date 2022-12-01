@@ -119,9 +119,6 @@ mylauncher = awful.widget.launcher({ image = beautiful.awesome_icon,
 -- Create a textclock widget
 mytextclock = wibox.widget.textclock()
 
-praisewidget = wibox.widget.textbox()
-praisewidget.text = "Test"
-
 -- Create a wibox for each screen and add it
 local taglist_buttons = gears.table.join(
                     awful.button({ }, 1, function(t) t:view_only() end),
@@ -206,9 +203,12 @@ awful.screen.connect_for_each_screen(function(s)
 
     -- Create a tasklist widget
     s.mytasklist = awful.widget.tasklist {
-        screen  = s,
-        filter  = awful.widget.tasklist.filter.currenttags,
-        buttons = tasklist_buttons
+        screen   = s,
+        filter   = awful.widget.tasklist.filter.currenttags,
+        buttons  = tasklist_buttons,
+        style = {
+            align = 'center'
+        }
     }
 
     -- Create the wibox
@@ -224,11 +224,11 @@ awful.screen.connect_for_each_screen(function(s)
             -- mylauncher,
             s.mytaglist,
             wibox.widget.systray(),
-            praisewidget,
         },
         s.mytasklist, -- Middle widget
         { -- Right widgets
             layout = wibox.layout.fixed.horizontal,
+            spacing = 10,
             mytextclock,
         },
     }
@@ -491,8 +491,9 @@ awful.rules.rules = {
                      buttons = clientbuttons,
                      screen = awful.screen.preferred,
                      placement = awful.placement.no_overlap+awful.placement.no_offscreen
-     }
+      }
     },
+
 
     -- Floating clients.
     { rule_any = {
@@ -511,9 +512,38 @@ awful.rules.rules = {
         }
       }, properties = { floating = true }},
 
-    -- Set Firefox to always map on the tag named "2" on screen 1.
-    -- { rule = { class = "Firefox" },
-    --   properties = { screen = 1, tag = "2" } },
+
+    -- Groups
+    { rule_any = {
+        class = {
+            "code"
+        }
+      }, properties = { tag = "", switchtotag = true }},
+
+    { rule_any = {
+        class = {
+            "firefox"
+        }
+      }, properties = { tag = "", switchtotag = true }},
+
+    { rule_any = {
+        class = {
+            "keepassxc"
+        } 
+      }, properties = { tag = "ﳳ", switchtotag = true }},
+
+    { rule_any = {
+        class = {
+            "lutris",
+            "steam"
+        } 
+      }, properties = { tag = "調", switchtotag = true }},
+
+    { rule_any = { 
+        class = {
+            "discord"
+        }
+      }, properties = { tag = "ﭮ", switchtotag = true }},
 }
 
 
