@@ -191,8 +191,6 @@ awful.screen.connect_for_each_screen(function(s)
     local layouts = { l.tile, l.tile, l.tile, l.tile, l.max, l.tile }
     awful.tag(names, s, layouts)
 
-    -- Create a promptbox for each screen
-    s.mypromptbox = awful.widget.prompt()
     -- Create an imagebox widget which will contain an icon indicating which layout we're using.
     -- We need one layoutbox per screen.
     s.mylayoutbox = awful.widget.layoutbox(s)
@@ -201,6 +199,7 @@ awful.screen.connect_for_each_screen(function(s)
                            awful.button({ }, 3, function () awful.layout.inc(-1) end),
                            awful.button({ }, 4, function () awful.layout.inc( 1) end),
                            awful.button({ }, 5, function () awful.layout.inc(-1) end)))
+    
     -- Create a taglist widget
     s.mytaglist = awful.widget.taglist {
         screen  = s,
@@ -488,7 +487,7 @@ awful.rules.rules = {
                      keys = clientkeys,
                      buttons = clientbuttons,
                      screen = awful.screen.preferred,
-                     placement = awful.placement.centered + awful.placement.no_overlap + awful.placement.no_offscreen
+                     placement = awful.placement.centered + awful.placement.no_offscreen
       }
     },
 
@@ -550,7 +549,7 @@ awful.rules.rules = {
 -------------------
 
 -- Signal function to execute when a new client appears.
-client.connect_signal("manage", function (c)
+client.connect_signal("manage", function(c)
     -- Set the windows at the slave,
     -- i.e. put it at the end of others instead of setting it master.
     -- if not awesome.startup then awful.client.setslave(c) end
