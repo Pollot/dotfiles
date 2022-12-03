@@ -96,11 +96,10 @@ awful.layout.layouts = {
 
 -- Default awesome menu
 myawesomemenu = {
+   { "Reload", awesome.restart },
    { "Hotkeys", function() hotkeys_popup.show_help(nil, awful.screen.focused()) end },
-   { "Manual", terminal .. " -e man awesome" },
-   { "Config", editor_cmd .. " " .. awesome.conffile },
-   { "Restart", awesome.restart },
-   { "Quit", function() awesome.quit() end },
+   { "Configuration", editor_cmd .. " " .. awesome.conffile },
+   { "Documentation", "firefox https://awesomewm.org/doc/api/" },
 }
 
 -- Power menu
@@ -110,7 +109,7 @@ mypowermenu = {
     { "Reboot", "reboot" },
 }
 
-mymainmenu = awful.menu({ items = { { "Power menu", mypowermenu },
+mymainmenu = awful.menu({ items = { { "Power", mypowermenu },
                                     { "Awesome", myawesomemenu  },
                                     { "Terminal", terminal }
                                   }
@@ -586,6 +585,7 @@ client.connect_signal("property::floating", function(c)
         c.border_color = beautiful.border_focus
     end
 end)
+
 
 -------------------
 ---- Autostart ----
