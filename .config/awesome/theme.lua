@@ -49,25 +49,26 @@ crust     = "#11111b"
 ---- Theming ----
 -----------------
 
-theme.font          = "Open Sans 12"
-theme.taglist_font  = "FiraCode Nerd Font Mono 28"
+theme.font            = "Open Sans 12"
+theme.taglist_font    = "FiraCode Nerd Font Mono 28"
 
-theme.bg_normal     = mantle
-theme.bg_focus      = surface0
-theme.bg_urgent     = red
-theme.bg_minimize   = surface2
-theme.bg_systray    = theme.bg_normal
+theme.bg_normal       = mantle
+theme.bg_focus        = surface0
+theme.bg_urgent       = red
+theme.bg_minimize     = mantle
+theme.bg_systray      = theme.bg_normal
 
-theme.fg_normal     = text
-theme.fg_focus      = text
-theme.fg_urgent     = "#ffffff"
-theme.fg_minimize   = "#ffffff"
+theme.fg_normal       = text
+theme.fg_focus        = text
+theme.fg_urgent       = crust
+theme.fg_minimize     = lavender
 
-theme.useless_gap   = dpi(4)
-theme.border_width  = dpi(2)
-theme.border_normal = base
-theme.border_focus  = mauve
-theme.border_marked = red
+theme.useless_gap     = dpi(4)
+theme.border_width    = dpi(2)
+theme.border_normal   = base
+theme.border_focus    = mauve
+theme.border_marked   = green
+theme.border_floating = red
 
 -- There are other variable sets
 -- overriding the default one when
