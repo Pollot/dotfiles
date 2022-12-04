@@ -52,6 +52,7 @@ crust     = "#11111b"
 --- Fonts ---
 theme.font         = "Open Sans 12"
 theme.taglist_font = "FiraCode Nerd Font Mono 24"
+theme.icons_font   = "FiraCode Nerd Font Mono 18"
 
 --- Backgrounds ---
 theme.bg_normal   = mantle
