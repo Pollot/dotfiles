@@ -14,23 +14,12 @@ require("awful.autofocus")
 local wibox = require("wibox")
 -- Theme handling library
 local beautiful = require("beautiful")
--- Notification library
-local naughty = require("naughty")
+-- Notification library -> use Dunst instead
+-- local naughty = require("naughty")
 local hotkeys_popup = require("awful.hotkeys_popup")
 -- Enable hotkeys help widget for VIM and other apps
 -- when client with a matching name is opened:
 -- require("awful.hotkeys_popup.keys")
-
-
------------------
---- Functions ---
------------------
-
-local show_volume_notification = function()
-    local command = "sleep 0.09 ; pactl list sinks | grep Volume | grep -oaE '..[0-9]%' | awk 'FNR == 1 {print}'"
-
-    awful.spawn.easy_async_with_shell(command, function(out) naughty.notify({ text = out, timeout = 1, position = "bottom_middle", replaces_id = -1}) end)
-end
 
 
 ----------------------
@@ -134,16 +123,34 @@ mylauncher = awful.widget.launcher({ image = beautiful.awesome_icon,
 ----- Wibar -----
 -----------------
 
--- Create a textclock widget
-myclock_text = wibox.widget.textbox("")
-myclock = wibox.widget.textclock("%H:%M")
+-- Clock
+clock = wibox.widget({
+		widget = wibox.widget.textclock,
+        format = "<span foreground='#f38ba8'>%H:%M:%S</span>",
+        refresh = 1,
+	})
 
-wibox.widget.textbox ("")
-mycalendar = wibox.widget.textclock("%a, %b %m")
+clock_text = wibox.widget({
+        widget = wibox.widget.textbox,
+        markup = "<span foreground='#f38ba8'></span>",
+        font = "FiraCode Nerd Font Mono 18",
+    })
 
--- Seperators
-myseparator = wibox.widget.textbox("  ")
-myseparator_small = wibox.widget.textbox(" ")
+-- Calendar
+calendar = wibox.widget({
+		widget = wibox.widget.textclock,
+        format = "<span foreground='#fab387'>%a, %b %m</span>",
+	})
+
+calendar_text = wibox.widget({
+        widget = wibox.widget.textbox,
+        markup = "<span foreground='#fab387'></span>",
+        font = "FiraCode Nerd Font Mono 18",
+    })
+
+-- Spacers
+myspacer = wibox.widget.textbox("  ")
+myspacer_small = wibox.widget.textbox(" ")
 
 -- Create a wibox for each screen and add it
 local taglist_buttons = gears.table.join(
@@ -223,8 +230,7 @@ awful.screen.connect_for_each_screen(function(s)
     s.mytaglist = awful.widget.taglist {
         screen  = s,
         filter  = awful.widget.taglist.filter.all,
-        buttons = taglist_buttons,
-        spacing = 10
+        buttons = taglist_buttons
     }
 
     -- Create a tasklist widget
@@ -246,23 +252,24 @@ awful.screen.connect_for_each_screen(function(s)
         { -- Left widgets
             layout = wibox.layout.fixed.horizontal,
             spacing = 6,
-            myseparator_small,
+            myspacer_small,
             s.mylayoutbox,
             s.mytaglist,
-            myseparator,
+            myspacer,
         },
         s.mytasklist, -- Middle widget
         { -- Right widgets
             layout = wibox.layout.fixed.horizontal,
             spacing = 6,
-            myseparator,
+            myspacer,
             wibox.widget.systray(),
-            mycalendar_text,
-            mycalendar,
-            myseparator_small,
-            myclock_text,
-            myclock,
-            myseparator_small,
+            myspacer,
+            calendar_text,
+            calendar,
+            myspacer,
+            clock_text,
+            clock,
+            myspacer_small,
         },
     }
 end)
