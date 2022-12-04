@@ -77,6 +77,10 @@ theme.border_floating = red
 --- Hotkeys help menu ---
 theme.hotkeys_modifiers_fg = text
 
+--- Spacing ---
+theme.systray_icon_spacing = 10
+theme.taglist_spacing      = 6
+
 -- There are other variable sets
 -- overriding the default one when
 -- defined, the sets are:
