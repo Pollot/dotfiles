@@ -22,6 +22,17 @@ local hotkeys_popup = require("awful.hotkeys_popup")
 -- require("awful.hotkeys_popup.keys")
 
 
+-----------------
+--- Functions ---
+-----------------
+
+local show_volume_notification = function()
+    local command = "sleep 0.09 ; pactl list sinks | grep Volume | grep -oaE '..[0-9]%' | awk 'FNR == 1 {print}'"
+
+    awful.spawn.easy_async_with_shell(command, function(out) naughty.notify({ text = out, timeout = 1, position = "bottom_middle", replaces_id = -1}) end)
+end
+
+
 ----------------------
 --- Error handling ---
 ----------------------
@@ -124,7 +135,15 @@ mylauncher = awful.widget.launcher({ image = beautiful.awesome_icon,
 -----------------
 
 -- Create a textclock widget
-mytextclock = wibox.widget.textclock()
+myclock_text = wibox.widget.textbox("")
+myclock = wibox.widget.textclock("%H:%M")
+
+wibox.widget.textbox ("")
+mycalendar = wibox.widget.textclock("%a, %b %m")
+
+-- Seperators
+myseparator = wibox.widget.textbox("  ")
+myseparator_small = wibox.widget.textbox(" ")
 
 -- Create a wibox for each screen and add it
 local taglist_buttons = gears.table.join(
@@ -204,7 +223,8 @@ awful.screen.connect_for_each_screen(function(s)
     s.mytaglist = awful.widget.taglist {
         screen  = s,
         filter  = awful.widget.taglist.filter.all,
-        buttons = taglist_buttons
+        buttons = taglist_buttons,
+        spacing = 10
     }
 
     -- Create a tasklist widget
@@ -212,9 +232,9 @@ awful.screen.connect_for_each_screen(function(s)
         screen   = s,
         filter   = awful.widget.tasklist.filter.currenttags,
         buttons  = tasklist_buttons,
-        style = {
-            align = 'center'
-        }
+        --style = {
+        --    align = 'center'
+        --}
     }
 
     -- Create the wibox
@@ -225,17 +245,24 @@ awful.screen.connect_for_each_screen(function(s)
         layout = wibox.layout.align.horizontal,
         { -- Left widgets
             layout = wibox.layout.fixed.horizontal,
-            spacing = 10,
+            spacing = 6,
+            myseparator_small,
             s.mylayoutbox,
-            -- mylauncher,
             s.mytaglist,
-            wibox.widget.systray(),
+            myseparator,
         },
         s.mytasklist, -- Middle widget
         { -- Right widgets
             layout = wibox.layout.fixed.horizontal,
-            spacing = 10,
-            mytextclock,
+            spacing = 6,
+            myseparator,
+            wibox.widget.systray(),
+            mycalendar_text,
+            mycalendar,
+            myseparator_small,
+            myclock_text,
+            myclock,
+            myseparator_small,
         },
     }
 end)
@@ -347,7 +374,29 @@ globalkeys = gears.table.join(
               {description = "view previous", group = "tag"}),
 
     awful.key({ modkey,           }, "Right",  awful.tag.viewnext,
-              {description = "view next", group = "tag"})
+              {description = "view next", group = "tag"}),
+
+    --- Multimedia keys ---
+    awful.key({}, "XF86AudioRaiseVolume",
+        function ()
+            awful.util.spawn("pactl set-sink-volume @DEFAULT_SINK@ +5%")
+            show_volume_notification()
+        end,
+        {description = "raise volume", group = "multimedia"}),
+
+    awful.key({}, "XF86AudioLowerVolume",
+        function ()
+            awful.util.spawn("pactl set-sink-volume @DEFAULT_SINK@ -5%")
+            show_volume_notification()
+        end,
+        {description = "lower volume", group = "multimedia"}),
+
+    awful.key({}, "XF86AudioMute",
+        function ()
+            awful.util.spawn("pactl set-sink-mute- @DEFAULT_SINK@ toggle")
+            show_volume_notification()
+        end,
+        {description = "toggle mute volume", group = "multimedia"})
 )
 
 
@@ -591,3 +640,4 @@ end)
 -------------------
 
 awful.spawn.with_shell("~/.config/awesome/autostart.sh")
+
