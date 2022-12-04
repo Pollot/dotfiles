@@ -540,7 +540,6 @@ awful.rules.rules = {
       }
     },
 
-
     -- Floating clients.
     { rule_any = {
         instance = {
@@ -557,7 +556,6 @@ awful.rules.rules = {
         role = {
         }
       }, properties = { floating = true }},
-
 
     -- Groups
     { rule_any = {
@@ -631,6 +629,14 @@ client.connect_signal("property::floating", function(c)
         c.border_color = beautiful.border_floating
     else
         c.border_color = beautiful.border_focus
+    end
+end)
+
+client.connect_signal("property::maximized", function(c) 
+    if c.maximized then
+        c.border_width = 0
+    else
+        c.border_width = beautiful.border_width
     end
 end)
 
