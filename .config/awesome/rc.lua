@@ -6,17 +6,23 @@
 -- found (e.g. lgi). If LuaRocks is not installed, do nothing.
 pcall(require, "luarocks.loader")
 
--- Standard awesome library
+-- Standard awesome libraries
 local gears = require("gears")
 local awful = require("awful")
 require("awful.autofocus")
+
 -- Widget and layout library
 local wibox = require("wibox")
+
 -- Theme handling library
 local beautiful = require("beautiful")
--- Notification library -> use Dunst instead
+
+-- Notification library. I use Dunst instead
 -- local naughty = require("naughty")
+
+-- Hotkeys help menu
 local hotkeys_popup = require("awful.hotkeys_popup")
+
 -- Enable hotkeys help widget for VIM and other apps
 -- when client with a matching name is opened:
 -- require("awful.hotkeys_popup.keys")
@@ -30,7 +36,7 @@ local hotkeys_popup = require("awful.hotkeys_popup")
 -- another config (This code will only ever execute for the fallback config)
 if awesome.startup_errors then
     naughty.notify({ preset = naughty.config.presets.critical,
-                     title = "You freaked up! Go and fix this config now...",
+                     title = "You freaked up!",
                      text = awesome.startup_errors })
 end
 
@@ -132,6 +138,8 @@ local tasklist_template = {
                 { widget = wibox.widget.imagebox, id = "icon_role" },
                 id     = "icon_margin_role",
                 left   = 4,
+                top    = 4,
+                bottom = 4,
                 widget = wibox.container.margin
             },
             {
@@ -153,6 +161,19 @@ local tasklist_template = {
     id     = "background_role",
     widget = wibox.container.background
 }
+
+local updates_value = awful.widget.watch('bash -c "dnf list updates -q | wc -l"', 20)
+
+updates_icon = wibox.widget({
+        widget = wibox.widget.textbox,
+        markup = "<span foreground='#89b4fa'>ﮮ</span>",
+        font = "FiraCode Nerd Font Mono 18",
+    })
+
+updates_text = wibox.widget({
+        widget = wibox.widget.textbox,
+        markup = "<span foreground='#89b4fa'>Updates:</span>",
+    })
 
 -- Systray
 systray = wibox.layout.margin(wibox.widget.systray(), 5, 5, 5, 5)
@@ -302,8 +323,13 @@ awful.screen.connect_for_each_screen(function(s)
 
             myspacer,
             systray,
-            myspacer_small,
 
+            myspacer_small,
+            updates_icon,
+            updates_text,
+            updates_value,
+
+            myspacer,
             calendar_text,
             calendar,
 
