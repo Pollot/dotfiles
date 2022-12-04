@@ -123,6 +123,40 @@ mylauncher = awful.widget.launcher({ image = beautiful.awesome_icon,
 ----- Wibar -----
 -----------------
 
+-- Tasklist template to make icons centred
+local tasklist_template = {
+    {
+        nil,
+        {
+            {
+                { widget = wibox.widget.imagebox, id = "icon_role" },
+                id     = "icon_margin_role",
+                left   = 4,
+                widget = wibox.container.margin
+            },
+            {
+                {
+                    id     = "text_role",
+                    widget = wibox.widget.textbox,
+                },
+                id     = "text_margin_role",
+                left   = 4,
+                right  = 4,
+                widget = wibox.container.margin
+            },
+            --fill_space = true,
+            layout     = wibox.layout.fixed.horizontal
+        },
+        expand = "outside",
+        layout = wibox.layout.align.horizontal,
+    },
+    id     = "background_role",
+    widget = wibox.container.background
+}
+
+-- Systray
+systray = wibox.layout.margin(wibox.widget.systray(), 5, 5, 5, 5)
+
 -- Clock
 clock = wibox.widget({
 		widget = wibox.widget.textclock,
@@ -130,6 +164,7 @@ clock = wibox.widget({
         refresh = 1,
 	})
 
+-- Clock icon
 clock_text = wibox.widget({
         widget = wibox.widget.textbox,
         markup = "<span foreground='#f38ba8'></span>",
@@ -142,6 +177,7 @@ calendar = wibox.widget({
         format = "<span foreground='#fab387'>%a, %b %m</span>",
 	})
 
+-- Calendar icon
 calendar_text = wibox.widget({
         widget = wibox.widget.textbox,
         markup = "<span foreground='#fab387'></span>",
@@ -225,25 +261,25 @@ awful.screen.connect_for_each_screen(function(s)
                            awful.button({ }, 3, function () awful.layout.inc(-1) end),
                            awful.button({ }, 4, function () awful.layout.inc( 1) end),
                            awful.button({ }, 5, function () awful.layout.inc(-1) end)))
-    
-    -- Create a taglist widget
+    -- Add margin to layoutbox to change icon size
+    layoutbox = wibox.layout.margin(s.mylayoutbox, 0, 4, 4, 4)
+
+    -- Taglist
     s.mytaglist = awful.widget.taglist {
         screen  = s,
         filter  = awful.widget.taglist.filter.all,
         buttons = taglist_buttons
     }
 
-    -- Create a tasklist widget
+    -- Tasklist
     s.mytasklist = awful.widget.tasklist {
         screen   = s,
         filter   = awful.widget.tasklist.filter.currenttags,
         buttons  = tasklist_buttons,
-        --style = {
-        --    align = 'center'
-        --}
+        widget_template = tasklist_template
     }
 
-    -- Create the wibox
+    -- Wibox
     s.mywibox = awful.wibar({ position = "top", screen = s })
 
     -- Add widgets to the wibox
@@ -252,8 +288,10 @@ awful.screen.connect_for_each_screen(function(s)
         { -- Left widgets
             layout = wibox.layout.fixed.horizontal,
             spacing = 6,
+
             myspacer_small,
-            s.mylayoutbox,
+            layoutbox,
+
             s.mytaglist,
             myspacer,
         },
@@ -261,11 +299,14 @@ awful.screen.connect_for_each_screen(function(s)
         { -- Right widgets
             layout = wibox.layout.fixed.horizontal,
             spacing = 6,
+
             myspacer,
-            wibox.widget.systray(),
-            myspacer,
+            systray,
+            myspacer_small,
+
             calendar_text,
             calendar,
+
             myspacer,
             clock_text,
             clock,
