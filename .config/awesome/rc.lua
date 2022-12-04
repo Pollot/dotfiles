@@ -64,9 +64,12 @@ end
 beautiful.init("~/.config/awesome/theme.lua")
 
 -- This is used later as the default terminal and editor to run.
-terminal = "kitty"
-editor = "vim"
-editor_cmd = terminal .. " -e " .. editor
+terminal       = "kitty"
+editor         = "vim"
+editor_cmd     = terminal .. " -e " .. editor
+clock_app      = "gnome-clocks"
+calendar_app   = "gnome-calendar"
+update_command = terminal .. " -e " .. "sudo dnf update"
 
 -- Default modkey.
 -- Usually, Mod4 is the key with a logo between Control and Alt.
@@ -162,52 +165,71 @@ local tasklist_template = {
     widget = wibox.container.background
 }
 
-local updates_value = awful.widget.watch('bash -c "dnf list updates -q | wc -l"', 20)
 
-updates_icon = wibox.widget({
+-- Updates
+update_buttons = awful.button({ }, 1, function () awful.spawn(update_command) end)
+
+update = awful.widget.watch("sh -c 'dnf list updates -q | wc -l'", 1800, function(widget, stdout)
+        value = tonumber(stdout)
+        if value == 0 then
+            widget:set_markup("<span foreground='#89b4fa'>Up to date</span>")
+        else
+            widget:set_markup(string.format("<span foreground='#89b4fa'>%s</span>", stdout))
+            widget:buttons(update_buttons)
+        end
+    end)
+
+update_text = wibox.widget({
         widget = wibox.widget.textbox,
         markup = "<span foreground='#89b4fa'>ﮮ</span>",
-        font = "FiraCode Nerd Font Mono 18",
+        font = beautiful.icons_font,
+        buttons = update_buttons,
     })
 
-updates_text = wibox.widget({
-        widget = wibox.widget.textbox,
-        markup = "<span foreground='#89b4fa'>Updates:</span>",
-    })
 
 -- Systray
 systray = wibox.layout.margin(wibox.widget.systray(), 5, 5, 5, 5)
 
+
 -- Clock
+clock_buttons = awful.button({ }, 1, function () awful.spawn(clock_app) end)
+
 clock = wibox.widget({
 		widget = wibox.widget.textclock,
         format = "<span foreground='#f38ba8'>%H:%M:%S</span>",
         refresh = 1,
+        buttons = clock_buttons,
 	})
 
--- Clock icon
 clock_text = wibox.widget({
         widget = wibox.widget.textbox,
         markup = "<span foreground='#f38ba8'></span>",
-        font = "FiraCode Nerd Font Mono 18",
+        font = beautiful.icons_font,
+        buttons = clock_buttons,
     })
 
+
 -- Calendar
+calendar_buttons = awful.button({ }, 1, function () awful.spawn(calendar_app) end)
+
 calendar = wibox.widget({
 		widget = wibox.widget.textclock,
         format = "<span foreground='#fab387'>%a, %b %m</span>",
+        buttons = calendar_buttons,
 	})
 
--- Calendar icon
 calendar_text = wibox.widget({
         widget = wibox.widget.textbox,
         markup = "<span foreground='#fab387'></span>",
-        font = "FiraCode Nerd Font Mono 18",
+        font = beautiful.icons_font,
+        buttons = calendar_buttons,
     })
+
 
 -- Spacers
 myspacer = wibox.widget.textbox("  ")
 myspacer_small = wibox.widget.textbox(" ")
+
 
 -- Create a wibox for each screen and add it
 local taglist_buttons = gears.table.join(
@@ -325,9 +347,8 @@ awful.screen.connect_for_each_screen(function(s)
             systray,
 
             myspacer_small,
-            updates_icon,
-            updates_text,
-            updates_value,
+            update_text,
+            update,
 
             myspacer,
             calendar_text,
