@@ -141,8 +141,8 @@ local tasklist_template = {
                 { widget = wibox.widget.imagebox, id = "icon_role" },
                 id     = "icon_margin_role",
                 left   = 4,
-                top    = 4,
-                bottom = 4,
+                top    = 8,
+                bottom = 8,
                 widget = wibox.container.margin
             },
             {
@@ -193,7 +193,7 @@ updates_text = wibox.widget({
 
 
 -- Systray
-systray = wibox.layout.margin(wibox.widget.systray(), 5, 5, 5, 5)
+systray = wibox.layout.margin(wibox.widget.systray(), 8, 8, 8, 8)
 
 
 -- Clock
