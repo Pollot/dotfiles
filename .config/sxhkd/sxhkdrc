@@ -41,13 +41,13 @@ XF86AudioNext
     playerctl next
 
 XF86AudioRaiseVolume
-    pactl set-sink-volume @DEFAULT_SINK@ +5%
+    $HOME/.config/sxhkd/volume/volume.sh up
 
 XF86AudioLowerVolume
-    pactl set-sink-volume @DEFAULT_SINK@ -5%
+    $HOME/.config/sxhkd/volume/volume.sh down
 
 XF86AudioMute
-    pactl set-sink-mute @DEFAULT_SINK@ toggle
+    $HOME/.config/sxhkd/volume/volume.sh mute
 
 # Screenshot
 Print
