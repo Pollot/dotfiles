@@ -51,7 +51,7 @@ sudo cp ~/.config/monitors.xml /var/lib/gdm/.config/
 ```
 sudo dnf install awesome zsh kitty sxhkd rofi neofetch pavucontrol flameshot htop polkit-gnome \
 picom lxappearance gtk-murrine-engine dunst xss-lock i3lock qt5-qtstyleplugins \
-network-manager-applet
+network-manager-applet playerctl
 ```
 
 2. [Copr](https://copr.fedorainfracloud.org/):
