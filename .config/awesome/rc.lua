@@ -69,7 +69,7 @@ editor         = "vim"
 editor_cmd     = terminal .. " -e " .. editor
 clock_app      = "gnome-clocks"
 calendar_app   = "gnome-calendar"
-update_command = terminal .. " -e " .. "sudo dnf update"
+updates_command = terminal .. " -e " .. "sudo dnf update"
 
 -- Default modkey.
 -- Usually, Mod4 is the key with a logo between Control and Alt.
@@ -167,23 +167,28 @@ local tasklist_template = {
 
 
 -- Updates
-update_buttons = awful.button({ }, 1, function () awful.spawn(update_command) end)
+updates_buttons = awful.button({}, 1, function()
+    awful.spawn(updates_command)
+    updates_timer:emit_signal("timeout")
+end)
 
-update = awful.widget.watch("sh -c 'dnf list updates -q | wc -l'", 1800, function(widget, stdout)
+updates_widget, updates_timer = awful.widget.watch(
+    "sh -c 'dnf list updates -q | wc -l'",
+    1800,
+    function(widget, stdout)
         value = tonumber(stdout)
         if value == 0 then
             widget:set_markup("<span foreground='#89b4fa'>Up to date</span>")
         else
             widget:set_markup(string.format("<span foreground='#89b4fa'>%s</span>", stdout))
-            widget:buttons(update_buttons)
         end
     end)
 
-update_text = wibox.widget({
+updates_text = wibox.widget({
         widget = wibox.widget.textbox,
         markup = "<span foreground='#89b4fa'>ﮮ</span>",
         font = beautiful.icons_font,
-        buttons = update_buttons,
+        buttons = updates_buttons,
     })
 
 
@@ -347,8 +352,8 @@ awful.screen.connect_for_each_screen(function(s)
             systray,
 
             myspacer_small,
-            update_text,
-            update,
+            updates_text,
+            updates_widget,
 
             myspacer,
             calendar_text,
@@ -475,21 +480,18 @@ globalkeys = gears.table.join(
     awful.key({}, "XF86AudioRaiseVolume",
         function ()
             awful.util.spawn("pactl set-sink-volume @DEFAULT_SINK@ +5%")
-            show_volume_notification()
         end,
         {description = "raise volume", group = "multimedia"}),
 
     awful.key({}, "XF86AudioLowerVolume",
         function ()
             awful.util.spawn("pactl set-sink-volume @DEFAULT_SINK@ -5%")
-            show_volume_notification()
         end,
         {description = "lower volume", group = "multimedia"}),
 
     awful.key({}, "XF86AudioMute",
         function ()
-            awful.util.spawn("pactl set-sink-mute- @DEFAULT_SINK@ toggle")
-            show_volume_notification()
+            awful.util.spawn("pactl set-sink-mute @DEFAULT_SINK@ toggle")
         end,
         {description = "toggle mute volume", group = "multimedia"})
 )
