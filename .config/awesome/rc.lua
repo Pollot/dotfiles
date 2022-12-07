@@ -169,7 +169,7 @@ local tasklist_template = {
 
 
 -- Updates
-updates_buttons = awful.button({}, 1, function()
+updates_buttons = awful.button({ }, 1, function()
     awful.spawn(updates_command)
     updates_timer:emit_signal("timeout")
 end)
@@ -192,11 +192,6 @@ updates_text = wibox.widget({
         font = beautiful.icons_font,
         buttons = updates_buttons,
     })
-
-
--- Systray
-systray = wibox.layout.margin(wibox.widget.systray(), 8, 8, 8, 8)
-
 
 -- Clock
 clock_buttons = awful.button({ }, 1, function () awful.spawn(clock_app) end)
@@ -237,6 +232,16 @@ calendar_text = wibox.widget({
 myspacer = wibox.widget.textbox("  ")
 myspacer_small = wibox.widget.textbox(" ")
 
+-- Systray
+systray = wibox.layout.margin(wibox.widget.systray(), 8, 8, 8, 8)
+
+systray_layout = wibox.widget({
+        layout  = wibox.layout.fixed.horizontal,
+        myspacer,
+        systray,
+    })
+
+systray_final = awful.widget.only_on_screen(systray_layout)
 
 -- Create a wibox for each screen and add it
 local taglist_buttons = gears.table.join(
@@ -350,8 +355,7 @@ awful.screen.connect_for_each_screen(function(s)
             layout = wibox.layout.fixed.horizontal,
             spacing = 6,
 
-            myspacer,
-            systray,
+            systray_final,
 
             myspacer_small,
             updates_text,
@@ -476,19 +480,19 @@ globalkeys = gears.table.join(
               {description = "view next", group = "tag"}),
 
     --- Multimedia keys ---
-    awful.key({}, "XF86AudioRaiseVolume",
+    awful.key({ }, "XF86AudioRaiseVolume",
         function ()
             awful.util.spawn("pactl set-sink-volume @DEFAULT_SINK@ +5%")
         end,
         {description = "raise volume", group = "multimedia"}),
 
-    awful.key({}, "XF86AudioLowerVolume",
+    awful.key({ }, "XF86AudioLowerVolume",
         function ()
             awful.util.spawn("pactl set-sink-volume @DEFAULT_SINK@ -5%")
         end,
         {description = "lower volume", group = "multimedia"}),
 
-    awful.key({}, "XF86AudioMute",
+    awful.key({ }, "XF86AudioMute",
         function ()
             awful.util.spawn("pactl set-sink-mute @DEFAULT_SINK@ toggle")
         end,
