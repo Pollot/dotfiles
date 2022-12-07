@@ -82,6 +82,12 @@ theme.hotkeys_modifiers_fg = text
 theme.systray_icon_spacing = 10
 theme.taglist_spacing      = 6
 
+--- Taglist ---
+theme.taglist_fg_focus    = mauve
+theme.taglist_bg_focus    = mantle
+theme.taglist_fg_occupied = text
+theme.taglist_fg_empty    = overlay0
+
 -- There are other variable sets
 -- overriding the default one when
 -- defined, the sets are:
@@ -96,13 +102,13 @@ theme.taglist_spacing      = 6
 --theme.taglist_bg_focus = "#ff0000"
 
 -- Generate taglist squares:
-local taglist_square_size = dpi(4)
-theme.taglist_squares_sel = theme_assets.taglist_squares_sel(
-    taglist_square_size, theme.fg_normal
-)
-theme.taglist_squares_unsel = theme_assets.taglist_squares_unsel(
-    taglist_square_size, theme.fg_normal
-)
+-- local taglist_square_size = dpi(4)
+-- theme.taglist_squares_sel = theme_assets.taglist_squares_sel(
+--     taglist_square_size, theme.fg_normal
+-- )
+-- theme.taglist_squares_unsel = theme_assets.taglist_squares_unsel(
+--     taglist_square_size, theme.fg_normal
+-- )
 
 -- Variables set for theming notifications:
 -- notification_font
