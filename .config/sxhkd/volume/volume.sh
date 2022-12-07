@@ -26,7 +26,7 @@ function send_notification {
         dunstify -i "$muted" -t 1000 -r 2593 "  Volume: $volume%"
     elif [[ $volume < 30 ]] || [[ $volume = 5 ]] && [[ $volume != 100 ]]; then
         dunstify -i "$low" -t 1000 -r 2593 "  Volume: $volume%"
-    elif [[ $volume < 80 ]] && [[ $volume != 100 ]]; then
+    elif [[ $volume < 75 ]] && [[ $volume != 100 ]]; then
         dunstify -i "$medium" -t 1000 -r 2593 "  Volume: $volume%"
     else
         dunstify -i "$high" -t 1000 -r 2593 "  Volume: $volume%"
