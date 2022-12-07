@@ -477,26 +477,7 @@ globalkeys = gears.table.join(
               {description = "view previous", group = "tag"}),
 
     awful.key({ modkey,           }, "Right",  awful.tag.viewnext,
-              {description = "view next", group = "tag"}),
-
-    --- Multimedia keys ---
-    awful.key({ }, "XF86AudioRaiseVolume",
-        function ()
-            awful.util.spawn("pactl set-sink-volume @DEFAULT_SINK@ +5%")
-        end,
-        {description = "raise volume", group = "multimedia"}),
-
-    awful.key({ }, "XF86AudioLowerVolume",
-        function ()
-            awful.util.spawn("pactl set-sink-volume @DEFAULT_SINK@ -5%")
-        end,
-        {description = "lower volume", group = "multimedia"}),
-
-    awful.key({ }, "XF86AudioMute",
-        function ()
-            awful.util.spawn("pactl set-sink-mute @DEFAULT_SINK@ toggle")
-        end,
-        {description = "toggle mute volume", group = "multimedia"})
+              {description = "view next", group = "tag"})
 )
 
 
