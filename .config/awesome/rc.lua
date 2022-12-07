@@ -219,7 +219,7 @@ calendar_buttons = awful.button({ }, 1, function () awful.spawn(calendar_app) en
 
 calendar = wibox.widget({
 		widget = wibox.widget.textclock,
-        format = "<span foreground='#fab387'>%a, %b %m</span>",
+        format = "<span foreground='#fab387'>%a, %b %d</span>",
         buttons = calendar_buttons,
 	})
 
