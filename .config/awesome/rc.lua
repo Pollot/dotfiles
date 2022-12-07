@@ -64,12 +64,13 @@ end
 beautiful.init("~/.config/awesome/theme.lua")
 
 -- This is used later as the default terminal and editor to run.
-terminal       = "kitty"
-editor         = "vim"
-editor_cmd     = terminal .. " -e " .. editor
-clock_app      = "gnome-clocks"
-calendar_app   = "gnome-calendar"
-updates_command = terminal .. " -e " .. "sudo dnf update"
+terminal          = "kitty"
+terminal_floating = "kitty --class floating"
+editor            = "vim"
+editor_cmd        = terminal .. " -e " .. editor
+clock_app         = "gnome-clocks"
+calendar_app      = "gnome-calendar"
+updates_command   = terminal_floating .. " -e " .. "sudo dnf update"
 
 -- Default modkey.
 -- Usually, Mod4 is the key with a logo between Control and Alt.
@@ -643,6 +644,10 @@ awful.rules.rules = {
         },
 
         class = {
+            "floating",
+            "gnome-calendar",
+            "org.gnome.clocks",
+            "pavucontrol"
         },
 
         -- Note that the name property shown in xprop might be set slightly after creation of the client
