@@ -87,9 +87,11 @@ cd dotfiles/installation
 sudo nvidia-settings
 ```
 
-3. Use lxappearance to change your GTK and cursor theme.
+3. Change your GTK and cursor theme using lxappearance.
 
-4. Change flatpak applications theme:
+4. Change font to **Open Sans** and set its size to **11**.
+
+5. Change flatpak applications theme:
 ```
 sudo flatpak override --filesystem=$HOME/.themes
 
