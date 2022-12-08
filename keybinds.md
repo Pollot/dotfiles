@@ -17,13 +17,14 @@
 | Super+Ctrl+Shift |  q  |   Quit Awesome |
 | Super+Shift      |  r  | Reload Awesome |
 | Super            |  s  |      Show help |
+| Super            |  w  |      Show menu |
 
 ### Client
 
 | Modifiers   |  Key  |                  Function |
 |-------------|:-----:|--------------------------:|
 | Super+Shift | Enter |            Move to master |
-| Super+Shift |   c   |                     Close |
+| Super+Shift |   c   |              Close client |
 | Super+Shift |   j   |     Swap with next client |
 | Super+Shift |   k   | Swap with previous client |
 | Super       |   j   |         Focus next client |
@@ -37,7 +38,7 @@
 |-------------|:---:|-------------------------------:|
 | Super+Shift |  h  | Increase the number of masters |
 | Super+Shift |  l  | Decrease the number of masters |
-| Super       | Tab |                    Select next |
+| Super       | Tab |             Select next layout |
 | Super       |  h  |          Increase master width |
 | Super       |  l  |          Decrease master width |
 
