@@ -1,5 +1,9 @@
 # Screenshots
 
+### Awesome
+
+<img src="screenshots/awesome-first.png">
+
 ### Qtile
 
 <img src="screenshots/qtile-update3.png">
