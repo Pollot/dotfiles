@@ -546,8 +546,8 @@ def widgets_screen1():
 
 def widgets_screen2():
     widgets = widgets_screen1()
-    del widgets[5:7]  # remove systray and normal spacer
-    widgets.insert(5, spacer_medium)  # add spacer after tasklist
+    del widgets[4:6]  # remove systray and normal spacer
+    widgets.insert(4, spacer_medium)  # add spacer after tasklist
     return widgets
 
 
@@ -630,7 +630,7 @@ wmname = "Qtile"
 ####### Autostart #######
 #########################
 
-@ hook.subscribe.startup_once
+@ hook.subscribe.startup
 def autostart():
     home = os.path.expanduser('~/.config/qtile/autostart.sh')
     subprocess.Popen([home])
