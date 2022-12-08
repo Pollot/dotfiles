@@ -171,7 +171,15 @@ local tasklist_template = {
 -- Updates
 updates_buttons = awful.button({ }, 1, function()
     awful.spawn(updates_command)
-    updates_timer:emit_signal("timeout")
+    -- refresh updates widget after 5 minutes
+    gears.timer {
+        timeout   = 300,
+        autostart = true,
+        single_shot = true,
+        callback  = function()
+            updates_timer:emit_signal("timeout")
+        end
+    }
 end)
 
 updates_widget, updates_timer = awful.widget.watch(
