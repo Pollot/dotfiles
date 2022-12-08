@@ -12,6 +12,7 @@
 
 # Table of contents
 - [List of software](#list-of-software)
+    - [Awesome](#awesome)
     - [Qtile](#qtile)
     - [Catppuccin](#catppuccin)
     - [Wallpapers](#wallpapers)
@@ -20,11 +21,12 @@
     - [Rofi](#rofi)
     - [Nerd Font](#nerd-font)
     - [Grub](#grub)
+- [Keybinds](keybinds.md)
 - [Installation on Fedora](installation/fedora.md)
 - [Installation on Arch (deprecated)](installation/arch.md)
 
 # List of software
-- Window manager: [Qtile](#qtile), [Awesome](#awesome)
+- Window manager: [Awesome](#awesome), [Qtile](#qtile)
 - Colour scheme: [Catppuccin](#catppuccin)
 - Wallpapers: [Catppuccin](#wallpapers)
 - GTK theme: [Catppuccin](https://github.com/catppuccin/gtk)
@@ -39,11 +41,18 @@
 - Nerd font: [Fira Code](#nerd-font)
 - Bootloader: [Grub](#grub)
 
+# Awesome
+### Information:
+- [Official website](https://awesomewm.org/)
+- [Documentation](https://awesomewm.org/doc/api/index.html)
+#### Dependencies:
+- [Nerd font](#nerd-font)
+- [Open Sans font](https://fonts.google.com/specimen/Open+Sans)
 
 ## Qtile
 #### Information:
 - [Official website](http://www.qtile.org/)
-- [Qtile documentation](http://docs.qtile.org/en/stable/)
+- [Documentation](http://docs.qtile.org/en/stable/)
 - [Qtile extras documentation](https://qtile-extras.readthedocs.io/en/stable/index.html)
 #### Dependencies:
 - [Qtile extras](https://qtile-extras.readthedocs.io/en/stable/manual/install.html)
@@ -90,6 +99,8 @@ sudo ./install-fonts.sh
 
 ## Grub
 **Not included in my repository**. I use [Catppuccin for Grub](https://github.com/catppuccin/grub).
+
+# [Keybinds](keybinds.md)
 
 # [Installation on Fedora](installation/fedora.md)
 
