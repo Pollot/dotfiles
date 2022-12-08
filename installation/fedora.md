@@ -89,6 +89,13 @@ sudo nvidia-settings
 
 3. Use lxappearance to change your GTK and cursor theme.
 
+4. Change flatpak applications theme:
+```
+sudo flatpak override --filesystem=$HOME/.themes
+
+sudo flatpak override --env=GTK_THEME=Catppuccin-Mocha
+```
+
 # Post installation:
 There's nothing here yet.
 
@@ -149,7 +156,7 @@ sudo mv lf /usr/local/bin
 - [steam](https://store.steampowered.com/)<sup>RPM Fusion</sup>
 - [lutris](https://packages.fedoraproject.org/pkgs/lutris/lutris/)
 - [ProtonUp-Qt](https://flathub.org/apps/details/net.davidotek.pupgui2)<sup>Flatpak</sup>
-- [xone ﰬ](#xone)
+- [xone &darr;](#xone)
 
 Installation:
 ```
