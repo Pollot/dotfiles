@@ -354,8 +354,6 @@ extension_defaults = widget_defaults.copy()
 
 def current_layout_icon():
     return widget.CurrentLayoutIcon(
-        use_mask=True,
-        foreground=mauve,
         scale=0.6,
     )
 
@@ -527,7 +525,7 @@ spacer_small = widget.Spacer(
 
 def widgets_screen1():
     widgets = [
-        spacer_medium, current_layout_icon(), spacer_small, group_box(),
+        spacer_small, current_layout_icon(), group_box(),
 
         tasklist(), systray(),
 
