@@ -291,7 +291,7 @@ local tasklist_buttons = gears.table.join(
                                               awful.client.focus.byidx(-1)
                                           end))
 
-local function set_wallpaper(s)
+local function set_wallpaper_default(s)
     -- Wallpaper
     if beautiful.wallpaper then
         local wallpaper = beautiful.wallpaper
@@ -303,8 +303,15 @@ local function set_wallpaper(s)
     end
 end
 
+local function set_wallpaper(s)
+    local wallpaper1 = beautiful.wallpaper1
+    local wallpaper2 = beautiful.wallpaper2
+    gears.wallpaper.maximized(wallpaper1, 1)
+    gears.wallpaper.maximized(wallpaper2, 2)
+end
+
 -- Re-set wallpaper when a screen's geometry changes (e.g. different resolution)
-screen.connect_signal("property::geometry", set_wallpaper)
+screen.connect_signal("property::geometry", set_wallpaper_default)
 
 awful.screen.connect_for_each_screen(function(s)
     -- Wallpaper
