@@ -510,10 +510,10 @@ clientkeys = gears.table.join(
 
     --- Screen ---
     awful.key({ modkey, "Shift" }, ",",      function (c) c:move_to_screen(c.screen.index-1) end,
-              {description = "move to previous screen", group = "screen"}),
+              {description = "move to the previous screen", group = "screen"}),
     
     awful.key({ modkey, "Shift" }, ".",      function (c) c:move_to_screen(c.screen.index+1) end,
-              {description = "move to next screen", group = "screen"}),
+              {description = "move to the next screen", group = "screen"}),
 
     awful.key({ modkey, "Shift" }, "e",      function (c) c:move_to_screen(2)                end,
               {description = "move to screen 2", group = "screen"}),
