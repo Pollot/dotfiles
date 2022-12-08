@@ -49,7 +49,7 @@ sudo cp ~/.config/monitors.xml /var/lib/gdm/.config/
 ### Packages
 1. [RPM](https://packages.fedoraproject.org/):
 ```
-sudo dnf install awesome zsh kitty sxhkd rofi neofetch pavucontrol flameshot htop polkit-gnome \
+sudo dnf install awesome zsh kitty sxhkd rofi neofetch flameshot polkit-gnome \
 picom lxappearance gtk-murrine-engine dunst xss-lock i3lock qt5-qtstyleplugins \
 network-manager-applet playerctl
 ```
@@ -108,13 +108,15 @@ There's nothing here yet.
 - TUI file manager: [lf &darr;](#lf)
 - Text/Code editor: [Visual Studio Code &darr;](#visual-studio-code)
 - Password manager: [keepassxc](https://packages.fedoraproject.org/pkgs/keepassxc/keepassxc/)
+- Process viewer: [htop](https://packages.fedoraproject.org/pkgs/htop/htop/)
+- Audio control: [pavucontrol](https://packages.fedoraproject.org/pkgs/pavucontrol/pavucontrol/)
 - Communication: [Discord](https://flathub.org/apps/details/com.discordapp.Discord)<sup>Flatpak</sup>, [Signal](https://flathub.org/apps/details/org.signal.Signal)<sup>Flatpak</sup>
 - Graphic design: [gimp](https://packages.fedoraproject.org/pkgs/gimp/gimp/)
 - Video editing: [kdenlive](https://kdenlive.org/en/)<sup>RPM Fusion</sup>
 
 Installation:
 ```
-sudo dnf install nemo nemo-fileroller keepassxc gimp kdenlive
+sudo dnf install nemo nemo-fileroller keepassxc htop pavucontrol gimp kdenlive
 
 flatpak install flathub com.discordapp.Discord org.signal.Signal
 ```
