@@ -52,8 +52,6 @@ from libqtile.config import (
 )
 from libqtile.lazy import lazy
 
-from qtile_extras import widget
-
 # Colours
 from colours import *
 
@@ -110,13 +108,17 @@ wlp2 = "~/Wallpapers/stardust.jpg"
 
 keys = [
     # Basics
-    Key([mod, "shift"], "q",
-        lazy.function(show_power_menu),
-        desc="Show power menu"
+    Key([mod, "control", "shift"], "q",
+        lazy.shutdown(),
+        desc="Quit Qtile"
         ),
     Key([mod, "shift"], "r",
         lazy.reload_config(),
         desc="Reload config"
+        ),
+    Key([mod], "w",
+        lazy.function(show_power_menu),
+        desc="Show power menu"
         ),
     Key([mod, "shift"], "c",
         lazy.window.kill(),
@@ -128,7 +130,7 @@ keys = [
         desc="Toggle between layouts"
         ),
     # Switch between monitors
-    Key([mod], "w",
+    Key([mod], "q",
         lazy.to_screen(0),
         desc="Move focus to screen 0"
         ),
@@ -145,14 +147,6 @@ keys = [
         lazy.layout.down(),
         desc="Move focus down"
         ),
-    Key([mod], "h",
-        lazy.layout.left(),
-        desc="Move focus left"
-        ),
-    Key([mod], "l",
-        lazy.layout.right(),
-        desc="Move focus right"
-        ),
     Key([mod], "space",
         lazy.group.next_window(),
         desc="Move focus to next window in the group"
@@ -166,15 +160,7 @@ keys = [
         lazy.layout.shuffle_down(),
         desc="Move window down"
         ),
-    Key([mod, "shift"], "h",
-        lazy.layout.shuffle_left(),
-        desc="Move window left"
-        ),
-    Key([mod, "shift"], "l",
-        lazy.layout.shuffle_right(),
-        desc="Move window right"
-        ),
-    Key([mod, "shift"], "w",
+    Key([mod, "shift"], "q",
         lazy.window.toscreen(0),
         desc="Move window to screen 0"
         ),
@@ -191,11 +177,11 @@ keys = [
         lazy.layout.grow(),
         desc="Expand window"
         ),
-    Key([mod, "control"], "h",
+    Key([mod], "h",
         lazy.layout.shrink_main(),
         desc="Shrink master pane"
         ),
-    Key([mod, "control"], "l",
+    Key([mod], "l",
         lazy.layout.grow_main(),
         desc="Expand master pane"
         ),
