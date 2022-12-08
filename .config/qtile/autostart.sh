@@ -1,27 +1,19 @@
 #!/bin/sh
 
-# Function checking whether there is already an instance of program running
-function run { 
-    if ! pgrep $1 ; 
-    then 
-        $@& 
-    fi 
-}
-
 # Hotkey daemon
-run sxhkd
+sxhkd &
 
 # Lock screen
-run xss-lock -- i3lock -c 000000
+xss-lock -- i3lock -c 000000 &
 
 # Compositor
-run picom
+picom &
 
 # Authentication agent
-run /usr/libexec/polkit-gnome-authentication-agent-1
+/usr/libexec/polkit-gnome-authentication-agent-1 &
 
 # Network Manager Applet
-run nm-applet
+nm-applet &
 
 # VPN, change "Warsaw" to the name of your VPN profile
-run nmcli connection up Warsaw
+nmcli connection up Warsaw
