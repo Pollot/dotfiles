@@ -1,11 +1,14 @@
 # Legacy
-<img src="first-version.jpg">
+<img src="qtile-first-version.jpg">
 
 # Unixporn
-<img src="unixporn.jpg">
+<img src="qtile-unixporn.jpg">
 
 # Update 1
-<img src="update1.png">
+<img src="qtile-update1.png">
 
 # Update 2
-<img src="update2.png">
+<img src="qtile-update2.png">
+
+# Update 3
+<img src="qtile-update3.png">

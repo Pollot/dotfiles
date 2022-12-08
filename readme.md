@@ -2,7 +2,7 @@
 
 ### Qtile
 
-<img src="screenshots/update2.png">
+<img src="screenshots/qtile-update3.png">
 
 [Screenshots of previous versions](screenshots/screenshots.md)
 
