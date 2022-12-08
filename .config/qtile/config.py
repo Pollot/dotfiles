@@ -460,7 +460,7 @@ memory = widget.Memory(
 )
 
 owm_text = widget.OpenWeather(
-    foreground=yellow,
+    foreground=green,
     app_key=owm_api,
     cityid=city_id,
     format="{icon}",
@@ -470,7 +470,7 @@ owm_text = widget.OpenWeather(
 )
 
 owm = widget.OpenWeather(
-    foreground=yellow,
+    foreground=green,
     cityid=city_id,
     app_key=owm_api,
     format="{main_temp:.0f}°{units_temperature}",
@@ -529,15 +529,15 @@ def widgets_screen1():
     widgets = [
         spacer_medium, current_layout_icon(), spacer_small, group_box(),
 
-        systray(), spacer_medium, tasklist(),
+        tasklist(), systray(),
 
-        spacer_medium, volume_text, spacer_small, volume,
+        # spacer_medium, volume_text, spacer_small, volume,
 
-        spacer_normal, updates_text, spacer_small, updates,
-
-        spacer_normal, memory_text, spacer_small, memory,
+        # spacer_normal, memory_text, spacer_small, memory,
 
         spacer_normal, owm_text, spacer_small, owm,
+
+        spacer_normal, updates_text, spacer_small, updates,
 
         spacer_normal, calendar_text, spacer_small, calendar,
 
@@ -548,7 +548,8 @@ def widgets_screen1():
 
 def widgets_screen2():
     widgets = widgets_screen1()
-    del widgets[4:6]  # remove systray and medium spacer
+    del widgets[5:7]  # remove systray and normal spacer
+    widgets.insert(5, spacer_medium)  # add spacer after tasklist
     return widgets
 
 
