@@ -110,15 +110,14 @@ There's nothing here yet.
 - Password manager: [keepassxc](https://packages.fedoraproject.org/pkgs/keepassxc/keepassxc/)
 - Process viewer: [htop](https://packages.fedoraproject.org/pkgs/htop/htop/)
 - Audio control: [pavucontrol](https://packages.fedoraproject.org/pkgs/pavucontrol/pavucontrol/)
-- Communication: [Discord](https://flathub.org/apps/details/com.discordapp.Discord)<sup>Flatpak</sup>, [Signal](https://flathub.org/apps/details/org.signal.Signal)<sup>Flatpak</sup>
+- Communication: [Discord](https://flathub.org/apps/details/com.discordapp.Discord)<sup>RPM Fusion</sup>, [Signal](https://flathub.org/apps/details/org.signal.Signal)<sup>Flatpak</sup>
 - Graphic design: [gimp](https://packages.fedoraproject.org/pkgs/gimp/gimp/)
-- Video editing: [kdenlive](https://kdenlive.org/en/)<sup>RPM Fusion</sup>
 
 Installation:
 ```
-sudo dnf install nemo nemo-fileroller keepassxc htop pavucontrol gimp kdenlive
+sudo dnf install nemo nemo-fileroller keepassxc htop pavucontrol discord gimp
 
-flatpak install flathub com.discordapp.Discord org.signal.Signal
+flatpak install flathub org.signal.Signal
 ```
 #### Nemo
 - [Package](https://packages.fedoraproject.org/pkgs/nemo/nemo/)
@@ -161,10 +160,12 @@ sudo mv lf /usr/local/bin
 - [lutris](https://packages.fedoraproject.org/pkgs/lutris/lutris/)
 - [ProtonUp-Qt](https://flathub.org/apps/details/net.davidotek.pupgui2)<sup>Flatpak</sup>
 - [xone &darr;](#xone)
+- [mangohud](https://packages.fedoraproject.org/pkgs/mangohud/mangohud/)
+- [goverlay](https://packages.fedoraproject.org/pkgs/goverlay/goverlay/)
 
 Installation:
 ```
-sudo dnf install steam lutris
+sudo dnf install steam lutris mangohud goverlay
 
 flatpak install flathub net.davidotek.pupgui2
 ```
