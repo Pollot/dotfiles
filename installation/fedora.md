@@ -110,14 +110,14 @@ There's nothing here yet.
 - Password manager: [keepassxc](https://packages.fedoraproject.org/pkgs/keepassxc/keepassxc/)
 - Process viewer: [htop](https://packages.fedoraproject.org/pkgs/htop/htop/)
 - Audio control: [pavucontrol](https://packages.fedoraproject.org/pkgs/pavucontrol/pavucontrol/)
-- Communication: [Discord](https://flathub.org/apps/details/com.discordapp.Discord)<sup>RPM Fusion</sup>, [Signal](https://flathub.org/apps/details/org.signal.Signal)<sup>Flatpak</sup>
+- Communication: [Discord](https://flathub.org/apps/details/com.discordapp.Discord)<sup>Flatpak</sup>, [Signal](https://flathub.org/apps/details/org.signal.Signal)<sup>Flatpak</sup>
 - Graphic design: [gimp](https://packages.fedoraproject.org/pkgs/gimp/gimp/)
 
 Installation:
 ```
-sudo dnf install nemo nemo-fileroller keepassxc htop pavucontrol discord gimp
+sudo dnf install nemo nemo-fileroller keepassxc htop pavucontrol gimp
 
-flatpak install flathub org.signal.Signal
+flatpak install com.discordapp.Discord flathub org.signal.Signal
 ```
 #### Nemo
 - [Package](https://packages.fedoraproject.org/pkgs/nemo/nemo/)
