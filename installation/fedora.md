@@ -24,15 +24,15 @@ max_parallel_downloads=10
 ```
 You can read about full configuration options in the [DNF docs](https://dnf.readthedocs.io/en/latest/conf_ref.html).
 
-2. [Enable RPM Fusion repositories](https://rpmfusion.org/Configuration).
+2. [Enable Flatpak](https://flatpak.org/setup/Fedora).
 
-3. [Install multimedia packages](https://rpmfusion.org/Howto/Multimedia).
+3. [Enable RPM Fusion repositories](https://rpmfusion.org/Configuration).
 
-4. [Enable Flatpak](https://flatpak.org/setup/Fedora).
+4. [Install multimedia packages](https://rpmfusion.org/Howto/Multimedia).
 
 5. Install drivers. For Nvidia graphics card follow [this guide](https://rpmfusion.org/Howto/NVIDIA).
 
-6. Reboot and make sure that drivers installed successful.
+6. Reboot and confirm successful drivers installation.
 
 7. Configure Xorg as the default GDM display server if you don't use and plan to use Wayland. Open ```/etc/gdm/custom.conf``` and uncomment the following line:
 ```
@@ -80,7 +80,7 @@ cd dotfiles/installation
 ```
 
 ### Final steps
-1. Reboot and start a Qtile session.
+1. Reboot and start a chosen session.
 
 2. Use nvidia-settings to change your displays configuration. Save changes to X configuration file to preserve them (requires root privileges):
 ```
@@ -99,7 +99,8 @@ sudo flatpak override --env=GTK_THEME=Catppuccin-Mocha
 ```
 
 # Post installation:
-There's nothing here yet.
+
+1. If you have multiple drives, configure fstab. You can do it using GUI application, for example: ```gnome-disks```.
 
 # Optional software
 
@@ -110,12 +111,12 @@ There's nothing here yet.
 - Password manager: [keepassxc](https://packages.fedoraproject.org/pkgs/keepassxc/keepassxc/)
 - Process viewer: [htop](https://packages.fedoraproject.org/pkgs/htop/htop/)
 - Audio control: [pavucontrol](https://packages.fedoraproject.org/pkgs/pavucontrol/pavucontrol/)
-- Communication: [Discord](https://flathub.org/apps/details/com.discordapp.Discord)<sup>Flatpak</sup>, [Signal](https://flathub.org/apps/details/org.signal.Signal)<sup>Flatpak</sup>
 - Graphic design: [gimp](https://packages.fedoraproject.org/pkgs/gimp/gimp/)
+- Communication: [Discord](https://flathub.org/apps/details/com.discordapp.Discord)<sup>Flatpak</sup>, [Signal](https://flathub.org/apps/details/org.signal.Signal)<sup>Flatpak</sup>
 
 Installation:
 ```
-sudo dnf install nemo nemo-fileroller keepassxc htop pavucontrol gimp
+sudo dnf install keepassxc htop pavucontrol gimp
 
 flatpak install com.discordapp.Discord flathub org.signal.Signal
 ```
@@ -137,9 +138,6 @@ xdg-mime default nemo.desktop inode/directory application/x-gnome-saved-search
 gsettings set org.cinnamon.desktop.default-applications.terminal exec kitty
 ```
 
-#### Visual Studio Code
-- [Official installation guide](https://code.visualstudio.com/docs/setup/linux)
-
 #### lf
 1. Dowload  ```lf-linux-amd64.tar.gz``` (if you have amd64 CPU) from [releases page](https://github.com/gokcehan/lf/releases).
 
@@ -155,13 +153,16 @@ tar xf lf-linux-amd64.tar.gz
 sudo mv lf /usr/local/bin
 ```
 
+#### Visual Studio Code
+- [Official installation guide](https://code.visualstudio.com/docs/setup/linux)
+
 ### Gaming
+- [xone &darr;](#xone)
 - [steam](https://store.steampowered.com/)<sup>RPM Fusion</sup>
 - [lutris](https://packages.fedoraproject.org/pkgs/lutris/lutris/)
-- [ProtonUp-Qt](https://flathub.org/apps/details/net.davidotek.pupgui2)<sup>Flatpak</sup>
-- [xone &darr;](#xone)
 - [mangohud](https://packages.fedoraproject.org/pkgs/mangohud/mangohud/)
 - [goverlay](https://packages.fedoraproject.org/pkgs/goverlay/goverlay/)
+- [ProtonUp-Qt](https://flathub.org/apps/details/net.davidotek.pupgui2)<sup>Flatpak</sup>
 
 Installation:
 ```
