@@ -59,7 +59,7 @@ crust     = "#11111b"
 
 --- Fonts ---
 theme.font         = "Open Sans 11"
-theme.taglist_font = "FiraCode Nerd Font Mono 20"
+theme.taglist_font = "FiraCode Nerd Font Mono 18"
 theme.icons_font   = "FiraCode Nerd Font Mono 18"
 
 --- Backgrounds ---
