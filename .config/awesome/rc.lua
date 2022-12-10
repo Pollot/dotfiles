@@ -645,7 +645,7 @@ awful.rules.rules = {
             "floating",
             "gnome-calendar",
             "org.gnome.clocks",
-            "pavucontrol"
+            "Pavucontrol"
         },
 
         -- Note that the name property shown in xprop might be set slightly after creation of the client
