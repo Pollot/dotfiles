@@ -153,7 +153,7 @@ local tasklist_template = {
                     widget = wibox.widget.textbox,
                 },
                 id     = "text_margin_role",
-                left   = 4,
+                left   = 6,
                 right  = 4,
                 widget = wibox.container.margin
             },
