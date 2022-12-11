@@ -161,12 +161,11 @@ sudo mv lf /usr/local/bin
 - [steam](https://store.steampowered.com/)<sup>RPM Fusion</sup>
 - [lutris](https://packages.fedoraproject.org/pkgs/lutris/lutris/)
 - [mangohud](https://packages.fedoraproject.org/pkgs/mangohud/mangohud/)
-- [goverlay](https://packages.fedoraproject.org/pkgs/goverlay/goverlay/)
 - [ProtonUp-Qt](https://flathub.org/apps/details/net.davidotek.pupgui2)<sup>Flatpak</sup>
 
 Installation:
 ```
-sudo dnf install steam lutris mangohud goverlay
+sudo dnf install steam lutris mangohud
 
 flatpak install flathub net.davidotek.pupgui2
 ```
