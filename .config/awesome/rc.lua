@@ -71,6 +71,7 @@ editor_cmd        = terminal .. " -e " .. editor
 clock_app         = "gnome-clocks"
 calendar_app      = "gnome-calendar"
 updates_command   = terminal_floating .. " -e " .. "sudo dnf update"
+updates_flatpak   = terminal_floating .. " -e " .. "flatpak update"
 
 -- Default modkey.
 -- Usually, Mod4 is the key with a logo between Control and Alt.
@@ -171,6 +172,7 @@ local tasklist_template = {
 -- Updates
 updates_buttons = awful.button({ }, 1, function()
     awful.spawn(updates_command)
+    awful.spawn(updates_flatpak)
     -- refresh updates widget after 5 minutes
     gears.timer {
         timeout   = 300,
