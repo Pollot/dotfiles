@@ -76,12 +76,13 @@ theme.fg_urgent   = crust
 theme.fg_minimize = lavender
 
 --- Borders ---
-theme.useless_gap     = dpi(4)
-theme.border_width    = dpi(2)
-theme.border_normal   = base
-theme.border_focus    = mauve
-theme.border_marked   = green
-theme.border_floating = red
+theme.useless_gap      = dpi(4)
+theme.border_width     = dpi(2)
+theme.border_normal    = base
+theme.border_focus     = mauve
+theme.border_marked    = green
+theme.border_floating  = red
+theme.border_maximized = pink
 
 --- Hotkeys help menu ---
 theme.hotkeys_modifiers_fg = text
