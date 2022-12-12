@@ -17,7 +17,7 @@ local wibox = require("wibox")
 -- Theme handling library
 local beautiful = require("beautiful")
 
--- Notification library. I use Dunst instead
+-- Notification library. Use Dunst instead
 -- local naughty = require("naughty")
 
 -- Hotkeys help menu
@@ -26,6 +26,9 @@ local hotkeys_popup = require("awful.hotkeys_popup")
 -- Enable hotkeys help widget for VIM and other apps
 -- when client with a matching name is opened:
 -- require("awful.hotkeys_popup.keys")
+
+-- Shared tags: https://github.com/Drauthius/awesome-sharedtags
+local sharedtags = require("sharedtags")
 
 
 ----------------------
@@ -80,6 +83,11 @@ updates_flatpak   = terminal_floating .. " -e " .. "flatpak update"
 -- However, you can use another modifier like Mod1, but it may interact with others.
 modkey = "Mod4"
 
+
+-------------------
+----- Layouts -----
+-------------------
+
 -- Table of layouts to cover with awful.layout.inc, order matters.
 awful.layout.layouts = {
     awful.layout.suit.tile,
@@ -99,6 +107,20 @@ awful.layout.layouts = {
     -- awful.layout.suit.corner.sw,
     -- awful.layout.suit.corner.se,
 }
+
+
+------------------
+------ Tags ------
+------------------
+
+local tags = sharedtags({
+    { name = "", layout = awful.layout.suit.tile },
+    { name = "", layout = awful.layout.suit.tile },
+    { name = "", layout = awful.layout.suit.tile },
+    { name = "ﳳ", layout = awful.layout.suit.tile },
+    { name = "調", layout = awful.layout.suit.max },
+    { name = "ﭮ", layout = awful.layout.suit.tile },
+})
 
 
 ------------------
@@ -320,10 +342,11 @@ awful.screen.connect_for_each_screen(function(s)
     set_wallpaper(s)
 
     -- Each screen has its own tag table.
-    local names = { "", "", "", "ﳳ", "調", "ﭮ" }
-    local l = awful.layout.suit  -- Just to save some typing: use an alias.
-    local layouts = { l.tile, l.tile, l.tile, l.tile, l.max, l.tile }
-    awful.tag(names, s, layouts)
+    -- Use sharedtags instead.
+    -- local names = { "", "", "", "ﳳ", "調", "ﭮ" }
+    -- local l = awful.layout.suit  -- Just to save some typing: use an alias.
+    -- local layouts = { l.tile, l.tile, l.tile, l.tile, l.max, l.tile }
+    -- awful.tag(names, s, layouts)
 
     -- Create an imagebox widget which will contain an icon indicating which layout we're using.
     -- We need one layoutbox per screen.
@@ -340,7 +363,8 @@ awful.screen.connect_for_each_screen(function(s)
     s.mytaglist = awful.widget.taglist {
         screen  = s,
         filter  = awful.widget.taglist.filter.all,
-        buttons = taglist_buttons
+        buttons = taglist_buttons,
+        source = function() return root.tags() end
     }
 
     -- Tasklist
@@ -560,42 +584,48 @@ for i = 1, 6 do
         awful.key({ modkey }, "#" .. i + 9,
                   function ()
                         local screen = awful.screen.focused()
-                        local tag = screen.tags[i]
+                        -- local tag = screen.tags[i]
+                        local tag = tags[i]
                         if tag then
-                           tag:view_only()
+                            -- tag:view_only()
+                            sharedtags.viewonly(tag, screen)
                         end
                   end,
                   {description = "view tag #"..i, group = "tag"}),
         -- Toggle tag display.
         awful.key({ modkey, "Control" }, "#" .. i + 9,
                   function ()
-                      local screen = awful.screen.focused()
-                      local tag = screen.tags[i]
-                      if tag then
-                         awful.tag.viewtoggle(tag)
-                      end
+                        local screen = awful.screen.focused()
+                        -- local tag = screen.tags[i]
+                        local tag = tags[i]
+                        if tag then
+                            -- awful.tag.viewtoggle(tag)
+                            sharedtags.viewtoggle(tag, screen)
+                        end
                   end,
                   {description = "toggle tag #" .. i, group = "tag"}),
         -- Move client to tag.
         awful.key({ modkey, "Shift" }, "#" .. i + 9,
                   function ()
-                      if client.focus then
-                          local tag = client.focus.screen.tags[i]
-                          if tag then
-                              client.focus:move_to_tag(tag)
-                          end
-                     end
+                        if client.focus then
+                            -- local tag = client.focus.screen.tags[i]
+                            local tag = tags[i]
+                            if tag then
+                                client.focus:move_to_tag(tag)
+                            end
+                        end
                   end,
                   {description = "move focused client to tag #"..i, group = "tag"})
         -- Toggle tag on focused client.
         -- awful.key({ modkey, "Control", "Shift" }, "#" .. i + 9,
         --           function ()
-        --               if client.focus then
-        --                   local tag = client.focus.screen.tags[i]
-        --                   if tag then
-        --                       client.focus:toggle_tag(tag)
-        --                   end
-        --               end
+        --              if client.focus then
+        --                  -- local tag = client.focus.screen.tags[i]
+        --                  local tag = tags[i]
+        --                  if tag then
+        --                      client.focus:toggle_tag(tag)
+        --                  end
+        --              end
         --           end,
         --           {description = "toggle focused client on tag #" .. i, group = "tag"})
     )
@@ -664,32 +694,32 @@ awful.rules.rules = {
         class = {
             "Code"
         }
-      }, properties = { tag = "", switchtotag = true }},
+      }, properties = { tag = tags[2], switchtotag = true }},
 
     { rule_any = {
         class = {
             "firefox"
         }
-      }, properties = { tag = "", switchtotag = true }},
+      }, properties = { tag = tags[3], switchtotag = true }},
 
     { rule_any = {
         class = {
             "KeePassXC"
         } 
-      }, properties = { tag = "ﳳ", switchtotag = true }},
+      }, properties = { tag = tags[4], switchtotag = true }},
 
     { rule_any = {
         class = {
             "Lutris",
             "Steam"
         } 
-      }, properties = { tag = "調", switchtotag = true }},
+      }, properties = { tag = tags[5], switchtotag = true }},
 
     { rule_any = { 
         class = {
             "discord"
         }
-      }, properties = { tag = "ﭮ", switchtotag = true }},
+      }, properties = { tag = tags[6], switchtotag = true }},
 }
 
 
