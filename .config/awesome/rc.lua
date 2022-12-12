@@ -718,7 +718,9 @@ end)
 
 -- Border colours
 function border_color_function(c) 
-    if c.maximized then
+    if c.ontop then
+        return beautiful.border_ontop
+    elseif c.maximized then
         return beautiful.border_maximized
     elseif c.floating then
         return beautiful.border_floating
@@ -735,11 +737,15 @@ client.connect_signal("focus", function(c)
     c.border_color = border_color_function(c)
 end)
 
-client.connect_signal("property::floating", function(c) 
+client.connect_signal("property::ontop", function(c) 
     c.border_color = border_color_function(c)
 end)
 
 client.connect_signal("property::maximized", function(c) 
+    c.border_color = border_color_function(c)
+end)
+
+client.connect_signal("property::floating", function(c) 
     c.border_color = border_color_function(c)
 end)
 

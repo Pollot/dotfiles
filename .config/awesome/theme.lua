@@ -80,9 +80,9 @@ theme.useless_gap      = dpi(4)
 theme.border_width     = dpi(2)
 theme.border_normal    = base
 theme.border_focus     = mauve
-theme.border_floating  = red
-theme.border_maximized = pink
 theme.border_ontop     = green
+theme.border_maximized = pink
+theme.border_floating  = red
 
 --- Hotkeys help menu ---
 theme.hotkeys_modifiers_fg = text
