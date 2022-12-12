@@ -348,9 +348,6 @@ awful.screen.connect_for_each_screen(function(s)
     -- local layouts = { l.tile, l.tile, l.tile, l.tile, l.max, l.tile }
     -- awful.tag(names, s, layouts)
 
-    -- Set tag 2 as default one for other screen
-    sharedtags.viewonly(tags[2], s)
-
     -- Create an imagebox widget which will contain an icon indicating which layout we're using.
     -- We need one layoutbox per screen.
     s.mylayoutbox = awful.widget.layoutbox(s)
@@ -781,3 +778,4 @@ end)
 -------------------
 
 awful.spawn.with_shell("~/.config/awesome/autostart.sh")
+
