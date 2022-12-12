@@ -292,16 +292,11 @@ layout_theme = {
 
 layouts = [
     layout.MonadTall(
-        new_client_position="top",
-        change_size=40,
-        **layout_theme,
-    ),
-    layout.MonadWide(
-        new_client_position="top",
         change_size=40,
         **layout_theme,
     ),
     layout.Max(**layout_theme),
+    # layout.MonadWide(**layout_theme),
     # layout.RatioTile(**layout_theme),
     # layout.Floating(**layout_theme),
     # layout.Columns(**layout_theme),
