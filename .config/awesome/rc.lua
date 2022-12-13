@@ -700,7 +700,7 @@ awful.rules.rules = {
 
     { rule_any = {
         class = {
-            "KeePassXC"
+            "Bitwarden"
         } 
       }, properties = { tag = "ﳳ", switchtotag = true }},
 

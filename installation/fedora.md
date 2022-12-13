@@ -108,17 +108,17 @@ sudo flatpak override --env=GTK_THEME=Catppuccin-Mocha-Standard-Mauve-Dark
 - GUI file manager: [nemo &darr;](#nemo)
 - TUI file manager: [lf &darr;](#lf)
 - Text/Code editor: [Visual Studio Code &darr;](#visual-studio-code)
-- Password manager: [keepassxc](https://packages.fedoraproject.org/pkgs/keepassxc/keepassxc/)
 - Process viewer: [htop](https://packages.fedoraproject.org/pkgs/htop/htop/)
 - Audio control: [pavucontrol](https://packages.fedoraproject.org/pkgs/pavucontrol/pavucontrol/)
 - Graphic design: [gimp](https://packages.fedoraproject.org/pkgs/gimp/gimp/)
+- Password manager: [Bitwarden](https://flathub.org/apps/details/com.bitwarden.desktop)<sup>Flatpak</sup>
 - Communication: [Discord](https://flathub.org/apps/details/com.discordapp.Discord)<sup>Flatpak</sup>, [Signal](https://flathub.org/apps/details/org.signal.Signal)<sup>Flatpak</sup>
 
 Installation:
 ```
-sudo dnf install keepassxc htop pavucontrol gimp
+sudo dnf install htop pavucontrol gimp
 
-flatpak install com.discordapp.Discord flathub org.signal.Signal
+flatpak install com.bitwarden.desktop com.discordapp.Discord flathub org.signal.Signal
 ```
 #### Nemo
 - [Package](https://packages.fedoraproject.org/pkgs/nemo/nemo/)
