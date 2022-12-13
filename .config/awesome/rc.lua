@@ -185,6 +185,7 @@ packages_widget, packages_timer = awful.widget.watch(
             widget:set_markup("<span foreground='#89b4fa'>Up to date</span>")
         else
             widget:set_markup(string.format("<span foreground='#89b4fa'>%s</span>", stdout))
+            widget:buttons(packages_buttons)
         end
     end)
 
@@ -212,6 +213,7 @@ flatpaks_widget, flatpaks_timer = awful.widget.watch(
             widget:set_markup("<span foreground='#a6e3a1'>Up to date</span>")
         else
             widget:set_markup(string.format("<span foreground='#a6e3a1'>%s</span>", stdout))
+            widget:buttons(flatpaks_buttons)
         end
     end)
 
