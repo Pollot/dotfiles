@@ -70,8 +70,8 @@ editor            = "vim"
 editor_cmd        = terminal .. " -e " .. editor
 clock_app         = "gnome-clocks"
 calendar_app      = "gnome-calendar"
-updates_command   = terminal_floating .. " -e " .. "sudo dnf update"
-updates_flatpak   = terminal_floating .. " -e " .. "flatpak update"
+packages_command  = terminal_floating .. " -e " .. "sudo dnf update"
+flatpaks_command  = terminal_floating .. " -e " .. "flatpak update"
 
 -- Default modkey.
 -- Usually, Mod4 is the key with a logo between Control and Alt.
@@ -169,14 +169,14 @@ local tasklist_template = {
 }
 
 
--- Updates
-updates_buttons = awful.button({ }, 1, function()
-    awful.spawn.easy_async(updates_command, function(out)
-        updates_timer:emit_signal("timeout")
+-- Packages updates
+packages_buttons = awful.button({ }, 1, function()
+    awful.spawn.easy_async(packages_command, function(out)
+        packages_timer:emit_signal("timeout")
     end)
 end)
 
-updates_widget, updates_timer = awful.widget.watch(
+packages_widget, packages_timer = awful.widget.watch(
     "sh -c 'dnf list updates -q | wc -l'",
     1800,
     function(widget, stdout)
@@ -188,12 +188,40 @@ updates_widget, updates_timer = awful.widget.watch(
         end
     end)
 
-updates_text = wibox.widget({
+packages_text = wibox.widget({
         widget = wibox.widget.textbox,
         markup = "<span foreground='#89b4fa'>ﮮ</span>",
         font = beautiful.icons_font,
-        buttons = updates_buttons,
+        buttons = packages_buttons,
     })
+
+
+-- FLatpaks updates
+flatpaks_buttons = awful.button({ }, 1, function()
+    awful.spawn.easy_async(flatpaks_command, function(out)
+        flatpaks_timer:emit_signal("timeout")
+    end)
+end)
+
+flatpaks_widget, flatpaks_timer = awful.widget.watch(
+    "sh -c 'flatpak remote-ls --updates | wc -l'",
+    1800,
+    function(widget, stdout)
+        value = tonumber(stdout)
+        if value == 0 then
+            widget:set_markup("<span foreground='#a6e3a1'>Up to date</span>")
+        else
+            widget:set_markup(string.format("<span foreground='#a6e3a1'>%s</span>", stdout))
+        end
+    end)
+
+flatpaks_text = wibox.widget({
+        widget = wibox.widget.textbox,
+        markup = "<span foreground='#a6e3a1'></span>",
+        font = beautiful.icons_font,
+        buttons = flatpaks_buttons,
+    })
+
 
 -- Clock
 clock_buttons = awful.button({ }, 1, function () awful.spawn(clock_app) end)
@@ -367,8 +395,12 @@ awful.screen.connect_for_each_screen(function(s)
             systray_final,
 
             myspacer_small,
-            updates_text,
-            updates_widget,
+            packages_text,
+            packages_widget,
+
+            myspacer,
+            flatpaks_text,
+            flatpaks_widget,
 
             myspacer,
             calendar_text,
