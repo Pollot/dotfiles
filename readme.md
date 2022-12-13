@@ -2,7 +2,7 @@
 
 ### Awesome
 
-<img src="screenshots/awesome-first.png">
+<img src="screenshots/awesome-update1.png">
 
 ### Qtile
 

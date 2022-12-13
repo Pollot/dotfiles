@@ -7,6 +7,9 @@
 ### First version
 <img src="awesome-first.png">
 
+### Update 1
+<img src="awesome-update1.png">
+
 # Qtile
 
 ### Legacy
