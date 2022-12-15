@@ -184,7 +184,7 @@ packages_widget, packages_timer = awful.widget.watch(
         if value == 0 then
             widget:set_markup("<span foreground='#89b4fa'>Up to date</span>")
         else
-            widget:set_markup(string.format("<span foreground='#89b4fa'>%s</span>", stdout))
+            widget:set_markup(string.format("<span foreground='#89b4fa'>%d</span>", value - 1))
             widget:buttons(packages_buttons)
         end
     end)
