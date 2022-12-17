@@ -742,6 +742,17 @@ client.connect_signal("mouse::enter", function(c)
     c:emit_signal("request::activate", "mouse_enter", {raise = false})
 end)
 
+-- Fix bar not disappearing when fullscreen client appear
+client.connect_signal("property::fullscreen", function(c)
+    if c.fullscreen then
+        gears.timer.delayed_call(function()
+            if c.valid then
+                c:geometry(c.screen.geometry)
+            end
+        end)
+    end
+end)
+
 -- Border colours
 function border_color_function(c) 
     if c.ontop then
