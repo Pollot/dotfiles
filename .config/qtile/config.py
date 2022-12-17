@@ -80,11 +80,15 @@ weather_app = "gnome-weather"
 calendar_app = "gnome-calendar"
 clock_app = "gnome-clocks"
 
-# Updates widget
-distro = "Fedora"
+# Packages updates
+check_updates = "Fedora"
 update = "sudo dnf update"
-# distro = "Arch_checkupdates"
+# check_updates = "Arch_checkupdates"
 # update = "sudo pacman -Syu"
+
+# Flatpak updates
+check_updates_flatpak = "flatpak remote-ls --updates"
+update_flatpak = "flatpak update"
 
 # OWM widget
 city_id = "756135"  # openweathermap.org/city/[city id]
@@ -410,7 +414,7 @@ updates_text = widget.TextBox(
     font=font_nerd,
     fontsize=icon_normal,
     mouse_callbacks={"Button1": lazy.spawn(
-        terminal + " -e sudo pacman - Syu")},
+        terminal + " -e " + update)},
 )
 
 updates = widget.CheckUpdates(
@@ -420,8 +424,28 @@ updates = widget.CheckUpdates(
     no_update_string="Up to date",
     display_format="{updates}",
     initial_text="Checking...",
-    distro=distro,
+    distro=check_updates,
     execute=terminal + " -e " + update,
+)
+
+updates_flatpak_text = widget.TextBox(
+    foreground=green,
+    text="",
+    font=font_nerd,
+    fontsize=icon_normal,
+    mouse_callbacks={"Button1": lazy.spawn(
+        terminal + " -e " + update_flatpak)},
+)
+
+updates_flatpak = widget.CheckUpdates(
+    colour_no_updates=green,
+    colour_have_updates=green,
+    update_interval=1800,
+    no_update_string="Up to date",
+    display_format="{updates}",
+    initial_text="Checking...",
+    custom_command=check_updates_flatpak,
+    execute=terminal + " -e " + update_flatpak,
 )
 
 memory_text = widget.TextBox(
@@ -514,9 +538,11 @@ def widgets_screen1():
 
         # spacer_normal, memory_text, spacer_small, memory,
 
-        spacer_normal, owm_text, spacer_small, owm,
+        # spacer_normal, owm_text, spacer_small, owm,
 
         spacer_normal, updates_text, spacer_small, updates,
+
+        spacer_normal, updates_flatpak_text, spacer_small, updates_flatpak,
 
         spacer_normal, calendar_text, spacer_small, calendar,
 
