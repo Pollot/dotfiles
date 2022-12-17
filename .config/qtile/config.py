@@ -489,7 +489,7 @@ calendar_text = widget.TextBox(
 
 calendar = widget.Clock(
     foreground=peach,
-    format="%a, %b %-d",
+    format="%a, %d %b",
     mouse_callbacks={"Button1": lazy.spawn(calendar_app)},
 )
 
