@@ -30,6 +30,7 @@
 - Colour scheme: [Catppuccin](#catppuccin)
 - Wallpapers: [Catppuccin](#wallpapers)
 - GTK theme: [Catppuccin](https://github.com/catppuccin/gtk)
+- Icon theme: [Breeze Dark](https://github.com/KDE/breeze-icons)
 - Cursor theme: [Volantes](https://www.gnome-look.org/p/1356095)
 - Compositor: [Picom](#picom)
 - Shell: [Zsh](#zsh)

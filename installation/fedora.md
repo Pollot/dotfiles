@@ -51,7 +51,7 @@ sudo cp ~/.config/monitors.xml /var/lib/gdm/.config/
 ```
 sudo dnf install awesome zsh kitty sxhkd rofi neofetch flameshot polkit-gnome \
 picom lxappearance gtk-murrine-engine dunst xss-lock i3lock qt5-qtstyleplugins \
-network-manager-applet playerctl
+network-manager-applet playerctl breeze-icon-theme
 ```
 
 2. [Copr](https://copr.fedorainfracloud.org/):
@@ -87,7 +87,7 @@ cd dotfiles/installation
 sudo nvidia-settings
 ```
 
-3. Change your GTK and cursor theme using lxappearance.
+3. Change your GTK, icon and cursor theme using lxappearance.
 
 4. Change font to **Open Sans** and set its size to **11**.
 
