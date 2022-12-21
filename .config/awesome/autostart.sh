@@ -22,6 +22,3 @@ run /usr/libexec/polkit-gnome-authentication-agent-1
 
 # Network Manager Applet
 run nm-applet
-
-# VPN, change "Warsaw" to the name of your VPN profile
-run nmcli connection up Warsaw
