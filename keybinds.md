@@ -69,9 +69,9 @@
 
 | Modifiers   |   Key  |               Function |
 |-------------|:------:|-----------------------:|
-| Super+Ctrl  |   1-6  |         Toggle tag 1-6 |
-| Super+Shift |   1-6  | Move client to tag 1-6 |
-| Super       |   1-6  |           View tag 1-6 |
+| Super+Ctrl  |   1-7  |         Toggle tag 1-7 |
+| Super+Shift |   1-7  | Move client to tag 1-7 |
+| Super       |   1-7  |           View tag 1-7 |
 | Super       | &larr; |          View previous |
 | Super       | &rarr; |              View next |
 

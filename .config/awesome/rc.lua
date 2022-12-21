@@ -342,9 +342,9 @@ awful.screen.connect_for_each_screen(function(s)
     set_wallpaper(s)
 
     -- Each screen has its own tag table.
-    local names = { "", "", "", "ﳳ", "調", "ﭮ" }
+    local names = { "", "", "", "ﳳ", "調", "ﭮ", "阮" }
     local l = awful.layout.suit  -- Just to save some typing: use an alias.
-    local layouts = { l.tile, l.tile, l.tile, l.tile, l.max, l.tile }
+    local layouts = { l.tile, l.tile, l.tile, l.tile, l.max, l.tile, l.tile }
     awful.tag(names, s, layouts)
 
     -- Create an imagebox widget which will contain an icon indicating which layout we're using.
@@ -580,7 +580,7 @@ clientkeys = gears.table.join(
 -- Bind all key numbers to tags.
 -- Be careful: we use keycodes to make it work on any keyboard layout.
 -- This should map on the top row of your keyboard, usually 1 to 9.
-for i = 1, 6 do
+for i = 1, 7 do
     globalkeys = gears.table.join(globalkeys,
         -- View tag only.
         awful.key({ modkey }, "#" .. i + 9,
@@ -716,6 +716,12 @@ awful.rules.rules = {
             "discord"
         }
       }, properties = { tag = "ﭮ", switchtotag = true }},
+
+    { rule_any = { 
+        class = {
+            "Spotify"
+        }
+      }, properties = { tag = "阮", switchtotag = true }},
 }
 
 
