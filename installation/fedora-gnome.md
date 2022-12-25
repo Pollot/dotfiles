@@ -37,7 +37,7 @@ You can read about full configuration options in the [DNF docs](https://dnf.read
 WaylandEnable=false
 ```
 
-7. [Enable Flatpak](https://flatpak.org/setup/Fedora). If you use gnome-software, enable it in software repositories as well.
+7. [Enable Flatpak](https://flatpak.org/setup/Fedora). If you use ```gnome-software```, enable it in software repositories as well.
 
 8. [Enable RPM Fusion repositories](https://rpmfusion.org/Configuration).
 
@@ -81,7 +81,6 @@ sudo cp ~/.config/monitors.xml /var/lib/gdm/.config/
 ```
 
 ### Packages
-**If you use GNOME:**
 1. [RPM](https://packages.fedoraproject.org/)
 ```
 sudo dnf install gnome-tweaks zsh kitty neofetch gtk-murrine-engine
@@ -90,26 +89,6 @@ sudo dnf install gnome-tweaks zsh kitty neofetch gtk-murrine-engine
 2. [Flatpak](https://flatpak.org/):
 ```
 flatpak install flathub com.mattjakeman.ExtensionManager
-```
-
-3. [Starship](https://starship.rs/) (shell prompt):
-```
-curl -sS https://starship.rs/install.sh | sh
-```
-
-**If you use window managers:**
-1. [RPM](https://packages.fedoraproject.org/):
-```
-sudo dnf install awesome zsh kitty sxhkd rofi neofetch flameshot polkit-gnome \
-picom lxappearance gtk-murrine-engine dunst xss-lock i3lock qt5-qtstyleplugins \
-network-manager-applet playerctl breeze-icon-theme
-```
-
-2. [Copr](https://copr.fedorainfracloud.org/):
-```
-sudo dnf copr enable frostyx/qtile
-
-sudo dnf install qtile qtile-extras
 ```
 
 3. [Starship](https://starship.rs/) (shell prompt):
@@ -131,18 +110,9 @@ cd dotfiles/installation
 ```
 
 ### Final steps
-1. Reboot and start a chosen session.
+1. Change your GTK3, shell and cursor theme using ```gnome-tweaks```.
 
-2. Use nvidia-settings to change your displays configuration. Save changes to X configuration file to preserve them (requires root privileges):
-```
-sudo nvidia-settings
-```
-
-3. Change your GTK, icon and cursor theme using lxappearance.
-
-4. Change font to **Open Sans** and set its size to **11**.
-
-5. Change flatpak applications theme:
+2. Change flatpak applications theme:
 ```
 sudo flatpak override --filesystem=$HOME/.themes
 
@@ -156,37 +126,18 @@ sudo flatpak override --env=GTK_THEME=Catppuccin-Mocha-Standard-Mauve-Dark
 # Optional software
 
 ### Recommended packages
-- GUI file manager: [nemo &darr;](#nemo)
 - TUI file manager: [lf &darr;](#lf)
 - Text/Code editor: [Visual Studio Code &darr;](#visual-studio-code)
 - Password manager: [Bitwarden &darr;](#bitwarden)
 - Process viewer: [htop](https://packages.fedoraproject.org/pkgs/htop/htop/)
-- Audio control: [pavucontrol](https://packages.fedoraproject.org/pkgs/pavucontrol/pavucontrol/)
 - Graphic design: [gimp](https://packages.fedoraproject.org/pkgs/gimp/gimp/)
 - Communication: [Discord](https://flathub.org/apps/details/com.discordapp.Discord)<sup>Flatpak</sup>, [Signal](https://flathub.org/apps/details/org.signal.Signal)<sup>Flatpak</sup>
 
 Installation:
 ```
-sudo dnf install htop pavucontrol gimp
+sudo dnf install htop gimp
 
 flatpak install com.discordapp.Discord flathub org.signal.Signal
-```
-#### Nemo
-- [Package](https://packages.fedoraproject.org/pkgs/nemo/nemo/)
-
-1. Install Nemo and chosen extensions:
-```
-sudo dnf install nemo nemo-fileroller
-```
-
-2. Set Nemo as default file browser:
-```
-xdg-mime default nemo.desktop inode/directory application/x-gnome-saved-search
-```
-
-3. Change the default terminal emulator to kitty:
-```
-gsettings set org.cinnamon.desktop.default-applications.terminal exec kitty
 ```
 
 #### lf

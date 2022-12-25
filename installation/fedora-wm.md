@@ -37,7 +37,7 @@ You can read about full configuration options in the [DNF docs](https://dnf.read
 WaylandEnable=false
 ```
 
-7. [Enable Flatpak](https://flatpak.org/setup/Fedora). If you use gnome-software, enable it in software repositories as well.
+7. [Enable Flatpak](https://flatpak.org/setup/Fedora). If you use ```gnome-software```, enable it in software repositories as well.
 
 8. [Enable RPM Fusion repositories](https://rpmfusion.org/Configuration).
 
@@ -81,23 +81,6 @@ sudo cp ~/.config/monitors.xml /var/lib/gdm/.config/
 ```
 
 ### Packages
-**If you use GNOME:**
-1. [RPM](https://packages.fedoraproject.org/)
-```
-sudo dnf install gnome-tweaks zsh kitty neofetch gtk-murrine-engine
-```
-
-2. [Flatpak](https://flatpak.org/):
-```
-flatpak install flathub com.mattjakeman.ExtensionManager
-```
-
-3. [Starship](https://starship.rs/) (shell prompt):
-```
-curl -sS https://starship.rs/install.sh | sh
-```
-
-**If you use window managers:**
 1. [RPM](https://packages.fedoraproject.org/):
 ```
 sudo dnf install awesome zsh kitty sxhkd rofi neofetch flameshot polkit-gnome \
