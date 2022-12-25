@@ -110,9 +110,15 @@ cd dotfiles/installation
 ```
 
 ### Final steps
-1. Change your GTK3, shell and cursor theme using ```gnome-tweaks```.
+1. Install chosen extensions. I recommend:
+- [User Themes](https://extensions.gnome.org/extension/19/user-themes/)
+- [AppIndicator and KStatusNotifierItem Support](https://extensions.gnome.org/extension/615/appindicator-support/)
+- [Blur my Shell](https://extensions.gnome.org/extension/3193/blur-my-shell/)
+- [Clipboard Indicator](https://extensions.gnome.org/extension/779/clipboard-indicator/)
+ 
+2. Change your GTK3, shell and cursor theme using ```gnome-tweaks```.
 
-2. Change flatpak applications theme:
+3. Change flatpak applications theme:
 ```
 sudo flatpak override --filesystem=$HOME/.themes
 
@@ -121,7 +127,7 @@ sudo flatpak override --env=GTK_THEME=Catppuccin-Mocha-Standard-Mauve-Dark
 
 # Post installation:
 
-1. If you have multiple drives, configure fstab. You can do it using GUI application, for example: ```gnome-disks```.
+1. If you have multiple drives, configure fstab using ```gnome-disks```.
 
 # Optional software
 
