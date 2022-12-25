@@ -111,10 +111,10 @@ cd dotfiles/installation
 
 ### Final steps
 1. Install chosen extensions. I recommend:
-- [User Themes](https://extensions.gnome.org/extension/19/user-themes/)
-- [AppIndicator and KStatusNotifierItem Support](https://extensions.gnome.org/extension/615/appindicator-support/)
-- [Blur my Shell](https://extensions.gnome.org/extension/3193/blur-my-shell/)
-- [Clipboard Indicator](https://extensions.gnome.org/extension/779/clipboard-indicator/)
+    - [User Themes](https://extensions.gnome.org/extension/19/user-themes/)
+    - [AppIndicator and KStatusNotifierItem Support](https://extensions.gnome.org/extension/615/appindicator-support/)
+    - [Blur my Shell](https://extensions.gnome.org/extension/3193/blur-my-shell/)
+    - [Clipboard Indicator](https://extensions.gnome.org/extension/779/clipboard-indicator/)
  
 2. Change your GTK3, shell and cursor theme using ```gnome-tweaks```.
 
