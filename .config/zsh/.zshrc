@@ -4,7 +4,7 @@ HISTSIZE=10000
 SAVEHIST=10000
 
 # Vi keybindings
-bindkey -v
+# bindkey -v
 
 # Autosuggestions: https://github.com/zsh-users/zsh-autosuggestions
 source ~/.config/zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
