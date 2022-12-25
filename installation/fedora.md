@@ -44,7 +44,6 @@ WaylandEnable=false
 9. [Install multimedia packages](https://rpmfusion.org/Howto/Multimedia).
 
 ### Video drivers with secure boot
-
 - [Guide i used for auto signing](https://blog.monosoul.dev/2022/05/17/automatically-sign-nvidia-kernel-module-in-fedora-36/)
 
 1. Install the tools required for auto signing to work:
@@ -82,6 +81,23 @@ sudo cp ~/.config/monitors.xml /var/lib/gdm/.config/
 ```
 
 ### Packages
+**If you use GNOME:**
+1. [RPM](https://packages.fedoraproject.org/)
+```
+sudo dnf install gnome-tweaks zsh kitty neofetch gtk-murrine-engine
+```
+
+2. [Flatpak](https://flatpak.org/):
+```
+flatpak install flathub com.mattjakeman.ExtensionManager
+```
+
+3. [Starship](https://starship.rs/) (shell prompt):
+```
+curl -sS https://starship.rs/install.sh | sh
+```
+
+**If you use window managers:**
 1. [RPM](https://packages.fedoraproject.org/):
 ```
 sudo dnf install awesome zsh kitty sxhkd rofi neofetch flameshot polkit-gnome \
