@@ -83,7 +83,7 @@ sudo cp ~/.config/monitors.xml /var/lib/gdm/.config/
 ### Packages
 1. [RPM](https://packages.fedoraproject.org/)
 ```
-sudo dnf install gnome-tweaks zsh kitty neofetch gtk-murrine-engine
+sudo dnf install gnome-tweaks zsh kitty neofetch gtk-murrine-engine qt5-qtstyleplugins
 ```
 
 2. [Flatpak](https://flatpak.org/):
