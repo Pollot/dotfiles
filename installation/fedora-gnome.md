@@ -129,6 +129,8 @@ sudo flatpak override --env=GTK_THEME=Catppuccin-Mocha-Standard-Mauve-Dark
 
 1. If you have multiple drives, configure fstab using ```gnome-disks```.
 
+2. Customize keyboard shortcuts in settings.
+
 # Optional software
 
 ### Recommended packages
