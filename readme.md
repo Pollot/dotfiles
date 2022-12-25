@@ -22,8 +22,7 @@
     - [Nerd Font](#nerd-font)
     - [Grub](#grub)
 - [Keybinds](keybinds.md)
-- [Installation on Fedora](installation/fedora.md)
-- [Installation on Arch (deprecated)](installation/arch.md)
+- [Installation](#installation)
 
 # List of software
 - Window manager: [Awesome](#awesome), [Qtile](#qtile)
@@ -100,6 +99,10 @@ sudo ./install-fonts.sh
 
 # [Keybinds](keybinds.md)
 
-# [Installation on Fedora](installation/fedora.md)
+# Installation
 
-# [Installation on Arch (deprecated)](installation/arch.md)
+### [Installation on Fedora (window managers)](installation/fedora-wm.md)
+
+### [Installation on Fedora (GNOME)](installation/fedora-gnome.md)
+
+### [Installation on Arch (deprecated)](installation/arch.md)
