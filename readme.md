@@ -101,8 +101,6 @@ sudo ./install-fonts.sh
 
 # Installation
 
-### [Installation on Fedora (window managers)](installation/fedora-wm.md)
-
-### [Installation on Fedora (GNOME)](installation/fedora-gnome.md)
+### [Installation on Fedora](installation/fedora-basic.md)
 
 ### [Installation on Arch (deprecated)](installation/arch.md)
