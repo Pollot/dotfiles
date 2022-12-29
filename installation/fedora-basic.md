@@ -86,11 +86,12 @@ sudo cp ~/.config/monitors.xml /var/lib/gdm/.config/
 - Process viewer: [htop](https://packages.fedoraproject.org/pkgs/htop/htop/)
 - Audio control: [pavucontrol](https://packages.fedoraproject.org/pkgs/pavucontrol/pavucontrol/)
 - Graphic design: [gimp](https://packages.fedoraproject.org/pkgs/gimp/gimp/)
+- Simplified man pages: [tldr](https://packages.fedoraproject.org/pkgs/tldr/tldr/)
 - Communication: [Discord](https://flathub.org/apps/details/com.discordapp.Discord)<sup>Flatpak</sup>, [Signal](https://flathub.org/apps/details/org.signal.Signal)<sup>Flatpak</sup>
 
 Installation:
 ```
-sudo dnf install htop pavucontrol gimp
+sudo dnf install htop pavucontrol gimp tldr
 
 flatpak install com.discordapp.Discord flathub org.signal.Signal
 ```
