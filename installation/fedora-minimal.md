@@ -16,7 +16,7 @@ Install *Fedora Everything* using an iso from the [alternative downloads website
 ```
 sudo dnf install xorg-x11-server-Xorg xorg-x11-xinit git awesome zsh kitty sxhkd rofi neofetch flameshot polkit-gnome \
 picom lxappearance gtk-murrine-engine dunst xss-lock i3lock qt5-qtstyleplugins network-manager-applet playerctl \
-breeze-icon-theme firefox vim gnome-calendar gnome-clocks
+breeze-icon-theme firefox vim gnome-calendar gnome-clocks gnome-keyring
 ```
 
 2. [Copr](https://copr.fedorainfracloud.org/):
