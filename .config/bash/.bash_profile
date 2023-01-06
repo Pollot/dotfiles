@@ -12,7 +12,7 @@ export QT_QPA_PLATFORMTHEME=gtk2
 # exec ensures that the user is logged out when the X server exits, crashes or is killed
 if [ -z "${DISPLAY}" ] && [ "$(tty)" = "/dev/tty1" ]; then
 	PS3='Please enter your choice: '
-	options=("Qtile" "Awesome" "Quit")
+	options=("Awesome" "Qtile" "TTY")
 	select opt in "${options[@]}"
 	do
     	case $opt in
