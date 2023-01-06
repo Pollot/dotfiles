@@ -17,6 +17,8 @@ cp -r .themes $HOME
 
 cp -r .icons $HOME
 
+cp -r scripts $HOME
+
 rm $HOME/.bash_profile
 ln -s $HOME/.config/bash/.bash_profile $HOME/.bash_profile
 
