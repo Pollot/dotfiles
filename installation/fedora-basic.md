@@ -12,7 +12,7 @@
 - [Extras](#extras)
 
 # Basic configuration
-1. Install Fedora using an iso from the [official website](https://getfedora.org/).
+1. Install Fedora Workstation using an iso from the [official website](https://getfedora.org/).
 
 2. Update system and reboot.
 
