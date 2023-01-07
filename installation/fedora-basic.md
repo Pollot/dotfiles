@@ -103,7 +103,7 @@ git clone https://github.com/Pollot/dotfiles
 ```
 cd dotfiles/installation
 
-./install-fedora.sh
+./install.sh
 ```
 
 ### Final steps

@@ -91,7 +91,7 @@ To quickly install FiraCode and JetBrainsMono Nerd Fonts included in this reposi
 ```
 cd dotfiles/installation
 
-sudo ./install-fonts.sh
+sudo ./fonts.sh
 ```
 
 ## Grub
@@ -102,5 +102,3 @@ sudo ./install-fonts.sh
 # Installation
 
 ### [Installation on Fedora](installation/fedora-basic.md)
-
-### [Installation on Fedora (Minimal Install)](installation/fedora-minimal.md)
