@@ -131,6 +131,11 @@ sudo flatpak override --env=GTK_THEME=Catppuccin-Mocha-Standard-Mauve-Dark
 ```
 
 # Post installation:
-If you have multiple drives, configure fstab. You can do it using GUI application, for example: ```gnome-disks``` or ```kde-partitionmanager```.
+1. If you have multiple drives, configure fstab. You can do it using GUI application, for example: ```gnome-disks``` or ```kde-partitionmanager```.
+
+2. You can change GRUB config by editing ```/etc/default/grub``` file with root privileges. To apply changes use the following:
+```
+sudo grub2-mkconfig -o /boot/grub2/grub.cfg
+```
 
 # [Additional software](fedora-software.md)
