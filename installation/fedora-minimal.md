@@ -6,7 +6,7 @@
 - [Basic configuration](#basic-configuration)
 - [Video drivers with secure boot](#video-drivers-with-secure-boot)
 - [Post installation](#post-installation)
-- [Additional software](fedora-software.md)]
+- [Additional software](fedora-software.md)
 
 # Installation
 Install *Fedora Everything* using an iso from the [alternative downloads website](https://alt.fedoraproject.org/). **Make sure to choose "Minimal Install" in the software selection.**
@@ -16,7 +16,7 @@ Install *Fedora Everything* using an iso from the [alternative downloads website
 ```
 sudo dnf install xorg-x11-server-Xorg xorg-x11-xinit git awesome zsh kitty sxhkd rofi neofetch flameshot polkit-gnome \
 picom lxappearance gtk-murrine-engine dunst xss-lock i3lock qt5-qtstyleplugins network-manager-applet playerctl \
-breeze-icon-theme firefox vim gnome-calendar gnome-clocks gnome-keyring
+breeze-icon-theme firefox vim gnome-calendar gnome-clocks gnome-keyring tar flatpak
 ```
 
 2. [Copr](https://copr.fedorainfracloud.org/):
@@ -108,6 +108,6 @@ sudo flatpak override --env=GTK_THEME=Catppuccin-Mocha-Standard-Mauve-Dark
 ```
 
 # Post installation:
-If you have multiple drives, configure fstab. You can do it using GUI application, for example: ```gnome-disks```.
+If you have multiple drives, configure fstab. You can do it using GUI application, for example: ```gnome-disks``` or ```kde-partitionmanager```.
 
 # [Additional software](fedora-software.md)

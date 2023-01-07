@@ -20,7 +20,7 @@ Installation:
 ```
 sudo dnf install htop pavucontrol gimp tldr gh
 
-flatpak install com.discordapp.Discord flathub org.signal.Signal
+flatpak install flathub com.discordapp.Discord org.signal.Signal
 ```
 ### Nemo
 - [Package](https://packages.fedoraproject.org/pkgs/nemo/nemo/)

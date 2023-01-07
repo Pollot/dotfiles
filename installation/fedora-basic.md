@@ -9,11 +9,11 @@
 - [Additional software](fedora-software.md)
 
 # Basic configuration
-1. Install *Fedora Workstation* using an iso from the [official website](https://getfedora.org/).
+1. Install *Fedora Workstation* or *chosen spin* using an iso from the [official website](https://getfedora.org/) or [spins website](https://spins.fedoraproject.org/).
 
 2. Update system and reboot.
 
-3. Change GNOME settings to your liking.
+3. Change your DE settings to your liking.
 
 4. Remove software you won't use.
 
@@ -24,16 +24,11 @@ max_parallel_downloads=10
 ```
 You can read about full configuration options in the [DNF docs](https://dnf.readthedocs.io/en/latest/conf_ref.html).
 
-6. Configure Xorg as the default GDM display server if you don't use and plan to use Wayland. Open ```/etc/gdm/custom.conf``` and uncomment the following line:
-```
-WaylandEnable=false
-```
+6. [Enable Flatpak](https://flatpak.org/setup/Fedora). If you use GUI package/software manager (e.g.: ```gnome-software```, ```plasma-discover```), enable it in software repositories as well.
 
-7. [Enable Flatpak](https://flatpak.org/setup/Fedora). If you use ```gnome-software```, enable it in software repositories as well.
+7. [Enable RPM Fusion repositories](https://rpmfusion.org/Configuration).
 
-8. [Enable RPM Fusion repositories](https://rpmfusion.org/Configuration).
-
-9. [Install multimedia packages](https://rpmfusion.org/Howto/Multimedia).
+8. [Install multimedia packages](https://rpmfusion.org/Howto/Multimedia).
 
 # Video drivers with secure boot
 - [Guide i used for auto signing](https://blog.monosoul.dev/2022/05/17/automatically-sign-nvidia-kernel-module-in-fedora-36/)
@@ -67,10 +62,14 @@ sudo mokutil --import /etc/pki/akmods/certs/public_key.der
 
 8. Configure screens.
 
-9. Replace GDM monitors configuration with yours:
+9. Replace display manager monitors configuration with yours:
+- GDM:
 ```
 sudo cp ~/.config/monitors.xml /var/lib/gdm/.config/ 
 ```
+- SDDM:
+    1. Edit ```/etc/sddm/Xsetup``` with root privileges. Use xrandr to set up monitors.
+    2. Uncomment ```DisplayCommand=/etc/sddm/Xsetup``` in ```/etc/sddm.conf```.
 
 # Installation
 
@@ -127,6 +126,6 @@ sudo flatpak override --env=GTK_THEME=Catppuccin-Mocha-Standard-Mauve-Dark
 ```
 
 # Post installation:
-If you have multiple drives, configure fstab. You can do it using GUI application, for example: ```gnome-disks```.
+If you have multiple drives, configure fstab. You can do it using GUI application, for example: ```gnome-disks``` or ```kde-partitionmanager```.
 
 # [Additional software](fedora-software.md)

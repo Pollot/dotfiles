@@ -101,6 +101,6 @@ sudo ./install-fonts.sh
 
 # Installation
 
-### [Installation on Fedora (Minimal Install)](installation/fedora-minimal.md)
+### [Installation on Fedora](installation/fedora-basic.md)
 
-### [Installation on Fedora (Workstation)](installation/fedora-basic.md)
+### [Installation on Fedora (Minimal Install)](installation/fedora-minimal.md)
