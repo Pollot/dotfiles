@@ -8,7 +8,6 @@
 - GUI file manager: [nemo &darr;](#nemo)
 - TUI file manager: [lf &darr;](#lf)
 - Text/Code editor: [Visual Studio Code &darr;](#visual-studio-code)
-- Password manager: [Bitwarden &darr;](#bitwarden)
 - Process viewer: [htop](https://packages.fedoraproject.org/pkgs/htop/htop/)
 - Audio control: [pavucontrol](https://packages.fedoraproject.org/pkgs/pavucontrol/pavucontrol/)
 - Graphic design: [gimp](https://packages.fedoraproject.org/pkgs/gimp/gimp/)
@@ -57,9 +56,6 @@ sudo mv lf /usr/local/bin
 
 ### Visual Studio Code
 - [Official installation guide](https://code.visualstudio.com/docs/setup/linux)
-
-### Bitwarden
-- [Official download page](https://bitwarden.com/download/)
 
 # Gaming
 - [xone &darr;](#xone)

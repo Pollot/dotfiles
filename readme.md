@@ -102,3 +102,5 @@ sudo ./fonts.sh
 # Installation
 
 ### [Installation on Fedora](installation/fedora-basic.md)
+
+### [Installation on Arch](installation/arch-basic.md)
