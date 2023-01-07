@@ -71,6 +71,11 @@ sudo cp ~/.config/monitors.xml /var/lib/gdm/.config/
     1. Edit ```/etc/sddm/Xsetup``` with root privileges. Use xrandr to set up monitors.
     2. Uncomment ```DisplayCommand=/etc/sddm/Xsetup``` in ```/etc/sddm.conf```.
 
+10. **If you don't use and plan to use Wayland**, you can force GDM to use X11 instead. Open ```/etc/gdm/custom.conf``` with root privileges and uncomment the following line:
+```
+WaylandEnable=false
+```
+
 # Installation
 
 ### Packages
