@@ -85,20 +85,9 @@ sudo mokutil --import /var/lib/dkms/mok.pub
     - Hit “Yes” and enter the password from step 1
     - Then select “Reboot”
 
-4. Check if the module has been loaded:
-```
-lsmod | grep -i xone_dongle
-```
-If not, modprobe it:
-```
-sudo modprobe xone_dongle
-```
 ---
-After Kernel update check if the module has been loaded:
-```
-lsmod | grep -i xone_dongle
-```
-If not, check if it has been build:
+
+After kernel update check if the module has been built:
 ```
 dkms status
 ```
