@@ -104,7 +104,7 @@ dkms status
 ```
 If not, build it:
 ```
-dkms build xone/v0.3
+sudo dkms build xone/v0.3
 ```
 
 # Extras
