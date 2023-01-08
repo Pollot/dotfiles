@@ -71,6 +71,42 @@ sudo dnf install steam lutris mangohud
 ### xone
 - [GitHub repository with installation guide](https://github.com/medusalix/xone)
 
+Secure boot support:
+1. Import certificate:
+```
+sudo mokutil --import /var/lib/dkms/mok.pub
+```
+
+2. Reboot.
+
+3. You will see MOK Manager interface and will be asked to enroll the key:
+    - First select “Enroll MOK“
+    - Then “Continue“
+    - Hit “Yes” and enter the password from step 1
+    - Then select “Reboot”
+
+4. Check if the module has been loaded:
+```
+lsmod | grep -i xone_dongle
+```
+If not, modprobe it:
+```
+sudo modprobe xone_dongle
+```
+---
+After Kernel update check if the module has been loaded:
+```
+lsmod | grep -i xone_dongle
+```
+If not, check if it has been build:
+```
+dkms status
+```
+If not, build it:
+```
+dkms build xone/v0.3
+```
+
 # Extras
 
 ### WireGuard VPN
