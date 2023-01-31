@@ -64,7 +64,7 @@ Catppuccin is a community-driven pastel theme that aims to be the middle ground 
 - [Official repository](https://github.com/catppuccin/catppuccin)
 - [Project's documentation](https://github.com/catppuccin/catppuccin/tree/dev/docs)
 
-I use **Catppuccin Mocha** palette in my configurations.
+I use **Catppuccin Macchiato** palette in my configurations.
 
 ## Wallpapers
 - [City](https://www.reddit.com/r/ImageGoNord/comments/xqbzjm/catppuccin_3840x2160_cityscape_synthwave_with/)
