@@ -22,3 +22,5 @@ do
     	*) echo "Invalid option, try again.";;
 	esac
 done
+
+# exec ensures that the user is logged out when the X server exits, crashes or is killed
