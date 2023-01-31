@@ -98,11 +98,6 @@ sudo dnf install qtile qtile-extras
 curl -sS https://starship.rs/install.sh | sh
 ```
 
-4. [Flatpaks](https://flatpak.org/):
-```
-flatpak install flathub com.github.GradienceTeam.Gradience
-```
-
 ### Dotfiles
 1. Clone this repository:
 ```
@@ -128,13 +123,11 @@ sudo nvidia-settings
 
 4. Change font to **Open Sans** and set its size to **11**.
 
-5. Change GTK 4 (Adwaita) theme using *Gradience*.
-
-6. Change flatpak applications theme:
+5. Change flatpak applications theme:
 ```
 sudo flatpak override --filesystem=$HOME/.themes
 
-sudo flatpak override --env=GTK_THEME=Catppuccin-Mocha-Standard-Mauve-Dark
+sudo flatpak override --env=GTK_THEME=Catppuccin-Macchiato-Standard-Mauve-Dark
 
 sudo flatpak override --filesystem=$HOME/.icons
 ```

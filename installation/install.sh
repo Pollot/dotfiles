@@ -19,8 +19,13 @@ cp -r .icons $HOME
 
 cp -r scripts $HOME
 
-rm $HOME/.bash_profile
-ln -s $HOME/.config/bash/.bash_profile $HOME/.bash_profile
+ln -sf $HOME/.config/bash/.bash_profile $HOME/.bash_profile
+
+# GTK 4
+mkdir $HOME/.config/gtk-4.0
+ln -sf $HOME/.themes/Catppuccin-Macchiato-Standard-Mauve-Dark/gtk-4.0/assets $HOME/.config/gtk-4.0/assets
+ln -sf $HOME/.themes/Catppuccin-Macchiato-Standard-Mauve-Dark/gtk-4.0/gtk.css $HOME/.config/gtk-4.0/gtk.css
+ln -sf $HOME/.themes/Catppuccin-Macchiato-Standard-Mauve-Dark/gtk-4.0/gtk-dark.css $HOME/.config/gtk-4.0/gtk-dark.css
 
 echo -e "\nConfiguration files installed.\n"
 

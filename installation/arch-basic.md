@@ -61,12 +61,7 @@ alsa-utils flameshot gnome-keyring polkit-gnome lxappearance dunst pacman-contri
 i3lock gnome-clocks gnome-weather gnome-calendar network-manager-applet
 ```
 
-5. Install *Gradience*:
-```
-flatpak install flathub com.github.GradienceTeam.Gradience
-```
-
-6. Install AUR helper *yay* :
+5. Install AUR helper *yay* :
 ```
 git clone https://aur.archlinux.org/yay
 
@@ -77,12 +72,12 @@ makepkg -si
 cd
 ```
 
-7. Install AUR packages:
+6. Install AUR packages:
 ```
 yay -S qtile-git qtile-extras-git picom-git qt5-styleplugins
 ```
 
-8. Install drivers. On Nvidia graphics card follow [this guide](https://wiki.archlinux.org/title/NVIDIA). **For the Maxwell (NV110/GMXXX) series and newer:**
+7. Install drivers. On Nvidia graphics card follow [this guide](https://wiki.archlinux.org/title/NVIDIA). **For the Maxwell (NV110/GMXXX) series and newer:**
 ```
 sudo pacman -S nvidia nvidia-settings lib32-nvidia-utils
 ```
@@ -112,19 +107,17 @@ sudo nvidia-settings
 
 4. Change font to **Open Sans** and set its size to **11**.
 
-5. Change GTK 4 (Adwaita) theme using *Gradience*.
-
-6. Change flatpak applications theme:
+5. Change flatpak applications theme:
 ```
 sudo flatpak override --filesystem=$HOME/.themes
 
-sudo flatpak override --env=GTK_THEME=Catppuccin-Mocha-Standard-Mauve-Dark
+sudo flatpak override --env=GTK_THEME=Catppuccin-Macchiato-Standard-Mauve-Dark
 
 sudo flatpak override --filesystem=$HOME/.icons
 ```
 
 # Post installation
-1. Change X11 keyboard layout. You can add the following line in the ```~/.config/X11/xinitrc-[]```:
+1. Change X11 keyboard layout. You can add the following line in the ```~/.config/X11/xinitrc-[window manager]```:
 ```
 setxkbmap [your layout] &
 ```
