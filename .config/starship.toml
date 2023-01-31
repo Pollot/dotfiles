@@ -1,13 +1,13 @@
 format = """
-[](#f38ba8)\
+[](#ed8796)\
 $username\
 $sudo\
-[](bg:#fab387 fg:#f38ba8)\
+[](fg:#ed8796 bg:#f5a97f)\
 $directory\
-[](fg:#fab387 bg:#f9e2af)\
+[](fg:#f5a97f bg:#eed49f)\
 $git_branch\
 $git_status\
-[](fg:#f9e2af bg:#a6e3a1)\
+[](fg:#eed49f bg:#a6da95)\
 $c\
 $python\
 $java\
@@ -18,31 +18,31 @@ $dart\
 $golang\
 $kotlin\
 $haskell\
-[](fg:#a6e3a1 bg:#89b4fa)\
+[](fg:#a6da95 bg:#8aadf4)\
 $time\
 $cmd_duration\
-[ ](fg:#89b4fa)\
+[ ](fg:#8aadf4)\
 """
 
-# Uncomment to disable the blank line at the start of the prompt
+# Uncomment to disable the blank line at the start of the prompt:
 # add_newline = false
 
 # Replaced with cat icon
 [username]
 show_always = true
-#style_user = "bg:#f38ba8 fg:#11111b"
-#style_root = "bg:#f38ba8 fg:#11111b"
+#style_user = "bg:#ed8796 fg:#181926"
+#style_root = "bg:#ed8796 fg:#181926"
 #format = "[$user ]($style)"
-format = "[ ](bg:#f38ba8 fg:#11111b)"
+format = "[ ](bg:#ed8796 fg:#181926)"
 
 [sudo]
 disabled = false
-style = "bg:#f38ba8 fg:#11111b"
+style = "bg:#ed8796 fg:#181926"
 symbol = ""
 format = "[$symbol ]($style)"
 
 [directory]
-style = "bg:#fab387 fg:#11111b"
+style = "bg:#f5a97f fg:#181926"
 format = "[ $path ]($style)"
 truncation_symbol = "…/"
 
@@ -65,69 +65,69 @@ truncation_symbol = "…/"
 
 [git_branch]
 symbol = ""
-style = "bg:#f9e2af fg:#11111b"
+style = "bg:#eed49f fg:#181926"
 format = "[ $symbol $branch]($style)"
 
 [git_status]
-style = "bg:#f9e2af fg:#11111b"
+style = "bg:#eed49f fg:#181926"
 format = "[$all_status$ahead_behind ]($style)"
 
 [c]
 symbol = ""
-style = "bg:#a6e3a1 fg:#11111b"
+style = "bg:#a6da95 fg:#181926"
 format = "[ $symbol ($version) ]($style)"
 
 [python]
 symbol = ""
-style = "bg:#a6e3a1 fg:#11111b"
+style = "bg:#a6da95 fg:#181926"
 format = "[ $symbol ($version) ]($style)"
 
 [java]
 symbol = ""
-style = "bg:#a6e3a1 fg:#11111b"
+style = "bg:#a6da95 fg:#181926"
 format = "[ $symbol ($version) ]($style)"
 
 [lua]
 symbol = ""
-style = "bg:#a6e3a1 fg:#11111b"
+style = "bg:#a6da95 fg:#181926"
 format = "[ $symbol ($version) ]($style)"
 
 [rust]
 symbol = ""
-style = "bg:#a6e3a1 fg:#11111b"
+style = "bg:#a6da95 fg:#181926"
 format = "[ $symbol ($version) ]($style)"
 
 [nodejs]
 symbol = ""
-style = "bg:#a6e3a1 fg:#11111b"
+style = "bg:#a6da95 fg:#181926"
 format = "[ $symbol ($version) ]($style)"
 
 [dart]
 symbol = ""
-style = "bg:#a6e3a1 fg:#11111b"
+style = "bg:#a6da95 fg:#181926"
 format = "[ $symbol ($version) ]($style)"
 
 [golang]
 symbol = ""
-style = "bg:#a6e3a1 fg:#11111b"
+style = "bg:#a6da95 fg:#181926"
 format = "[ $symbol ($version) ]($style)"
 
 [kotlin]
 symbol = ""
-style = "bg:#a6e3a1 fg:#11111b"
+style = "bg:#a6da95 fg:#181926"
 format = "[ $symbol ($version) ]($style)"
 
 [haskell]
 symbol = ""
-style = "bg:#a6e3a1 fg:#11111b"
+style = "bg:#a6da95 fg:#181926"
 format = "[ $symbol ($version) ]($style)"
 
 [time]
 disabled = false
 time_format = "%R" # Hour:Minute Format
-style = "bg:#89b4fa fg:#11111b"
+style = "bg:#8aadf4 fg:#181926"
 format = "[  $time ]($style)"
 
 [cmd_duration]
-style = "bg:#89b4fa fg:#11111b"
+style = "bg:#8aadf4 fg:#181926"
 format = "[ took $duration ]($style)"
