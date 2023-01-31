@@ -1,7 +1,7 @@
 # Colours: https://github.com/catppuccin/dunst
 
 [global]
-    frame_color = "#F38BA8"
+    frame_color = "#8AADF4"
     frame_width = 2
     separator_color= frame
     # set it to the same value as in picom config
@@ -19,18 +19,18 @@
 
 
 [urgency_low]
-    background = "#1E1E2E"
-    foreground = "#CDD6F4"
+    background = "#24273A"
+    foreground = "#CAD3F5"
     timeout = 3
 
 
 [urgency_normal]
-    background = "#1E1E2E"
-    foreground = "#CDD6F4"
+    background = "#24273A"
+    foreground = "#CAD3F5"
     timeout = 5
 
 
 [urgency_critical]
-    background = "#1E1E2E"
-    foreground = "#CDD6F4"
-    frame_color = "#FAB387"
+    background = "#24273A"
+    foreground = "#CAD3F5"
+    frame_color = "#F5A97F"
