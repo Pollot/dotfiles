@@ -14,5 +14,4 @@ configuration{
     sidebar-mode: true;
 }
 
-@theme "catppuccin-mocha"
-
+@theme "catppuccin-macchiato"
