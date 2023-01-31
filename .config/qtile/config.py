@@ -55,9 +55,6 @@ from colours import *
 # OpenWeatherMap API key and symbols
 from owm import owm_api, owm_symbols
 
-# Power menu
-from powermenu import show_power_menu
-
 
 ##########################
 ####### Variables ########
@@ -116,10 +113,6 @@ keys = [
     Key([mod, "shift"], "r",
         lazy.reload_config(),
         desc="Reload config"
-        ),
-    Key([mod], "w",
-        lazy.function(show_power_menu),
-        desc="Show power menu"
         ),
     Key([mod, "shift"], "c",
         lazy.window.kill(),
