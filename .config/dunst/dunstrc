@@ -1,13 +1,13 @@
 # Colours: https://github.com/catppuccin/dunst
 
 [global]
-    frame_color = "#8AADF4"
+    frame_color = "#F5A97F"
     frame_width = 2
-    separator_color= frame
+    separator_color = frame
     # set it to the same value as in picom config
     corner_radius = 15
 
-    follow = mouse
+    follow = keyboard
 
     font = "Open Sans 14"
 
@@ -33,4 +33,4 @@
 [urgency_critical]
     background = "#24273A"
     foreground = "#CAD3F5"
-    frame_color = "#F5A97F"
+    frame_color = "#ED8796"
